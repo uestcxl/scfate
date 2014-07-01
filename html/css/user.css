@@ -1,0 +1,63 @@
+/*------------login-------------------*/
+.ad{
+	height: 72px;
+	width: 1000px;
+	margin: 10px 0;
+}
+.ad img{
+	display: block;
+	margin: 0 auto;
+	height: 72px;
+	max-width: 1000px;
+}
+
+.login,.register{
+	padding: 12px;
+	font-size: 16px;
+}
+.login{
+	height:280px;
+}
+
+.login_left,.register_left{
+	float: left;
+	padding: 30px 15px;
+	width: 610px;
+	border-right: 1px solid #a0a0a0;
+}
+.login_left .login_left_pic,.login_left .login_left_form,.register_left .register_left_form{
+	float: left;
+}
+.login_form input,.register_form input{
+	width: 220px;
+}
+
+.login_right,.register_right{
+	float: right;
+	width: 300px;
+	height: 280px;
+}
+.login_right div,.register_right div{
+	width: 192px;
+	margin: 40px auto;
+}
+.login_right p ,.register_right.p{
+	line-height: 20px;
+	margin-bottom: 2px;
+}
+
+/*------------register-------------------*/
+.register{
+	height: 600px;
+}
+.form_part.register_form{
+	display: inline-block;
+	vertical-align: middle;
+}
+.register_left h1{
+	margin-bottom:30px;
+}
+.register_left_form{
+	margin-left: 70px;
+	width: 530px;
+}
