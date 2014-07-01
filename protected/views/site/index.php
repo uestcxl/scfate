@@ -1,20 +1,25 @@
-<?php
-/* @var $this SiteController */
-
-$this->pageTitle=Yii::app()->name;
-?>
-
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
-<p>Congratulations! You have successfully created your Yii application.</p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+	<!-- section  begin -->
+		<!-- slider  begin -->
+		<div class="slider">
+			<img src="<?php echo Yii::app()->baseUrl?>/html/img/index_slider_tempPic.png">
+		</div>
+		<!-- slider end -->
+		<!-- announcement&promotion  begin -->
+		<div>
+			<!-- announcement  begin -->
+			<div class="announcemnt">
+				<h1>公告</h1>
+				<div>
+					<h3>这里是公告的题目</h3>
+					<p>这里是公告的内容</p>
+				</div>
+			</div>
+			<!-- announcement  end -->
+			<!-- promotion  begin -->
+			<div class="promotion">
+				<h1>促销活动</h1>
+			</div>
+			<!-- promotion  end -->
+		</div>
+		<!-- announcement&promotion end -->
+	<!-- section  end -->

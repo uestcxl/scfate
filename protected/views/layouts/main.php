@@ -1,59 +1,66 @@
-<?php /* @var $this Controller */ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/main.css">
 
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/index.css">
 </head>
-
 <body>
+	<!-- header  begin -->
+	<header>
+		<!-- about login information  begin -->
+		<div class="all_login">
+			<p>
+				<span><a href="user.html">个人中心</a></span>
+				<span><a href="shopping.html">购物车</a></span>
+				<span><a href="<?php echo Yii::app()->createUrl('site/login')?>">登陆</a>|<a href="<?php echo Yii::app()->createUrl('user/create')?>">注册</a></span>
+			</p>
+		</div>
+		<!-- about login information  end -->
 
-<div class="container" id="page">
+		<!-- logo&search  begin -->
+		<div class="all_logoAndsearch">
+			<div class="logo">
+				<a href="<?php echo Yii::app()->createUrl('site/index')?>"><img src="<?php echo Yii::app()->baseUrl?>/html/img/LOGO.png"></a>
+			</div>
+			<div class="search">
+				<form>
+					<a><img src="<?php echo Yii::app()->baseUrl?>/html/img/FDJ.png"></a>
+					<span>搜索</span>
+					<input type="text">
+				</form>
+			</div>
+		</div>
+		<!-- logo&search  end -->
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
-
-	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
-</div><!-- page -->
+		<!--navigation begin-->
+		<div class="navigation">
+			<div>
+				<span><a href="<?php echo Yii::app()->createUrl('site/index')?>">网站主页</a></span>
+				<span><a href="works.html">作品展示</a></span>
+				<span><a href="rent.html">服饰租赁</a></span>
+				<span><a href="souvenir.html">纪念礼品</a></span>
+				<span><a href="about.html">关于我们</a></span>
+			</div>
+		</div>
+	</header>
+	<!-- header  end -->
+<?php echo $content;?>
+	<!-- section  begin -->
+	<!-- section  end -->
+	<!-- footer  begin -->
+	<footer>
+		<p>友情链接</p>
+		<div class="copyright">
+			<p>Copyright © 2014-05-30 校缘 All Rights Reserved.</p>
+		</div>
+	</footer>
+	<!-- footer  end -->
 
 </body>
 </html>
