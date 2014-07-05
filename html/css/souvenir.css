@@ -1,0 +1,49 @@
+.souvenir{
+	min-height: 800px;
+}
+.menu{
+	height: 800px;
+	width: 200px;
+	float: left;
+}
+.menu_part{
+	height: 330px;
+	width: 200px;
+	margin-bottom: 30px;
+	background-color: #fff;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+}
+.menu_part .head{
+	height: 40px;
+	background-color: #246966;
+	color: #fff;
+	line-height: 40px;
+}
+.menu_part .body{
+	padding: 30px 0;
+}
+.souvenir_concent{
+	height: 800px;
+	width: 790px;
+	float: right;
+	background-color: #fff;
+}
+.souvenir_concent_part{
+	height: 300px;
+	width: 230px;
+	float:left;
+	margin: 16px;
+	text-align: center;
+	border-right: 1px solid #adadad;
+	border-bottom: 1px solid #adadad; 
+	background-color: #fff;
+}
+.souvenir_concent_part img{
+	height: 210px;
+	width: 210px;
+	margin:5px;
+	border: 0;
+	background-color: #efefef;
+}

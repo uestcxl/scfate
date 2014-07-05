@@ -7,7 +7,6 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/main.css">
-
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/index.css">
 </head>
 <body>
@@ -16,7 +15,7 @@
 		<!-- about login information  begin -->
 		<div class="all_login">
 			<p>
-				<span><a href="user.html">个人中心</a></span>
+				<span><a href="<?php echo Yii::app()->createUrl('user/index')?>">个人中心</a></span>
 				<span><a href="shopping.html">购物车</a></span>
 				<span><a href="<?php echo Yii::app()->createUrl('site/login')?>">登陆</a>|<a href="<?php echo Yii::app()->createUrl('user/create')?>">注册</a></span>
 			</p>

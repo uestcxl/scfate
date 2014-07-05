@@ -1,3 +1,6 @@
+section{
+	min-height: 800px;
+}
 /*------------login-------------------*/
 .ad{
 	height: 72px;
@@ -60,4 +63,168 @@
 .register_left_form{
 	margin-left: 70px;
 	width: 530px;
+}
+
+/*-----------------user------------------*/
+.user{
+	vertical-align: middle;
+	min-height: 300px;
+}
+.user .menu{
+	width: 200px;
+	height: 300px;
+	float: left;
+	background-color: #fff;
+}
+.menu_title{
+	background-color: #246966;
+	background-image: url(../img/user_menu.png);
+	height: 40px;
+}
+.menu_list{
+	height: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	text-align: center;
+	background-color: #fff;
+	background-image: url(../img/user_list.png);
+	border-bottom: 1px solid #c9c9c9;
+	cursor: pointer;
+}
+.user .all_lable{
+	width: 795px;
+	float: right;
+}
+.user_nav{
+	height: 50px;
+	background-image: url(../img/nav.png);
+	background-repeat: repeat-x;
+}
+.user_nav div{
+	height: 50px;
+	width: 150px;
+	float: left;
+	cursor: pointer;
+	background-repeat: no-repeat;
+}
+/*-----------------account------------------*/
+
+#nav_information.select{
+	background-image: url(../img/account_inf_select.png);
+}
+#nav_information.no{
+	background-image: url(../img/account_inf_no.png);
+}
+#nav_rePasswords.select{
+	background-image: url(../img/account_passwords_select.png);
+}
+#nav_rePasswords.no{
+	background-image: url(../img/account_passwords_no.png);
+}
+#nav_reInformation.select{
+	background-image: url(../img/account_reInf_select.png);
+}
+#nav_reInformation.no{
+	background-image: url(../img/account_reInf_no.png);
+}
+
+#nav_rePasswords_concent,#nav_reInformation_concent,#nav_information_concent{
+	min-height: 500px;
+}
+
+#nav_information_concent{
+	display: block;
+	background-color: #fff;
+}
+.account_head{
+	width: 250px;
+	float: left;
+}
+.account_head img{
+	width: 150px;
+	height: 150px;
+	margin: 50px auto 0px auto;
+	display: block;
+	background-color: #e1e1e1;
+}
+.information_form,.rePasswords_form{
+	padding:30px;
+	height: 500px;
+	float: left;
+}
+.information_form .form_part input{
+	border-style: dotted;
+	width: 300px;
+}
+
+#nav_rePasswords_concent{
+	display: none;
+}
+.rePasswords_form{
+	margin: 0 auto;
+	width: 500px;
+	padding-left: 100px;
+}
+.rePasswords_form .form_part input{
+	width: 300px;
+}
+#nav_reInformation_concent{
+	display: none;
+}
+.reInformation_form .form_part input{
+	width: 300px;
+}
+
+/*--------------address-------------------*/
+#nav_address.select{
+	background-image: url(../img/address_select.png);
+}
+#nav_address.no{
+	background-image: url(../img/address_no.png);
+}
+#nav_newAddress.select{
+	background-image: url(../img/new_address_select.png);
+}
+#nav_newAddress.no{
+	background-image: url(../img/new_address_no.png);
+}
+#nav_address_concent{
+	margin: 25px;
+	border-top: 12px solid #8b8b8b;
+	border-bottom: 12px solid #8b8b8b;
+	display: block;
+}
+#nav_address_concent table{
+	text-align: left;
+	line-height: 30px;
+}
+#nav_address_concent tr{
+	border-top: 6px solid #d2d2d2; 
+}
+.table_right_button{
+	text-align: right;
+}
+.table_right_button input{
+	margin-left: 3px;
+	width: 50px;
+	height: 25px;
+	border-radius: 3px;
+	color: #fff;
+	border: 0;
+	background-color: #009e96;
+}
+.table_right_button input:hover{
+	background-color: #00736d;
+}
+#nav_newAddress_concent{
+	display: none;
+	padding: 30px 0;
+}
+#nav_newAddress_concent .form_part{
+	width: 500px;
+	margin-left: 150px;
+}
+#nav_newAddress_concent .form_part input{
+	width: 250px;
+	height: 25px;
 }
