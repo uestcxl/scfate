@@ -19,6 +19,7 @@
  */
 class User extends CActiveRecord
 {
+	public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,12 +36,14 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, phone, mail', 'required'),
-			array('username, name', 'length', 'max'=>45),
+			array('username, password, phone, mail', 'required','message'=>'必填哦'),
+			array('username, name', 'length', 'max'=>45,'message'=>'用户名不能大于45个字符！'),
 			array('password', 'length', 'max'=>32),
 			array('phone', 'length', 'max'=>11),
 			array('mail', 'length', 'max'=>40),
 			array('QQ', 'length', 'max'=>20),
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(),'on'=>'captchaRequired'),
+        	array('verifyCode', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, name, password, phone, mail, QQ', 'safe', 'on'=>'search'),
@@ -74,6 +77,7 @@ class User extends CActiveRecord
 			'phone' => 'Phone',
 			'mail' => 'Mail',
 			'QQ' => 'Qq',
+			'verifyCode' => 'Verification Code',
 		);
 	}
 
@@ -120,20 +124,20 @@ class User extends CActiveRecord
 	}
 	public  function validatePassword($password)
 	{
-                               return md5($password)===$this->password;
+        return md5($password)===$this->password;
 	}
 
 
 	protected function beforeSave(){
 		if (parent::beforeSave()) {
-                                                if($this->isNewRecord){
-                                                	//var_dump($this->password);die;
-                                                	$this->password=md5($this->password);
-                                                }
-
+	        if($this->isNewRecord){
+	        	//var_dump($this->password);die;
+	        	$this->password=md5($this->password);
+	        }
 			return  true;
 		}else{
 			return false;
 		}
 	}
+
 }

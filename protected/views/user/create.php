@@ -18,48 +18,73 @@
 			<!--login begin-->
 			<div class="register">
 				<div class="register_left">
+
+					<?php $form=$this->beginWidget('CActiveForm', array(
+						'id'=>'user-form',
+						'enableAjaxValidation'=>false,
+						'enableClientValidation'=>true,
+						'clientOptions'=>array(
+							'validateOnSubmit'=>true,
+						),
+					)); ?>
+
 					<h1>请填写注册信息</h1>
 					<div class="register_left_form">
 						<form>
 							<div>
 								<div class="form_part register_form">
 									<span>用户名：</span>
-									<input type="text">	
+									<input type="text" name="User[username]">
+									<?php echo $form->error($model,'username'); ?>	
 								</div>
 								<span>用于登录的名字</span>
 							</div>
 							<div>
 								<div class="form_part register_form">
 									<span>密&nbsp;&nbsp;码：</span>
-									<input type="passwords">	
+									<input type="password" name="User[password]">
+									<?php echo $form->error($model,'password'); ?>	
 								</div>
 								<span>您的密码</span>
 							</div>
 							<div>
 								<div class="form_part register_form">
 									<span>确认密码：</span>
-									<input type="passwords">	
+									<input type="password" name="User[password_repeat]">	
+									<?php echo $form->error($model,'password_repeat'); ?>	
 								</div>
 								<span>重复输入密码</span>
 							</div>
 							<div>
 								<div class="form_part register_form">
 									<span>电&nbsp;&nbsp;话：</span>
-									<input type="text">	
+									<input type="text" name="User[phone]">	
+									<?php echo $form->error($model,'phone'); ?>	
 								</div>
 								<span>请输入电话</span>
 							</div>
 							<div>
 								<div class="form_part register_form">
 									<span>邮&nbsp;&nbsp;箱：</span>
-									<input type="text">	
+									<input type="text" name="User[mail]">	
+									<?php echo $form->error($model,'mail'); ?>	
 								</div>
 								<span>请输入有效邮箱</span>
 							</div>
 							<div>
 								<div class="form_part register_form">
 									<span>验证码：</span>
-									<input type="text">	
+									<input type="text" name="User[verifyCode]" style="width: 100px">
+								    <?php $this->widget('CCaptcha',array(
+								        'showRefreshButton'=>false,
+								        'clickableImage'=>true,
+								        'buttonLabel'=>'刷新验证码',
+								        'imageOptions'=>array(
+								            'alt'=>'点击换图',
+								            'title'=>'点击换图',
+								            'style'=>'cursor:pointer',)
+								        )); ?>
+									<?php echo $form->error($model,'verifyCode'); ?>	
 								</div>
 								<span></span>
 							</div>
@@ -69,6 +94,7 @@
 
 						</form>
 					</div>
+					<?php $this->endWidget();?>
 				</div>
 			
 				<div class="login_right">

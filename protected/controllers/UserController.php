@@ -8,6 +8,7 @@ class UserController extends Controller
 	 */
 	public $layout='//layouts/column1';
 
+	public $verifyCode;
 	/**
 	 * @return array action filters
 	 */
@@ -35,6 +36,10 @@ class UserController extends Controller
 				'actions'=>array('create','index'),
 				'users'=>array('*'),
 			),
+			array('allow',
+				'actions'=>array('captcha'),
+				'users'=>array('*'),
+				),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete','update'),
 				'users'=>array(ADMIN),
@@ -64,14 +69,32 @@ class UserController extends Controller
 	{
 		$model=new User;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['User'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if ($_POST['User']['password']==$_POST['User']['password_repeat']) {
+					$model->attributes=$_POST['User'];
+					$someone=User::model()->findByAttributes(array('username'=>$model->username));
+					if ($someone==null) {
+						if($model->save()){
+							echo "<script type='text/javascript'>
+        							alert('注册成功! 确定并返回登陆页面。');
+        							window.location.href = '../site/login';
+    					 	</script>";
+						}
+					}
+					else{
+						echo "<script type='text/javascript'>
+        							alert('用户名已被使用!');
+        							window.location.href = '".$this->createUrl('user/create')."';
+    					 	</script>";
+					}
+			}
+			else{
+				echo "<script type='text/javascript'>
+        						alert('两次输入的密码不相同!');
+        						window.location.href = '".$this->createUrl('user/create')."';
+    				 	</script>";
+			}
 		}
 
 		$this->render('create',array(
@@ -169,5 +192,20 @@ class UserController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actions(){
+	    return array( 
+	        // captcha action renders the CAPTCHA image displayed on the contact page
+	        'captcha'=>array(
+	                'class'=>'CCaptchaAction',
+	                'backColor'=>0xFFFFFF, 
+	                'maxLength'=>'4',       // 最多生成几个字符
+	                'minLength'=>'4',       // 最少生成几个字符
+	                'height'=>'40',
+	                'width'=>'100',
+	        ), 
+	    ); 
+	    
 	}
 }
