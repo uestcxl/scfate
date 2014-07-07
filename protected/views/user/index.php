@@ -16,9 +16,9 @@
 				<div class="menu_title">
 				</div>
 				<div>
-					<a href="user_account.html"><div class="menu_list">我的账户</div></a>
+					<a href="<?php echo Yii::app()->createUrl('user/index'); ?>"><div class="menu_list">我的账户</div></a>
 					<a href="user_order.html"><div class="menu_list">我的订单</div></a>
-					<a href="user_address.html"><div class="menu_list">我的地址</div></a>
+					<a href="<?php echo Yii::app()->createUrl('user/user_address')?>"><div class="menu_list">我的地址</div></a>
 					<a href="user_photos.html"><div class="menu_list">我的相册</div></a>
 					<a href="user_friends.html"><div class="menu_list">我的朋友</div></a>
 					<a href="user_systemMessage.html"><div class="menu_list">系统消息</div></a>

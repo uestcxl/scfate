@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','index'),
+				'actions'=>array('create','index','user_address'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -131,6 +131,12 @@ class UserController extends Controller
 	/**
 	 * Manages all models.
 	 */
+
+	public function actionUser_address()
+	{
+		
+		$this->render('user_address');
+	}
 	public function actionAdmin()
 	{
 		$model=new User('search');
