@@ -1,14 +1,13 @@
 <?php
 
-class UserController extends Controller
+class UserpicController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column1';
+	public $layout='//layouts/column2';
 
-	public $verifyCode;
 	/**
 	 * @return array action filters
 	 */
@@ -28,21 +27,9 @@ class UserController extends Controller
 	public function accessRules()
 	{
 		return array(
-/*			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),*/
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','index'),
-				'users'=>array('*'),
-			),
-			array('allow',
-				'actions'=>array('captcha'),
-				'users'=>array('*'),
-				),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('update'),
-				'users'=>array('@'),
+				'actions'=>array('admin','delete','create','update','index','view'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -67,34 +54,16 @@ class UserController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new User;
+		$model=new Userpic;
 
-		if(isset($_POST['User']))
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Userpic']))
 		{
-			if ($_POST['User']['password']==$_POST['User']['password_repeat']) {
-					$model->attributes=$_POST['User'];
-					$someone=User::model()->findByAttributes(array('username'=>$model->username));
-					if ($someone==null) {
-						if($model->save()){
-							echo "<script type='text/javascript'>
-        							alert('注册成功! 确定并返回登陆页面。');
-        							window.location.href = '../site/login';
-    					 	</script>";
-						}
-					}
-					else{
-						echo "<script type='text/javascript'>
-        							alert('用户名已被使用!');
-        							window.location.href = '".$this->createUrl('user/create')."';
-    					 	</script>";
-					}
-			}
-			else{
-				echo "<script type='text/javascript'>
-        						alert('两次输入的密码不相同!');
-        						window.location.href = '".$this->createUrl('user/create')."';
-    				 	</script>";
-			}
+			$model->attributes=$_POST['Userpic'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -114,9 +83,9 @@ class UserController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
+		if(isset($_POST['Userpic']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes=$_POST['Userpic'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -145,7 +114,10 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->render('index');
+		$dataProvider=new CActiveDataProvider('Userpic');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 
 	/**
@@ -153,10 +125,10 @@ class UserController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new User('search');
+		$model=new Userpic('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['User']))
-			$model->attributes=$_GET['User'];
+		if(isset($_GET['Userpic']))
+			$model->attributes=$_GET['Userpic'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -167,12 +139,12 @@ class UserController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return User the loaded model
+	 * @return Userpic the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
+		$model=Userpic::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -180,29 +152,14 @@ class UserController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param User $model the model to be validated
+	 * @param Userpic $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='userpic-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-	}
-
-	public function actions(){
-	    return array( 
-	        // captcha action renders the CAPTCHA image displayed on the contact page
-	        'captcha'=>array(
-	                'class'=>'CCaptchaAction',
-	                'backColor'=>0xFFFFFF, 
-	                'maxLength'=>'4',       // 最多生成几个字符
-	                'minLength'=>'4',       // 最少生成几个字符
-	                'height'=>'40',
-	                'width'=>'100',
-	        ), 
-	    ); 
-	    
 	}
 }
