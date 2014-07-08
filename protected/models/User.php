@@ -124,7 +124,7 @@ class User extends CActiveRecord
 	}
 	public  function validatePassword($password)
 	{
-        return md5($password)===$this->password;
+                return md5($password)===$this->password;
 	}
 
 

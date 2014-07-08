@@ -30,7 +30,7 @@ return array(
 'users'=>array('*'),
 ),*/
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('create','index'),
+'actions'=>array('create','index','changpassword','changeziliao'),
 'users'=>array('*'),
 ),
 array('allow',
@@ -131,7 +131,6 @@ $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'
 */
 public function actionIndex($id)
 {
-	
 
                  $dataProvider=new CActiveDataProvider('User');
                  $this->render('index',array(
@@ -191,4 +190,59 @@ return array(
 ),
 );
 }
+public function actionchangpassword(){
+             
+	$id=Yii::app()->user->id;
+
+	$model=User::model()->findByPk($id);
+
+	if (isset($_POST['User'])) {
+		$password=$_POST['User']['password'];
+		$password1=$_POST['User']['password1'];
+		$password2=$_POST['User']['password2'];
+		if (!empty($password) && !empty($password1)&&!empty($password2) ){
+			# code...
+		
+		if (md5($password)==$model->password) {
+			if ($password1==$password2) {
+				$model->password=md5($password1);
+				if ($model->save()) {
+					echo "修改密码成功";	
+				}
+			}else{
+				echo "两次输入密码不同";
+			}
+		}else{
+				
+				echo "原密码不对";
+		}
+	}else{
+		echo "密码不能为空";
+	}
+}
+}
+             public function actionchangeziliao(){
+             
+	$id=Yii::app()->user->id;
+
+	$model=User::model()->findByPk($id);
+
+	if (isset($_POST['User'])) {
+		
+		$mail=$_POST['User']['mail'];
+		$name=$_POST['User']['name'];
+		$QQ=$_POST['User']['QQ'];
+		$phone=$_POST['User']['phone'];
+		if (!empty($username) && !empty($mail)&&!empty($phone) && !empty($QQ)&&!empty($name)){
+		
+			$model->mail=$mail;
+			$model->name=$name;
+			$model->QQ=$QQ;
+			$model->phone=$phone;
+			if ($model->save()) {
+				echo "修改成功";
+			}
+	             }
+             }
+             }
 } 
