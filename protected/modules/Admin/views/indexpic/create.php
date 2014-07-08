@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Indexpic</h1>
+<h1>添加首页图片</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

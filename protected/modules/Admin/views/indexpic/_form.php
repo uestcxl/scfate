@@ -13,40 +13,31 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->labelEx($model,'图片名称'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45,'placeholder'=>'最多45个字符')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'picture'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'create_time'); ?>
-		<?php echo $form->textField($model,'create_time'); ?>
-		<?php echo $form->error($model,'create_time'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'view'); ?>
-		<?php echo $form->textField($model,'view'); ?>
+		<?php echo $form->labelEx($model,'是否显示：0表示不显示，1表示显示'); ?>
+		<?php echo $form->textField($model,'view',array('size'=>2)); ?>
 		<?php echo $form->error($model,'view'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'picture'); ?>
+		<?php echo $form->fileField($model,'picture'); 
+			if(!empty($model->picture)) echo '原图片：'.$model->picture; 
+		?>
+		<?php echo $form->error($model,'picture'); ?>
 	</div>
 
 	<div class="row buttons">

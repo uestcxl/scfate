@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Announcement</h1>
+<h1>创建首页公告</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

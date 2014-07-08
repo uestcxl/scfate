@@ -16,15 +16,16 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Indexpic #<?php echo $model->id; ?></h1>
+<h1>图片详情&nbsp;&nbsp;&nbsp;<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
 		'name',
-		'picture',
 		'create_time',
 		'view',
 	),
 )); ?>
+
+<img src="<?php echo Yii::app()->baseUrl.'/images/indexpic/'.$model->picture?>" width="350px" height="250px">

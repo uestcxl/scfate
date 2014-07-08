@@ -591,3 +591,328 @@ in /var/www/scfate/index.php (13)
 2014/07/07 17:12:48 [warning] [application] Failed to set unsafe attribute "password_repeat" of "User".
 in /var/www/scfate/protected/controllers/UserController.php (75)
 in /var/www/scfate/index.php (13)
+2014/07/09 00:39:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/Admin/announcement/admin".' in /var/www/scfate/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/Admin/ann...')
+#1 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/scfate/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/Admin/announcement/admin
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin
+---
+2014/07/09 00:40:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/Admin/announcement/admin".' in /var/www/scfate/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/Admin/ann...')
+#1 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/scfate/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/Admin/announcement/admin
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin
+---
+2014/07/09 00:49:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/contact
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin
+---
+2014/07/09 00:52:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Admin".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('Admin')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('Admin')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/default/A...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/default/Admin
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin
+---
+2014/07/09 01:19:03 [error] [exception.CException] exception 'CException' with message 'The attribute must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.' in /var/www/scfate/framework/zii/widgets/CDetailView.php:183
+Stack trace:
+#0 /var/www/scfate/framework/web/CBaseController.php(173): CDetailView->run()
+#1 /var/www/scfate/protected/modules/Admin/views/announcement/view.php(29): CBaseController->widget('zii.widgets.CDe...', Array)
+#2 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#3 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#4 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#5 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#6 /var/www/scfate/protected/modules/Admin/controllers/AnnouncementController.php(48): CController->render('view', Array)
+#7 [internal function]: AnnouncementController->actionView('1')
+#8 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AnnouncementController), Array)
+#9 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AnnouncementController), Object(ReflectionMethod), Array)
+#10 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('view')
+#19 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/announcem...')
+#20 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/scfate/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/announcement/view&id=1
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/announcement/create
+---
+2014/07/09 01:19:18 [error] [exception.CException] exception 'CException' with message 'The attribute must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.' in /var/www/scfate/framework/zii/widgets/CDetailView.php:183
+Stack trace:
+#0 /var/www/scfate/framework/web/CBaseController.php(173): CDetailView->run()
+#1 /var/www/scfate/protected/modules/Admin/views/announcement/view.php(29): CBaseController->widget('zii.widgets.CDe...', Array)
+#2 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#3 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#4 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#5 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#6 /var/www/scfate/protected/modules/Admin/controllers/AnnouncementController.php(48): CController->render('view', Array)
+#7 [internal function]: AnnouncementController->actionView('1')
+#8 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AnnouncementController), Array)
+#9 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AnnouncementController), Object(ReflectionMethod), Array)
+#10 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('view')
+#19 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/announcem...')
+#20 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/scfate/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/announcement/view&id=1
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/announcement/create
+---
+2014/07/09 04:38:45 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.enctype" is not defined.' in /var/www/scfate/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/scfate/framework/web/CWidgetFactory.php(161): CComponent->__set('enctype', 'multipart/form-...')
+#1 /var/www/scfate/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(IndexpicController), 'CActiveForm', Array)
+#2 /var/www/scfate/framework/web/CBaseController.php(189): CBaseController->createWidget('CActiveForm', Array)
+#3 /var/www/scfate/protected/modules/Admin/views/indexpic/_form.php(17): CBaseController->beginWidget('CActiveForm', Array)
+#4 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#5 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#6 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#7 /var/www/scfate/protected/modules/Admin/views/indexpic/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#9 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#10 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#11 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(81): CController->render('create', Array)
+#13 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#14 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/indexpic/...')
+#24 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/scfate/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/indexpic/admin
+---
+2014/07/09 04:39:57 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:40:33 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:40:46 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:49:44 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:49:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:49:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/scfate/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/scfate/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): CActiveRecord->save()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/indexpic/...')
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/indexpic/create
+---
+2014/07/09 04:50:52 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:50:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:50:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/scfate/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/scfate/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): CActiveRecord->save()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/indexpic/...')
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/indexpic/create
+---
+2014/07/09 04:53:20 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:53:37 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:53:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:53:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/scfate/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/scfate/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): CActiveRecord->save()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/indexpic/...')
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/indexpic/create
+---
+2014/07/09 04:56:20 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:58:35 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:58:55 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:58:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/09 04:58:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/scfate/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/scfate/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): CActiveRecord->save()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/indexpic/...')
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/indexpic/create
+---
+2014/07/09 05:05:31 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:06:41 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:07:27 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:10:01 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:15:31 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:16:42 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:17:11 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:17:19 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:17:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `id`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (75)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:17:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `id`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in /var/www/scfate/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/scfate/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(75): CActiveRecord->save()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/indexpic/...')
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/indexpic/create
+---
+2014/07/09 05:22:22 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:28:21 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:28:36 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:34:49 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:35:43 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 05:35:52 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)

@@ -20,9 +20,6 @@
 					<span><a href="<?php echo Yii::app()->createUrl('user/index')?>">|&nbsp;个人中心</a></span>
 					<span><a href="shopping.html">|&nbsp;购物车</a></span>
 					<span><a href="<?php echo Yii::app()->createUrl('site/logout')?>">|&nbsp;退出</a></span>
-					<?php if (Yii::app()->user->name===ADMIN) {?>
-						<span><a href="<?php echo Yii::app()->createUrl('Admin')?>">|&nbsp;我不是后台</a></span>
-					<?php }?>
 				<?php  } else{?>
 				<span style="font-size: 14px"><a href="<?php echo Yii::app()->createUrl('site/login')?>">登陆</a>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('user/create')?>">注册</a></span>
 				<?php }?>

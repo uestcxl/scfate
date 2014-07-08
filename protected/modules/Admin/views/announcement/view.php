@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Announcement #<?php echo $model->id; ?></h1>
+<h1>公告详情&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $model->title; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

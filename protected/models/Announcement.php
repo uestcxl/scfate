@@ -27,7 +27,7 @@ class Announcement extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content, create_time, title', 'required'),
+			array('content, title', 'required'),
 			array('title', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -53,9 +53,9 @@ class Announcement extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'content' => 'Content',
-			'create_time' => 'Create Time',
-			'title' => 'Title',
+			'content' => '公告内容',
+			'create_time' => '创建时间',
+			'title' => '公告标题',
 		);
 	}
 
@@ -96,5 +96,14 @@ class Announcement extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function beforeSave(){
+		if (parent::beforeSave()) {
+			$this->create_time=date('Y-m-d H:i');
+			return true;
+		}
+		else
+			return false;
 	}
 }

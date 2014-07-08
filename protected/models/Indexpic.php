@@ -28,13 +28,17 @@ class Indexpic extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, name, picture, create_time', 'required'),
-			array('id, view', 'numerical', 'integerOnly'=>true),
+			array('name, picture', 'required'),
+			array('id,view', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			array('picture', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, picture, create_time, view', 'safe', 'on'=>'search'),
+			array('picture', 'file', 'allowEmpty'=>true,
+				'types'=>'jpg, jpeg, gif, png',
+				'maxSize'=>512 * 1024 * 1, // 512KB
+				'tooLarge'=>'上传文件超过 512KB，无法上传。',),
 		);
 	}
 
@@ -56,10 +60,10 @@ class Indexpic extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
+			'name' => '图片名字',
 			'picture' => 'Picture',
-			'create_time' => 'Create Time',
-			'view' => 'View',
+			'create_time' => '创建时间',
+			'view' => '是否可见',
 		);
 	}
 
@@ -106,6 +110,7 @@ class Indexpic extends CActiveRecord
 	public function beforeSave(){
 		if (parent::beforeSave()) {
 			$this->create_time=date('Y-m-d H:i');
+			$this->id=count(Indexpic::model()->findAll())+1;
 			return true;
 		}
 		else

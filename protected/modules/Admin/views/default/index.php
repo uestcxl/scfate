@@ -1,17 +1,11 @@
-<?php
-/* @var $this DefaultController */
+<style>
+	p:{
+		font-size: 20px;
+		padding: 20px;
+	}
+</style>
 
-$this->breadcrumbs=array(
-	$this->module->id,
-);
-?>
-<h1><?php echo $this->uniqueId . '/' . $this->action->id; ?></h1>
+<p>管理公告:<a href="<?php echo $this->createUrl('announcement/admin');?>">点我</a></p>
 
-<p>
-This is the view content for action "<?php echo $this->action->id; ?>".
-The action belongs to the controller "<?php echo get_class($this); ?>"
-in the "<?php echo $this->module->id; ?>" module.
-</p>
-<p>
-You may customize this page by editing <tt><?php echo __FILE__; ?></tt>
-</p>
+<p>管理首页大图:<a href="<?php echo $this->createUrl('indexpic/admin');?>">点我</a></p>
+

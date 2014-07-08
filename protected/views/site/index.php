@@ -1,3 +1,9 @@
+<?php
+	$criteria=new CDbCriteria;
+	$criteria->limit=3;
+	$criteria->order='create_time desc';
+	$announcement=Announcement::model()->findAll($criteria);
+?>
 	<!-- section  begin -->
 		<!-- slider  begin -->
 		<div class="slider">
@@ -9,10 +15,12 @@
 			<!-- announcement  begin -->
 			<div class="announcemnt">
 				<h1>公告</h1>
-				<div>
-					<h3>这里是公告的题目</h3>
-					<p>这里是公告的内容</p>
-				</div>
+				<?php foreach ($announcement as $key => $onelist) {?>
+					<div>
+						<h3><?php echo $onelist->title;?></h3>
+						<p><?php echo $onelist->content;?></p>
+					</div>
+				<?php }?>
 			</div>
 			<!-- announcement  end -->
 			<!-- promotion  begin -->
