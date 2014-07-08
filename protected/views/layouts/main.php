@@ -17,7 +17,7 @@
 			<p>
 				<?php if (!Yii::app()->user->isGuest) { ?>
 					<span>欢迎您，<?php echo Yii::app()->user->name;?></span>
-					<span><a href="<?php echo Yii::app()->createUrl('user/index')?>">|&nbsp;个人中心</a></span>
+					<span><a href="<?php echo Yii::app()->createUrl('user/index',array('id'=>Yii::app()->user->id))?>">|&nbsp;个人中心</a></span>
 					<span><a href="shopping.html">|&nbsp;购物车</a></span>
 					<span><a href="<?php echo Yii::app()->createUrl('site/logout')?>">|&nbsp;退出</a></span>
 				<?php  } else{?>

@@ -51,27 +51,41 @@
 								<form>
 									<div class="form_part">
 										<span>用户名：</span>
-										<input type="text" readonly value="aaaa">						
+										<input type="text" readonly value="<?php echo Yii::app()->user->name;?>">						
 									</div>
 									<div class="form_part">
 										<span>电子邮箱：</span>
-										<input type="text" readonly value="aaaa">
+										<input type="text" readonly value="<?php echo $model->mail;?>">
 									</div>
 									<div class="form_part">
 										<span>真实姓名：</span>
-										<input type="text" readonly value="aaaa">
+										<input type="text" readonly value="
+										<?php 
+										if (!isset($model->name)) {
+											echo '请输入你的真实姓名';
+										}
+										else{
+											echo  $model->name;
+										}
+										?>">
 									</div>
-									<div class="form_part">
-										<span>性别：</span>
-										<input type="text" readonly value="男">
-									</div>
-									<div class="form_part">
-										<span>生日：</span>
-										<input type="text" readonly value="1994-01-01">
-									</div>
+						
 									<div class="form_part">
 										<span>QQ：</span>
-										<input type="text" readonly value="1234567890">
+										<input type="text" readonly value="
+                                                                                                                                                                <?php 
+										if (!isset($model->name)) {
+											echo '请输入你的QQ';
+										}
+										else{
+											echo  $model->QQ;
+										}
+										?>
+										">
+									</div>
+								                <div class="form_part">
+										<span>手机：</span>
+										<input type="text" readonly value="<?php echo $model->phone?>">
 									</div>
 								</form>
 							</div>
