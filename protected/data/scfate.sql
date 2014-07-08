@@ -8,6 +8,8 @@ USE `scfate` ;
 -- -----------------------------------------------------
 -- Table `scfate`.`user`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`user` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `username` VARCHAR(45) NOT NULL ,
@@ -16,6 +18,7 @@ CREATE  TABLE IF NOT EXISTS `scfate`.`user` (
   `phone` VARCHAR(11) NOT NULL ,
   `mail` VARCHAR(40) NOT NULL ,
   `QQ` VARCHAR(20) NULL ,
+  `picture` VARCHAR(255) NULL COMMENT '头像图片' ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -26,6 +29,8 @@ COMMENT = '用户信息表';
 -- -----------------------------------------------------
 -- Table `scfate`.`address`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`address` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`address` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `userid` INT NOT NULL ,
@@ -53,6 +58,8 @@ COMMENT = '用户收获地址表';
 -- -----------------------------------------------------
 -- Table `scfate`.`order`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`order` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`order` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `goods_name` VARCHAR(45) NOT NULL ,
@@ -64,6 +71,7 @@ CREATE  TABLE IF NOT EXISTS `scfate`.`order` (
   `goods_type` INT NOT NULL COMMENT '0:衣服\n1:纪念品' ,
   `order_status` TINYINT(1) NOT NULL COMMENT 'type=0\n0:订单成功正在配送\n1:配送成功未返回\n2:返回成功未评论\n3:评论成功交易完成\ntype=1\n' ,
   `message` TEXT NULL ,
+  `express_id` VARCHAR(60) NULL COMMENT '快递号' ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -74,6 +82,8 @@ COMMENT = '订单表';
 -- -----------------------------------------------------
 -- Table `scfate`.`userpic`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`userpic` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`userpic` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `userid` INT NOT NULL ,
@@ -90,13 +100,15 @@ CREATE  TABLE IF NOT EXISTS `scfate`.`userpic` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci
+COLLATE = utf8_bin
 COMMENT = '用户图片时间轴';
 
 
 -- -----------------------------------------------------
 -- Table `scfate`.`indexpic`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`indexpic` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`indexpic` (
   `id` INT NOT NULL ,
   `name` VARCHAR(45) NOT NULL ,
@@ -113,6 +125,8 @@ COMMENT = '首页大图片';
 -- -----------------------------------------------------
 -- Table `scfate`.`announcement`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`announcement` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`announcement` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `content` TEXT NOT NULL ,
@@ -128,6 +142,8 @@ COMMENT = '首页公告';
 -- -----------------------------------------------------
 -- Table `scfate`.`clothes`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`clothes` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`clothes` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `clothesname` VARCHAR(45) NOT NULL ,
@@ -150,6 +166,8 @@ COMMENT = '服装信息表';
 -- -----------------------------------------------------
 -- Table `scfate`.`comment`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`comment` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`comment` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `user_id` INT NOT NULL ,
@@ -160,6 +178,7 @@ CREATE  TABLE IF NOT EXISTS `scfate`.`comment` (
   `goods_type` TINYINT(1) NOT NULL COMMENT '0是衣服\n1是纪念品' ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_user` (`user_id` ASC) ,
+  INDEX () ,
   CONSTRAINT `fk_user`
     FOREIGN KEY (`user_id` )
     REFERENCES `scfate`.`user` (`id` )
@@ -174,6 +193,8 @@ COMMENT = '反馈评论表';
 -- -----------------------------------------------------
 -- Table `scfate`.`area`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`area` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`area` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `parent_id` INT NOT NULL ,
@@ -188,6 +209,8 @@ COLLATE = utf8_general_ci;
 -- -----------------------------------------------------
 -- Table `scfate`.`souvenir`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`souvenir` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`souvenir` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(45) NOT NULL ,
@@ -218,6 +241,8 @@ COMMENT = '纪念品';
 -- -----------------------------------------------------
 -- Table `scfate`.`sort`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`sort` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`sort` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `sort_name` VARCHAR(50) NOT NULL ,
@@ -232,6 +257,8 @@ COMMENT = '衣服和纪念品分类信息表';
 -- -----------------------------------------------------
 -- Table `scfate`.`phototeam`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`phototeam` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`phototeam` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `team_name` VARCHAR(120) NOT NULL ,
@@ -248,6 +275,8 @@ COMMENT = '摄影团队信息表';
 -- -----------------------------------------------------
 -- Table `scfate`.`photographs`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`photographs` ;
+
 CREATE  TABLE IF NOT EXISTS `scfate`.`photographs` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(50) NOT NULL ,
@@ -275,6 +304,27 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci
 COMMENT = '摄影作品展示';
+
+
+-- -----------------------------------------------------
+-- Table `scfate`.`sent_spot`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `scfate`.`sent_spot` ;
+
+CREATE  TABLE IF NOT EXISTS `scfate`.`sent_spot` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `spot_name` VARCHAR(45) NOT NULL ,
+  `sent_area` INT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `area_id` (`id` ASC) ,
+  CONSTRAINT `area_id`
+    FOREIGN KEY (`id` )
+    REFERENCES `scfate`.`area` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 
