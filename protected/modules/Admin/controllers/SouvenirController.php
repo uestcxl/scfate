@@ -1,6 +1,6 @@
 <?php
 
-class SortController extends Controller
+class SouvenirController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,17 +27,9 @@ class SortController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array(ADMIN),
+				'actions'=>array('admin','delete','create','update','index','view'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -62,14 +54,14 @@ class SortController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Sort;
+		$model=new Souvenir;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Sort']))
+		if(isset($_POST['Souvenir']))
 		{
-			$model->attributes=$_POST['Sort'];
+			$model->attributes=$_POST['Souvenir'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +83,9 @@ class SortController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Sort']))
+		if(isset($_POST['Souvenir']))
 		{
-			$model->attributes=$_POST['Sort'];
+			$model->attributes=$_POST['Souvenir'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +114,7 @@ class SortController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Sort');
+		$dataProvider=new CActiveDataProvider('Souvenir');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +125,10 @@ class SortController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Sort('search');
+		$model=new Souvenir('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Sort']))
-			$model->attributes=$_GET['Sort'];
+		if(isset($_GET['Souvenir']))
+			$model->attributes=$_GET['Souvenir'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +139,12 @@ class SortController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Sort the loaded model
+	 * @return Souvenir the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Sort::model()->findByPk($id);
+		$model=Souvenir::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +152,11 @@ class SortController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Sort $model the model to be validated
+	 * @param Souvenir $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='sort-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='souvenir-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

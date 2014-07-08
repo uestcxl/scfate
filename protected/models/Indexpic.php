@@ -102,4 +102,13 @@ class Indexpic extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function beforeSave(){
+		if (parent::beforeSave()) {
+			$this->create_time=date('Y-m-d H:i');
+			return true;
+		}
+		else
+			return false;
+	}
 }

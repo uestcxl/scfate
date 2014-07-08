@@ -1,6 +1,6 @@
 <?php
 
-class IndexpicController extends Controller
+class SortController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,17 +27,9 @@ class IndexpicController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array(ADMIN),
+				'actions'=>array('admin','delete','create','update','index','view'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -62,14 +54,14 @@ class IndexpicController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Indexpic;
+		$model=new Sort;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Indexpic']))
+		if(isset($_POST['Sort']))
 		{
-			$model->attributes=$_POST['Indexpic'];
+			$model->attributes=$_POST['Sort'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +83,9 @@ class IndexpicController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Indexpic']))
+		if(isset($_POST['Sort']))
 		{
-			$model->attributes=$_POST['Indexpic'];
+			$model->attributes=$_POST['Sort'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +114,7 @@ class IndexpicController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Indexpic');
+		$dataProvider=new CActiveDataProvider('Sort');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +125,10 @@ class IndexpicController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Indexpic('search');
+		$model=new Sort('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Indexpic']))
-			$model->attributes=$_GET['Indexpic'];
+		if(isset($_GET['Sort']))
+			$model->attributes=$_GET['Sort'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +139,12 @@ class IndexpicController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Indexpic the loaded model
+	 * @return Sort the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Indexpic::model()->findByPk($id);
+		$model=Sort::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +152,11 @@ class IndexpicController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Indexpic $model the model to be validated
+	 * @param Sort $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='indexpic-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='sort-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

@@ -1,6 +1,6 @@
 <?php
 
-class SouvenirController extends Controller
+class AnnouncementController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,9 +27,9 @@ class SouvenirController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete','create','update','index','view'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -54,14 +54,14 @@ class SouvenirController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Souvenir;
+		$model=new Announcement;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Souvenir']))
+		if(isset($_POST['Announcement']))
 		{
-			$model->attributes=$_POST['Souvenir'];
+			$model->attributes=$_POST['Announcement'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -83,9 +83,9 @@ class SouvenirController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Souvenir']))
+		if(isset($_POST['Announcement']))
 		{
-			$model->attributes=$_POST['Souvenir'];
+			$model->attributes=$_POST['Announcement'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -114,7 +114,7 @@ class SouvenirController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Souvenir');
+		$dataProvider=new CActiveDataProvider('Announcement');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -125,10 +125,10 @@ class SouvenirController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Souvenir('search');
+		$model=new Announcement('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Souvenir']))
-			$model->attributes=$_GET['Souvenir'];
+		if(isset($_GET['Announcement']))
+			$model->attributes=$_GET['Announcement'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -139,12 +139,12 @@ class SouvenirController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Souvenir the loaded model
+	 * @return Announcement the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Souvenir::model()->findByPk($id);
+		$model=Announcement::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -152,11 +152,11 @@ class SouvenirController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Souvenir $model the model to be validated
+	 * @param Announcement $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='souvenir-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='announcement-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
