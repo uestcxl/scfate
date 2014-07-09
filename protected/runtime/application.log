@@ -916,3 +916,98 @@ in /var/www/scfate/index.php (13)
 2014/07/09 05:35:52 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
 in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
 in /var/www/scfate/index.php (13)
+2014/07/09 14:27:29 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:27:37 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:27:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:27:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `indexpic` (`view`, `name`, `picture`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/scfate/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/scfate/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): CActiveRecord->save()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('Admin/indexpic/...')
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=Admin/indexpic/create
+---
+2014/07/09 14:29:55 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:29:55 [error] [php] Undefined variable: model (/var/www/scfate/protected/models/Indexpic.php:122)
+Stack trace:
+#0 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): Indexpic->save()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): IndexpicController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): IndexpicController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): IndexpicController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): IndexpicController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+in /var/www/scfate/protected/models/Indexpic.php (122)
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:30:12 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:32:11 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:43:47 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:43:47 [error] [php] Undefined variable: CDbCriteria (/var/www/scfate/protected/models/Indexpic.php:114)
+Stack trace:
+#0 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): Indexpic->save()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): IndexpicController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): IndexpicController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): IndexpicController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): IndexpicController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+in /var/www/scfate/protected/models/Indexpic.php (114)
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:43:56 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:44:14 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:44:58 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/09 14:45:09 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)

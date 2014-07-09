@@ -29,7 +29,7 @@ class Indexpic extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, picture', 'required'),
-			array('id,view', 'numerical', 'integerOnly'=>true),
+			array('view', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			array('picture', 'length', 'max'=>100),
 			// The following rule is used by search().
@@ -110,10 +110,24 @@ class Indexpic extends CActiveRecord
 	public function beforeSave(){
 		if (parent::beforeSave()) {
 			$this->create_time=date('Y-m-d H:i');
-			$this->id=count(Indexpic::model()->findAll())+1;
+			$count=count(Indexpic::model()->findAll());
+			$criteria=new CDbCriteria;
+			$criteria->limit=1;
+			$criteria->offset=$count-1;
+			$lastest=Indexpic::model()->find($criteria);
+			$this->id=$lastest->id+1;
 			return true;
 		}
 		else
 			return false;
 	}
+/*	public function beforeSave(){
+		if (parent::beforeSave()) {
+			$this->create_time=date('Y-m-d H:i');
+			//echo Yii::app()->request->userHostAddress;
+			return true;
+		}
+		else
+			return false;
+	}*/
 }
