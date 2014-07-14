@@ -18,7 +18,7 @@
 				<?php if (!Yii::app()->user->isGuest) { ?>
 					<span>欢迎您，<?php echo Yii::app()->user->name;?></span>
 					<span><a href="<?php echo Yii::app()->createUrl('user/index')?>">|&nbsp;个人中心</a></span>
-					<span><a href="shopping.html">|&nbsp;购物车</a></span>
+					<span><a href="<?php echo Yii::app()->createUrl('order/shopping')?>">|&nbsp;购物车</a></span>
 					<span><a href="<?php echo Yii::app()->createUrl('site/logout')?>">|&nbsp;退出</a></span>
 					<?php if (Yii::app()->user->name===ADMIN) {?>
 						<span><a href="<?php echo Yii::app()->createUrl('Admin')?>">|&nbsp;我不是后台</a></span>
@@ -49,15 +49,15 @@
 		<div class="navigation">
 			<div>
 				<span><a href="<?php echo Yii::app()->createUrl('site/index')?>">网站主页</a></span>
-				<span><a href="works.html">作品展示</a></span>
-				<span><a href="rent.html">服饰租赁</a></span>
+				<span><a href="<?php echo Yii::app()->createUrl('photographs/index')?>">作品展示</a></span>
+				<span><a href="#">服饰租赁</a></span>
 				<span><a href="<?php echo $this->createUrl('souvenir/index')?>">纪念礼品</a></span>
 				<span><a href="<?php echo $this->createUrl('/site/about')?>">关于我们</a></span>
 			</div>
 		</div>
 	</header>
 	<!-- header  end -->
-<?php echo $content;?>
+		<?php echo $content;?>
 	<!-- section  begin -->
 	<!-- section  end -->
 	<!-- footer  begin -->

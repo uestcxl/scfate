@@ -20,8 +20,8 @@
 					<a href="<?php echo $this->createUrl('user/order')?>"><div class="menu_list">我的订单</div></a>
 					<a href="<?php echo Yii::app()->createUrl('user/address')?>"><div class="menu_list">我的地址</div></a>
 					<a href="<?php echo $this->createUrl('user/album')?>"><div class="menu_list">我的相册</div></a>
-					<a href="user_friends.html"><div class="menu_list">我的朋友</div></a>
-					<a href="user_systemMessage.html"><div class="menu_list">系统消息</div></a>
+					<a href="#"><div class="menu_list">我的朋友</div></a>
+					<a href="#"><div class="menu_list">系统消息</div></a>
 				</div>
 			</div>
 			<!--menu end-->

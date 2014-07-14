@@ -1193,3 +1193,24 @@ Stack trace:
 REQUEST_URI=/scfate/index.php?r=user/album
 HTTP_REFERER=http://localhost/scfate/index.php?r=user/address
 ---
+2014/07/14 14:38:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('admin')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('admin')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('photographs/adm...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=photographs/admin
+HTTP_REFERER=http://localhost/scfate/index.php?r=photographs/index
+---
+2014/07/14 14:58:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "vieworer".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('vieworer')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('vieworer')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/vieworer')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=user/vieworer
+---

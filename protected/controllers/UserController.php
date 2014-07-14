@@ -34,7 +34,7 @@ array('allow', // allow authenticated user to perform 'create' and 'update' acti
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('index','changpassword','changeziliao','address','order','album'),
+'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder'),
 'users'=>array('@'),
 ),
 array('allow',
@@ -231,5 +231,11 @@ public function actionchangpassword(){
     public function actionAlbum(){
     	$model=$this->loadModel(Yii::app()->user->id);
     	$this->render('album',array('model'=>$model));
+    }
+
+    //view detail order
+
+    public function actionVieworder(){
+    	$this->render('vieworder');
     }
 } 
