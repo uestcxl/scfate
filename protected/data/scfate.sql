@@ -280,7 +280,7 @@ DROP TABLE IF EXISTS `scfate`.`photographs` ;
 CREATE  TABLE IF NOT EXISTS `scfate`.`photographs` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(50) NOT NULL ,
-  `piture` VARCHAR(100) NOT NULL ,
+  `picture` VARCHAR(100) NOT NULL ,
   `sort_id` INT NOT NULL ,
   `phototeam_id` INT NOT NULL ,
   `create_time` DATETIME NOT NULL ,

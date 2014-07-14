@@ -23,7 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'title',
-		'piture',
+		'picture',
 		'sort_id',
 		'phototeam_id',
 		'create_time',
@@ -32,3 +32,6 @@ $this->menu=array(
 		'school',
 	),
 )); ?>
+
+<h3>图片预览</h3>
+<img src="<?php echo Yii::app()->baseUrl.'/images/photographs/'.$model->picture;?>" alt="null">

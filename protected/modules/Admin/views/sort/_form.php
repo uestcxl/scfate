@@ -23,13 +23,7 @@
 		<?php echo $form->textField($model,'sort_name',array('size'=>50,'maxlength'=>50,'placeholder'=>'最多30个字符')); ?>
 		<?php echo $form->error($model,'sort_name'); ?>
 	</div>
-
-<!-- 	<div class="row">
-	<?php echo $form->labelEx($model,' 分类类别id：0是衣服；1是纪念品；2是作品'); ?>
-	<?php echo $form->textField($model,'sort_type',array('size'=>10,'maxlength'=>10)); ?>
-	<?php echo $form->error($model,'sort_type'); ?>
-</div> -->
-
+	
 	<div>
 		<br>
 		<h3>分类所属类别:</h3>

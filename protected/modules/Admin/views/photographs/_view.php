@@ -13,8 +13,8 @@
 	<?php echo CHtml::encode($data->title); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('piture')); ?>:</b>
-	<?php echo CHtml::encode($data->piture); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('picture')); ?>:</b>
+	<?php echo CHtml::encode($data->picture); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('sort_id')); ?>:</b>

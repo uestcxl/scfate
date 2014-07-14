@@ -22,36 +22,34 @@
 					<form>
 						<div class="form_part">
 							<span>用户名：</span>
-							<input type="text" readonly value="<?php echo Yii::app()->user->name;?>">						
+							<label for=""><?php echo Yii::app()->user->name;?></label>
 						</div>
 						<div class="form_part">
 							<span>电子邮箱：</span>
-							<input type="text" readonly value="<?php echo $model->mail;?>">
+							<!-- <input type="text" readonly value="<?php echo $model->mail;?>"> -->
+							<label for=""><?php echo $model->mail?></label>
 						</div>
 						<div class="form_part">
 							<span>真实姓名：</span>
 							<?php if(!empty($model->name)){?>
-							<input type="text" readonly value="<?php echo $model->name;?>">
+							<!-- <input type="text" readonly value="<?php echo $model->name;?>"> -->
+							<label for=""><?php echo $model->name?></label>
 							<?php }else{?>
-							<input type="text" readonly value="请输入你的真实姓名">
+							<label for="">请输入你的真实姓名</label>
 							<?php }?>
 						</div>
 			
 						<div class="form_part">
 							<span>QQ：</span>
-							<input type="text" readonly value="<?php 
-							if (!isset($model->name)) {
-								echo '请输入你的QQ';
-							}
-							else{
-								echo  $model->QQ;
-							}
-							?>
-							">
+							<?php if (empty($model->QQ)) {?>
+								<label for="">尚未填写</label>
+							<?php } else{?>
+								<label for=""><?php echo $model->QQ?></label>
+							<?php }?>
 						</div>
-					                <div class="form_part">
+					    <div class="form_part">
 							<span>手机：</span>
-							<input type="text" readonly value="<?php echo $model->phone?>">
+							<label for=""><?php echo $model->phone?></label>
 						</div>
 					</form>
 				</div>
