@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Sort</h1>
+<h1>创建分类</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

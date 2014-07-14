@@ -15,18 +15,17 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'team_name'); ?>
-		<?php echo $form->textField($model,'team_name',array('size'=>60,'maxlength'=>120)); ?>
+		<?php echo $form->labelEx($model,'团队名称'); ?>
+		<?php echo $form->textField($model,'team_name',array('size'=>30,'maxlength'=>120,'placeholder'=>'最多40个字符')); ?>
 		<?php echo $form->error($model,'team_name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'phone'); ?>
+		<?php echo $form->labelEx($model,'电话号码'); ?>
 		<?php echo $form->textField($model,'phone',array('size'=>11,'maxlength'=>11)); ?>
 		<?php echo $form->error($model,'phone'); ?>
 	</div>
@@ -39,7 +38,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>60)); ?>
+		<?php echo $form->textField($model,'email',array('size'=>40,'maxlength'=>60)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 

@@ -5,7 +5,7 @@ class UserController extends Controller
 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 * using two-column layout. See 'protected/views/layouts/column2.php'.
 */
-public $layout='//layouts/column1';
+public $layout='//layouts/column3';
 public $verifyCode;
 /**
 * @return array action filters
@@ -30,32 +30,23 @@ return array(
 'users'=>array('*'),
 ),*/
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('create','index','changpassword','changeziliao'),
+'actions'=>array('create',),
 'users'=>array('*'),
+),
+array('allow', // allow authenticated user to perform 'create' and 'update' actions
+'actions'=>array('index','changpassword','changeziliao','address','order','album'),
+'users'=>array('@'),
 ),
 array('allow',
 'actions'=>array('captcha'),
 'users'=>array('*'),
-),
-array('allow', // allow admin user to perform 'admin' and 'delete' actions
-'actions'=>array('admin','delete','update'),
-'users'=>array(ADMIN),
 ),
 array('deny', // deny all users
 'users'=>array('*'),
 ),
 );
 }
-/**
-* Displays a particular model.
-* @param integer $id the ID of the model to be displayed
-*/
-public function actionView($id)
-{
-$this->render('view',array(
-'model'=>$this->loadModel($id),
-));
-}
+
 /**
 * Creates a new model.
 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -114,43 +105,17 @@ $this->render('update',array(
 'model'=>$model,
 ));
 }
-/**
-* Deletes a particular model.
-* If deletion is successful, the browser will be redirected to the 'admin' page.
-* @param integer $id the ID of the model to be deleted
-*/
-public function actionDelete($id)
-{
-$this->loadModel($id)->delete();
-// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-if(!isset($_GET['ajax']))
-$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-}
+
+
 /**
 * Lists all models.
 */
-public function actionIndex($id)
-{
+	public function actionIndex(){
+		$model=$this->loadModel(Yii::app()->user->id);
+		$this->render('index',array('model'=>$model));
+	}
 
-                 $dataProvider=new CActiveDataProvider('User');
-                 $this->render('index',array(
-                 'dataProvider'=>$dataProvider,
-                 'model'=>$this->loadModel($id),
-));
-}
-/**
-* Manages all models.
-*/
-public function actionAdmin()
-{
-$model=new User('search');
-$model->unsetAttributes(); // clear any default values
-if(isset($_GET['User']))
-$model->attributes=$_GET['User'];
-$this->render('admin',array(
-'model'=>$model,
-));
-}
+
 /**
 * Returns the data model based on the primary key given in the GET variable.
 * If the data model is not found, an HTTP exception will be raised.
@@ -221,7 +186,8 @@ public function actionchangpassword(){
 	}
 }
 }
-             public function actionchangeziliao(){
+
+ public function actionchangeziliao(){
              
 	$id=Yii::app()->user->id;
 
@@ -244,5 +210,26 @@ public function actionchangpassword(){
 			}
 	             }
              }
-             }
+    }
+
+    // user address page
+
+    public function actionAddress(){
+    	$model=$this->loadModel(Yii::app()->user->id);
+    	$this->render('address',array('model'=>$model));
+    }
+
+    //user order page
+
+    public function actionOrder(){
+    	$model=$this->loadModel(Yii::app()->user->id);
+    	$this->render('order',array('model'=>$model));
+    }
+
+    //user ablum page
+
+    public function actionAlbum(){
+    	$model=$this->loadModel(Yii::app()->user->id);
+    	$this->render('album',array('model'=>$model));
+    }
 } 

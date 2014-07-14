@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Phototeam</h1>
+<h1>添加摄影团队信息</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -20,19 +20,19 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'parent_id'); ?>
+		<?php echo $form->labelEx($model,'父地区id'); ?>
 		<?php echo $form->textField($model,'parent_id'); ?>
 		<?php echo $form->error($model,'parent_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'area_name'); ?>
-		<?php echo $form->textField($model,'area_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->labelEx($model,'地区名称'); ?>
+		<?php echo $form->textField($model,'area_name',array('size'=>20,'maxlength'=>45,'不多于30个字符')); ?>
 		<?php echo $form->error($model,'area_name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'area_type'); ?>
+		<?php echo $form->labelEx($model,'类型代码：0是国家；1是省份；2是市；3是区；4是学校'); ?>
 		<?php echo $form->textField($model,'area_type'); ?>
 		<?php echo $form->error($model,'area_type'); ?>
 	</div>

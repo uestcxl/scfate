@@ -15,20 +15,29 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sort_name'); ?>
-		<?php echo $form->textField($model,'sort_name',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->labelEx($model,'分类名称'); ?>
+		<?php echo $form->textField($model,'sort_name',array('size'=>50,'maxlength'=>50,'placeholder'=>'最多30个字符')); ?>
 		<?php echo $form->error($model,'sort_name'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'sort_type'); ?>
-		<?php echo $form->textField($model,'sort_type'); ?>
-		<?php echo $form->error($model,'sort_type'); ?>
+<!-- 	<div class="row">
+	<?php echo $form->labelEx($model,' 分类类别id：0是衣服；1是纪念品；2是作品'); ?>
+	<?php echo $form->textField($model,'sort_type',array('size'=>10,'maxlength'=>10)); ?>
+	<?php echo $form->error($model,'sort_type'); ?>
+</div> -->
+
+	<div>
+		<br>
+		<h3>分类所属类别:</h3>
+		<p>
+		<label><input type="radio" value='0' name="Sort[sort_type]">衣服</label>
+		<label><input type="radio" value='1' name="Sort[sort_type]">纪念品</label>
+		<label><input type="radio" value='2' name="Sort[sort_type]">作品</label>
+		</p>
 	</div>
 
 	<div class="row buttons">
