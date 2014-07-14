@@ -101,7 +101,7 @@
 					<form>
 					             <div class="form_part">
 							<span>用户名：</span>
-							<input type="text" readonly value="<?php echo Yii::app()->user->name;?>">						
+							<input type="text" value="<?php echo Yii::app()->user->name;?>">						
 						</div>
 				
 						<div class="form_part">
@@ -112,18 +112,18 @@
 						<div class="form_part">
 							<span>真实姓名：</span>
 							<?php if(!empty($model->name)){?>
-							<input type="text" readonly value="<?php echo $model->name;?>">
+							<input type="text" value="<?php echo $model->name;?>">
 							<?php }else{?>
-							<input type="text" readonly value="请输入你的真实姓名">
+							<input type="text" value="请输入你的真实姓名">
 							<?php }?>
 					        <?php echo $form->error($model,'name'); ?>
 						</div>							
 						<div class="form_part">
 							<span>QQ：</span>
 							<?php if(!empty($model->QQ)){?>
-							<input type="text" readonly value="<?php echo $model->QQ;?>">
+							<input type="text" value="<?php echo $model->QQ;?>">
 							<?php }else{?>
-							<input type="text" readonly value="请输入你的qq">
+							<input type="text" value="请输入你的qq">
 							<?php }?>
 					        <?php echo $form->error($model,'QQ'); ?>
 						</div>

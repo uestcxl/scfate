@@ -1,8 +1,8 @@
 section{
-	min-height: 800px;
+	min-height: 1000px;
 }
 .user .all_lable{
-	min-height: 600px;
+	min-height: 800px;
 }
 /*------------login-------------------*/
 .login,.register{
@@ -219,4 +219,466 @@ section{
 #nav_newAddress_concent .form_part input{
 	width: 250px;
 	height: 25px;
+}
+
+/*-------------indents-----------------*/
+.indents_select{
+	background-image: url(../img/indents_select.png);
+}
+.indents_search{
+	margin: 10px 15px;
+	height: 30px;
+}
+.indents_search_div{
+	margin: 5px;
+	float: left;
+}
+.indents_part,.indents_detail_part{
+	width: 750px;
+	margin: 10px auto;
+	background-color: #fff;
+}
+.indents_part_head,.indents_detail_part_head{
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	color: #fff;
+	background-color: #8b8b8b;
+}
+.indent_Nom{
+	margin-left: 5px;
+	float: left;
+}
+.indent_state{
+	margin-right: 5px;
+	float: right;
+}
+.indents_part_section,.indents_detail_part_section{
+	border-bottom: 1px solid #adadad;
+	border-right: 1px solid #adadad;
+}
+.indent_inf{
+	height: 150px;
+	border-bottom:6px solid #d2d2d2;
+}
+.indent_inf img{
+	height: 120px;
+	width: 120px;
+	margin: 15px;
+	background-color: #adadad;
+}
+.indent_inf_all{
+	width: 550px;
+	float: right;
+	margin: 15px 15px 8px 15px;
+	color: #565656;
+	font-weight: bold;
+}
+.indent_name{
+	height: 92px;
+	text-align: left;
+}
+.indent_buy{
+	height: 35px;
+	text-align: right;
+	font-size: 16px;
+	line-height: 30px;
+}
+.indent_buy span{
+	margin-left: 60px;
+	margin-right: 10px;
+}
+.indent_do{
+	height: 30px;
+	margin: 10px 0;
+	font-size: 16px;
+	color: #565656;
+	font-weight: bold;
+	line-height: 30px;
+}
+.indent_do_left{
+	width: 200px;
+	float: left;
+}
+.indent_do_right{
+	width: 400px;
+	float: right;
+}
+.indent_do_right input{
+	margin:3px;
+	height: 25px;
+	width: 75px;
+	line-height: 25px;
+	color: #fff;
+	font-size: 14px;
+	border: 0;
+	background-color: #009e96;
+	float: right;
+}
+.indent_do_right input:hover{
+	background-color: #00736d;
+}
+
+
+/*--------------indents detail--------------*/
+.indents_detail_head{
+	line-height: 30px;
+	margin: 15px 30px;
+}
+.indents_detail_head span{
+	margin-right: 10px;
+}
+._red{
+	color: #f00;
+}
+.indents_detail_part_section{
+	padding: 0 3px;
+	margin: 0 auto;
+}
+.seller_inf,.goods_inf{
+	height: 200px;
+	background-color: #fff;
+	color: #565656;
+}
+.seller_inf{
+	border-bottom: 1px solid #adadad;
+	padding: 3px;
+}
+.seller_inf h2{
+	line-height: 30px;
+	margin: 10px 5px 0 5px;
+}
+.seller_inf div{
+	font-size: 14px;
+	width: 225px;
+	margin: 3px 10px;
+	float: left;
+}
+.seller_inf div p{
+	line-height: 18px;
+	margin: 20px 0;
+}
+.goods_head{
+	height: 100px;
+	border-bottom: 1px solid #efefef;
+}
+.goods_head_left{
+	width: 400px;
+	height: 100px;
+	float: left;
+}
+.goods_head_left img{
+	margin: 10px;
+	height: 80px;
+	min-width: 60px;
+	background-color: #adadad;
+}
+.goods_head_left span{
+	vertical-align: top;
+	margin-top: 10px;
+	display: inline-block;
+}
+.goods_head_right{
+	width: 300px;
+	float: right;
+	line-height: 100px;
+}
+.goods_head_right span{
+	margin: 0 10px;
+}
+.goods_send{
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	font-weight: bold;
+	border-bottom: 1px solid #efefef;
+}
+.goods_send span{
+	margin: 0 10px;
+}
+.goods_indents{
+	padding: 0 10px;
+	line-height: 50px;
+}
+.indents_iframe iframe{
+	width: 700px;
+	height: 250px;
+	margin: 10px  20px;
+	background-color: #f9f9f9;
+}
+/*----------------message--------------------*/
+#nav_system.select{
+	background-image: url(../img/system_select.png);
+}
+.message_system_part{
+	width: 800px;
+	height: 75px;
+	margin: 0 auto;
+	border-bottom: 1px solid #17bfbb;
+	line-height: 70px;
+}
+.message_left{
+	float: left;
+	width: 600px;
+}
+.message_left img{
+	max-height: 75px;
+	vertical-align: middle;
+}
+.message_right{
+	float: right;
+	width: 150px;
+	text-align: right;
+	padding-right: 15px;
+}
+.message_right span{
+	margin-right: 5px;
+}
+.message_right span a{
+	color: #00f;
+	text-decoration: underline;
+}
+.message_do{
+	line-height: 40px;
+	margin: 5px 30px;
+	width: 250px;
+	float: left;
+}
+.message_btn{
+	height: 25px;
+	min-width: 50px;
+	background-color: #efefef;
+	border: 1px solid #565656;
+	margin: 0 5px;
+	cursor: pointer;
+}
+.message_btn:hover{
+	background-color: #e0e0e0;
+}
+.pag{
+	line-height: 30px;
+	margin: 12px 30px;
+	width: 400px;
+	text-align: right;
+	float: right;
+}
+.pag input.Last{
+	height: 30px;
+	width: 80px;
+	margin: 2px;
+	background-image: url(../img/Last.png);
+	cursor: pointer;
+}
+.pag input.Next{
+	height: 30px;
+	width: 80px;
+	margin: 2px;
+	background-image: url(../img/Next.png);
+	cursor: pointer;
+}
+.pag span.normal{
+	display: inline-block;
+	height: 28px;
+	width: 28px;
+	text-align: center;
+	vertical-align: top;
+	margin: 3px 2px;
+	border: 1px solid #17bfbb;
+	cursor: pointer;
+}
+.pag span.normal:hover{
+	color: #fff;
+	background-color: #17bfbb;
+}
+.pag span.select{
+	display: inline-block;
+	height: 28px;
+	width: 28px;
+	text-align: center;
+	vertical-align: top;
+	margin: 3px 2px;
+	font-weight: bold;
+}
+
+.detail_left{
+	float: left;
+	width: 80px;
+	text-align: left;
+}
+.detail_head{
+	line-height: 30px;
+}
+.detail_head span{
+	margin-right: 5px;
+}
+.detail_right{
+	float: left;
+	line-height: 20px;
+	width: 650px;
+	margin: 5px;
+	padding: 5px 0;
+	text-align: left;
+}
+.detail_content{
+	width: 600px;
+	height: 500px;
+	margin: 10px 0;
+}
+.detail_content iframe{
+	width: 600px;
+	height: 500px;
+	border: 1px solid #17bfbb;
+}
+/*----------------photo----------------*/
+.Photo_btn{
+	min-width: 75px;
+	height: 25px;
+	margin: 5px 0;
+	line-height: 21px;
+	color: #fff;
+	background-color: #0C4786;
+}
+#nav_myPhoto.select{
+	background-image: url(../img/myPhoto_select.png);
+}
+#nav_myPhoto.no{
+	background-image: url(../img/myPhoto_no.png);
+}
+#nav_newPhoto.select{
+	background-image: url(../img/newPhoto_select.png);
+}
+#nav_newPhoto.no{
+	background-image: url(../img/newPhoto_no.png);
+}
+#nav_myPhoto_concent{
+	display: block;
+}
+#nav_newPhoto_concent{
+	display: none;
+}
+.all_album_part{
+	padding: 10px 6px;
+	width: 800px;
+	height: 200px;
+}
+.sigle_part{
+	float: left;
+	width: 150px;
+	height: 200px;
+	margin: 0 3px;
+}
+.sigle_part_photo{
+	width: 150px;
+	height: 150px;
+	background-image: url(../img/PhotoBG.png);
+}
+.sigle_part_photo img{
+	width: 135px;
+	height: 135px;
+	margin:7px;
+}
+.sigle_part p{
+	text-align: center;
+	line-height: 20px;
+}
+.sigle_part p span{
+	margin: 0 5px;
+}
+.sigle_part p span a{
+	color: #00f;
+	text-decoration: underline;
+}
+.album_head{
+	padding: 5px;
+	border-bottom: 1px dotted #17bfbb;
+}
+.album_head p{
+	text-align: left;
+	line-height: 20px;
+}
+.album_head p span a{
+	color: #00f;
+	text-decoration: underline;
+}
+
+#nav_chooseAlbum_concent{
+	display:none;
+}
+
+.choose_photo,.choose_album{
+	line-height: 20px;
+	padding: 5px;
+}
+.choose_photo iframe{
+	width: 780px;
+	height: 200px;
+	border: 1px dotted #17bfbb;
+}
+	/*-----------choose_photo iframe_html*/
+	body.choose{
+		width: 770px;
+		margin: 0 auto;
+	}
+	.choose_photo_part{
+		height: 80px;
+		font-size: 14px;
+		margin-top: 4px;
+		border-bottom: 1px solid #17bfbb;
+	}
+	.choose_left,.choose_right{
+		float: left;
+	}
+	.choose_left img{
+		height: 75px;
+		width:75px; 
+		display: inline-block;
+		vertical-align: middle;
+		background-color: #efefef;
+	}
+	.choose_left span{
+		font-weight: bold;
+		margin: 5px;
+	}
+	.choose_right{
+		margin: 22px 30px;
+	}
+	.choose_right input{
+		width: 400px;
+		height: 20px;
+		line-height: 18px;
+		padding: 1px;
+	}
+
+
+#nav_newAlbum_concent{
+	background-color: #efefef;
+	display: none;
+}
+#nav_newAlbum_concent div,#nav_chooseAlbum_concent div{
+	line-height: 30px;
+	padding: 5px;
+}
+#nav_newAlbum_concent div span,#nav_chooseAlbum_concent div span{
+	display: inline-block;
+	width: 100px;
+	text-align: left;
+	vertical-align: top;
+}
+#nav_newAlbum_concent div input{
+	width: 500px;
+	height: 20px;
+	font-size: 14px;
+	line-height: 20px;
+}
+#nav_newAlbum_concent div select,#nav_chooseAlbum_concent div select{
+	width:100px;
+	height: 20px;
+	font-size: 14px;
+	line-height: 20px;
+}
+#nav_newAlbum_concent div textarea{
+	width: 500px;
+	height: 200px;
+	font-size: 14px;
+	line-height: 20px;
 }
