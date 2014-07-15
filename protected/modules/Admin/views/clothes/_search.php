@@ -47,8 +47,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'piture'); ?>
-		<?php echo $form->textField($model,'piture',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->label($model,'picture'); ?>
+		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">

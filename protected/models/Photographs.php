@@ -62,6 +62,7 @@ class Photographs extends CActiveRecord
 		return array(
 			'school0' => array(self::BELONGS_TO, 'Area', 'school_id'),
 			'phototeam' => array(self::BELONGS_TO, 'Phototeam', 'phototeam_id'),
+			'sort'=>array(self::BELONGS_TO,'Sort','sort_id'),
 		);
 	}
 

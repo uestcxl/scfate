@@ -1,6 +1,6 @@
 <?php
 	$phototeam=Phototeam::model()->findAll();
-	$sort=Sort::model()->findAllByAttributes(array('sort_type'=>1));
+	$sort=Sort::model()->findAllByAttributes(array('sort_type'=>2));
 	$school=Area::model()->findAllByAttributes(array('area_type'=>4));
 ?>
 

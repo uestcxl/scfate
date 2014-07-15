@@ -23,7 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'title',
-		'piture',
+		'picture',
 		'sort_id',
 		'phototeam_id',
 		'create_time',

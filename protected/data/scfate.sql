@@ -152,7 +152,7 @@ CREATE  TABLE IF NOT EXISTS `scfate`.`clothes` (
   `reserve` INT NOT NULL COMMENT '库存' ,
   `sort_id` INT NOT NULL ,
   `description` TEXT NOT NULL ,
-  `piture` VARCHAR(100) NOT NULL ,
+  `picture` VARCHAR(100) NOT NULL ,
   `comment_count` INT NOT NULL DEFAULT 0 COMMENT '评论数量' ,
   `sale_count` INT NOT NULL DEFAULT 0 COMMENT '租赁次数' ,
   `size` VARCHAR(40) NOT NULL ,

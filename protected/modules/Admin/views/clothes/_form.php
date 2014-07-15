@@ -56,9 +56,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'piture'); ?>
-		<?php echo $form->textField($model,'piture',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'piture'); ?>
+		<?php echo $form->labelEx($model,'picture'); ?>
+		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'picture'); ?>
 	</div>
 
 	<div class="row">

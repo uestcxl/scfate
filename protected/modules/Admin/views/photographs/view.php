@@ -18,20 +18,19 @@ $this->menu=array(
 
 <h1>View Photographs #<?php echo $model->id; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'title',
-		'picture',
-		'sort_id',
-		'phototeam_id',
-		'create_time',
-		'description',
-		'school_id',
-		'school',
-	),
-)); ?>
+<p>作品ID:<?php echo $model->id;?></p>
+
+<p>作品标题:<?php echo $model->title;?></p>
+
+<p>作品创建时间:<?php echo $model->create_time;?></p>
+
+<p>作品描述:<?php echo $model->description;?></p>
+
+<p>分类:<?php echo $model->sort->sort_name;?></p>
+
+<p>学校:<?php echo $model->school0->area_name;?></p>
+
+<p>摄影团队:<?php echo $model->phototeam->team_name;?></p>
 
 <h3>图片预览</h3>
 <img src="<?php echo Yii::app()->baseUrl.'/images/photographs/'.$model->picture;?>" alt="null">
