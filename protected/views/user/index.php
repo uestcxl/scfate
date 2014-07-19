@@ -86,12 +86,22 @@
 					</form>
 				</div>
 			</div>
+		
 			<?php $this->endWidget(); ?>
+	            <?php $form=$this->beginWidget('CActiveForm', array(
+                                   'id'=>'changepic',
+                                   'action'=>array('user/changepic'),
+                                   'enableAjaxValidation'=>false,
+            	            )); ?>
 			<div id="nav_reInformation_concent">
 				<div class="account_head">
-					<img src="">
-					<input type="button" class="btn" value="更换头像">
+				           
+				                     		<img src="">
+					                                <input type="button" class="btn" value="更换头像">			                   
 				</div>
+			                
+		<?php $this->endWidget(); ?>
+	
 	                <?php $form=$this->beginWidget('CActiveForm', array(
                                    'id'=>'changeziliao',
                                    'action'=>array('user/changeziliao'),

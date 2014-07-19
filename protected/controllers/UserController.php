@@ -211,6 +211,30 @@ public function actionchangpassword(){
 	             }
              }
     }
+     public function actionchangepic(){
+             
+	$id=Yii::app()->user->id;
+
+	$model=User::model()->findByPk($id);
+
+	if (isset($_POST['User'])) {
+		
+		$mail=$_POST['User']['mail'];
+		$name=$_POST['User']['name'];
+		$QQ=$_POST['User']['QQ'];
+		$phone=$_POST['User']['phone'];
+		if (!empty($username) && !empty($mail)&&!empty($phone) && !empty($QQ)&&!empty($name)){
+		
+			$model->mail=$mail;
+			$model->name=$name;
+			$model->QQ=$QQ;
+			$model->phone=$phone;
+			if ($model->save()) {
+				echo "修改成功";
+			}
+	             }
+             }
+    }
 
     // user address page
 
