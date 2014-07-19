@@ -16,3 +16,5 @@
 <p>地区设定:<a href="<?php echo $this->createUrl('area/admin')?>">点我</a></p>
 
 <p>管理分类列表:<a href="<?php echo $this->createUrl('sort/admin')?>">点我</a></p>
+
+<p>管理展示作品:<a href="<?php echo $this->createUrl('photographs/admin')?>">点我</a></p>

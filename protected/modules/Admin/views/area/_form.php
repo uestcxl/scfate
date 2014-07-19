@@ -2,16 +2,14 @@
 /* @var $this AreaController */
 /* @var $model Area */
 /* @var $form CActiveForm */
+
+$areas=Area::model()->findAll();
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'area-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -19,10 +17,16 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'父地区id'); ?>
-		<?php echo $form->textField($model,'parent_id'); ?>
-		<?php echo $form->error($model,'parent_id'); ?>
+	<div>
+		<br>
+		<h3>父地区id</h3>
+		<p>
+		<?php if(!empty($areas)){foreach ($areas as $key => $area) {?>
+			<label><input type="radio" value='<?php echo $area->id?>' name="Area[parent_id]"><?php echo $area->area_name?></label>
+		<?php }} else{?>
+			<input type="text" name="Area[parent_id]" value="1">
+		<?php }?>
+		</p>
 	</div>
 
 	<div class="row">
@@ -32,9 +36,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'类型代码：0是国家；1是省份；2是市；3是区；4是学校'); ?>
-		<?php echo $form->textField($model,'area_type'); ?>
-		<?php echo $form->error($model,'area_type'); ?>
+		<h3>地区类型</h3>
+		<label><input type="radio" value="0" name="Area[area_type]">国家</label>
+		<label><input type="radio" value="1" name="Area[area_type]">省份</label>
+		<label><input type="radio" value="2" name="Area[area_type]">地级市</label>
+		<label><input type="radio" value="3" name="Area[area_type]">区/县</label>
+		<label><input type="radio" value="4" name="Area[area_type]">学校</label>
 	</div>
 
 	<div class="row buttons">

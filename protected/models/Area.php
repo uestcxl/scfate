@@ -106,4 +106,9 @@ class Area extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	public function getarealist()
+	{
+		$arealist=Area::model()->findAll();
+		 return  CHtml::listData($arealist,'id','area_name');
+	}
 }

@@ -8,6 +8,9 @@ class PhotographsController extends Controller
 	 */
 	public $layout='/layouts/column2';
 
+	public $file;   	//upload files
+	public $fileName;
+	public $oldFile;
 	/**
 	 * @return array action filters
 	 */
@@ -29,7 +32,7 @@ class PhotographsController extends Controller
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete','create','update','index','view'),
-				'users'=>array('admin'),
+				'users'=>array(ADMIN),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -55,21 +58,27 @@ class PhotographsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Photographs;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Photographs']))
 		{
 			$model->attributes=$_POST['Photographs'];
+			//var_dump($_FILES);die;
+			//判断是否上传，有上传则处理文件上传项目图标 调用父类中的上传文件方法
+			($_FILES['Photographs']['name']['picture'] != '') ? $this->UploadName($model, 'picture') : $i =1;
+		
 			if($model->save())
+			{
+				isset($i) ? $i='' : $this->moveFile();
 				$this->redirect(array('view','id'=>$model->id));
+				//$this->redirect(array('create'));
+			}
 		}
-
 		$this->render('create',array(
 			'model'=>$model,
 		));
-	}
+	}	
 
 	/**
 	 * Updates a particular model.
@@ -79,15 +88,28 @@ class PhotographsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$this->oldFile = $model->picture;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Photographs']))
 		{
 			$model->attributes=$_POST['Photographs'];
-			if($model->save())
+			//var_dump($_POST['Photographs']);die;
+			($_FILES['Photographs']['name']['picture'] != '') ? $this->UploadName($model, 'picture') : $i =1;
+	
+				if (isset($this->oldFile)&& empty($_FILES['Food']['name']['picname'])) {
+					$model->picname=$this->oldFile;
+				}
+	
+			if($model->save()){
+				//isset($i) ? $i='' : $this->moveFile();
+				if(!isset($i)) 
+				{
+					$this->moveFile();
+					$this->delFile($this->oldFile);
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
@@ -102,12 +124,14 @@ class PhotographsController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model = $this->loadModel($id);
+		$this->delFile($model->picture);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
+	}	
 
 	/**
 	 * Lists all models.
@@ -160,6 +184,54 @@ class PhotographsController extends Controller
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+
+	/**
+	* 为上传文件命名
+	* @param $myAttribute 上传文件的字段名
+	 */
+	public function UploadName(&$model, $myAttribute)
+	{
+		$this->file = CUploadedFile::getInstance($model, $myAttribute);
+		$suffix = $this->file->getExtensionName();		//获取文件后缀名
+		//var_dump($suffix);die;
+		$this->fileName = time().'.'.$suffix;            //$this->fileName 在下面moveFile方法中要用
+		$model->$myAttribute = $this->fileName;
+	}
+	
+	/**
+	* 移动上传文件至指定路径
+	* $dir 格式示例：  movefile('/var/www/file/')
+	* 不传参数默认为 images目录
+	 */
+	public function moveFile($dir='')
+	{
+		if(is_object($this->file) && get_class($this->file)==='CUploadedFile'){
+			if($dir=='') 
+				$dir = Yii::app()->basePath."/../images/photographs/".$this->fileName;
+			else 
+				$dir .= $this->fileName;
+			
+			$this->file->saveAs($dir);
+			chmod($dir, 0776);
+		}
+	}
+	
+	/**
+	* 删除文件
+	* $file 文件名
+	* $dir 文件所在路径名
+	 */
+	public function delFile($file,$dir='')
+	{
+		if($dir == '')
+			$dir = Yii::app()->basePath."/../images/photographs/".$file;
+		else 
+			$dir = $dir.$file;
+		
+		if(file_exists($dir)){
+			unlink($dir);
 		}
 	}
 }

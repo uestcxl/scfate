@@ -213,3 +213,6 @@ footer{
 	height: 72px;
 	max-width: 1000px;
 }
+._red{
+	color: #f00;
+}

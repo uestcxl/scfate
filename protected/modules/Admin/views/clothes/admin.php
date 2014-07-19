@@ -53,7 +53,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'sort_id',
 		/*
 		'description',
-		'piture',
+		'picture',
 		'comment_count',
 		'sale_count',
 		'size',

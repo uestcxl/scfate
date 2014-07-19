@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Photographs</h1>
+<h1>添加展示作品</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

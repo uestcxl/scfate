@@ -1,0 +1,86 @@
+.shopping{
+	width: 980px;
+	margin: 10px auto;
+	border-top: 3px solid #adadad;
+	border-bottom: 3px solid #adadad;
+}
+.shopping_state img{
+	width: 1000px;
+}
+.shopping table{
+	width: 980px;
+	line-height: 20px;
+	background-color: #fff;
+}
+.shopping table tr.table_head{
+	background-color: #efefef;
+}
+.shopping table tr.table_section{
+	height: 90px;
+	border-bottom: 1px solid #efefef;
+	text-align: center;
+	line-height: 90px;
+}
+.shopping table tr.table_section td.goods{
+	text-align: left;
+}
+.shopping table tr.table_section td{
+	padding: 5px 3px;
+	position: relative;
+}
+.shopping table tr.table_section .goods_photo{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #adadad;
+	display: inline-block;
+	vertical-align: middle;
+}
+.shopping table tr.table_section span{
+	vertical-align: top;
+}
+.goods_do span{
+	margin: 0 10px;
+	color: #00f;
+}
+.goods_do span a{
+	text-decoration: underline;
+}	
+ .f_l{
+	position: absolute;
+	top: 37px;
+}
+.add_chose{
+	width:105px;
+}
+.add_chose a{
+	float:left;
+	margin:5px 0 0 0;
+	display:block;
+	width:15px;
+	height:15px;
+	line-height:99em;
+	overflow:hidden;
+	background:url(../img/reduce-add.gif) no-repeat;
+}
+.add_chose a.reduce{
+	background-position:0 0;
+}
+.add_chose a.reduce:hover{
+	background-position:0 -16px;
+}
+.add_chose a.add{
+	background-position:-16px 0;
+}
+.add_chose a.add:hover{
+	background-position: -16px -16px;
+}
+.add_chose .text{
+	float:left;margin:0 5px;
+	display:inline;
+	border:solid 1px #ccc;
+	padding:4px 3px 4px 8px;
+	width:40px;
+	font-size:14px;
+	color:#990000;
+	font-weight:800;
+}

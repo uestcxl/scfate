@@ -28,7 +28,7 @@ class OrderController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','index','view'),
+				'actions'=>array('create','index','view','shopping'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -108,5 +108,11 @@ class OrderController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	//shopping center
+
+	public function actionShopping(){
+		$this->render('shopping');
 	}
 }

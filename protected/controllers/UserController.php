@@ -5,7 +5,7 @@ class UserController extends Controller
 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 * using two-column layout. See 'protected/views/layouts/column2.php'.
 */
-public $layout='//layouts/column3';
+public $layout='//layouts/user';
 public $verifyCode;
 /**
 * @return array action filters
@@ -34,7 +34,7 @@ array('allow', // allow authenticated user to perform 'create' and 'update' acti
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('index','changpassword','changeziliao','address','order','album'),
+'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder'),
 'users'=>array('@'),
 ),
 array('allow',
@@ -191,6 +191,7 @@ public function actionchangpassword(){
              
 	$id=Yii::app()->user->id;
 
+
 	$model=User::model()->findByPk($id);
 
 	if (isset($_POST['User'])) {
@@ -199,6 +200,7 @@ public function actionchangpassword(){
 		$name=$_POST['User']['name'];
 		$QQ=$_POST['User']['QQ'];
 		$phone=$_POST['User']['phone'];
+
 		if (!empty($username) && !empty($mail)&&!empty($phone) && !empty($QQ)&&!empty($name)){
 		
 			$model->mail=$mail;
@@ -207,11 +209,31 @@ public function actionchangpassword(){
 			$model->phone=$phone;
 			if ($model->save()) {
 				echo "修改成功";
+				
 			}
 	             }
              }
     }
-     public function actionchangepic(){
+
+
+    // user address page
+
+    public function actionAddress(){
+    	$model=$this->loadModel(Yii::app()->user->id);	
+    	
+    	$newsdata1=Area::model()->findAllByAttributes(array('parent_id'=>1));
+    	
+    	
+    	$newsdata2=Area::model()->findAllByAttributes(array('parent_id'=>2));
+    	$this->render('address',array(
+    		'model'=>$model,
+    	                'newsdata1'=>$newsdata1,
+                                'newsdata2'=>$newsdata2,
+                                )
+                        
+    	);
+    }
+     public function actionCreateaddress(){
              
 	$id=Yii::app()->user->id;
 
@@ -236,13 +258,6 @@ public function actionchangpassword(){
              }
     }
 
-    // user address page
-
-    public function actionAddress(){
-    	$model=$this->loadModel(Yii::app()->user->id);
-    	$this->render('address',array('model'=>$model));
-    }
-
     //user order page
 
     public function actionOrder(){
@@ -255,5 +270,11 @@ public function actionchangpassword(){
     public function actionAlbum(){
     	$model=$this->loadModel(Yii::app()->user->id);
     	$this->render('album',array('model'=>$model));
+    }
+
+    //view detail order
+
+    public function actionVieworder(){
+    	$this->render('vieworder');
     }
 } 

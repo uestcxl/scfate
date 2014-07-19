@@ -35,6 +35,12 @@
 				</tr>
 			</table>
 		</div>
+                            <?php $form=$this->beginWidget('CActiveForm', array(
+                                   'id'=>'createaddress',
+                                   'action'=>array('user/createaddress'),
+                                   'enableAjaxValidation'=>false,
+            	            )); ?>
+			
 		<div id="nav_newAddress_concent">
 			<div>
 				<form>
@@ -48,11 +54,15 @@
 						<span>所在地区：</span>
 						<select>
   							<option value ="none">请选择</option>
-  							<option value ="sichuan">四川省</option>
+  							  <?php foreach ($newsdata1 as $news1) :?>
+  							<option value =""><?php echo $news1['area_name'];?></option>
+  							 <?php endforeach;?>
 						</select>
 						<select>
   							<option value ="none">请选择</option>
-  							<option value ="成都">成都市</option>
+  							  <?php foreach ($newsdata2 as $news2) :?>
+  							<option value =""><?php echo $news2['area_name'];?></option>
+  							 <?php endforeach;?>
 						</select>
 					</div>
 					<div class="form_part">
@@ -64,11 +74,7 @@
 						<span>邮政编码：</span>
 						<input type="text">
 					</div>
-					<div class="form_part">
-						<span>电话号码：</span>
-						<input type="text">
-						<span class="form_part_right">区号-电话号码-分号</span>
-					</div>
+			
 					<div class="form_part">
 						<span>手机号码：</span>
 						<input type="text" >
@@ -79,6 +85,7 @@
 				</form>
 			</div>
 		</div>
+		<?php $this->endWidget(); ?>
 	</div>
 </div>
 <!--account end-->

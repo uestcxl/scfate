@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'photographs':
  * @property integer $id
  * @property string $title
- * @property string $piture
+ * @property string $picture
  * @property integer $sort_id
  * @property integer $phototeam_id
  * @property string $create_time
@@ -36,14 +36,19 @@ class Photographs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, piture, sort_id, phototeam_id, create_time, description, school_id, school', 'required'),
+			array('title, picture, sort_id, phototeam_id, description, school_id, school', 'required'),
 			array('sort_id, phototeam_id, school_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>50),
-			array('piture', 'length', 'max'=>100),
+			array('picture', 'length', 'max'=>100),
 			array('school', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, piture, sort_id, phototeam_id, create_time, description, school_id, school', 'safe', 'on'=>'search'),
+			array('id, title, picture, sort_id, phototeam_id, create_time, description, school_id, school', 'safe', 'on'=>'search'),
+			array('picture', 'file', 'allowEmpty'=>true,
+				'types'=>'jpg, jpeg, gif, png',
+				'maxSize'=>1024 * 512, // 512KB
+				'tooLarge'=>'上传文件超过 512KB，无法上传。',
+		),
 		);
 	}
 
@@ -57,6 +62,7 @@ class Photographs extends CActiveRecord
 		return array(
 			'school0' => array(self::BELONGS_TO, 'Area', 'school_id'),
 			'phototeam' => array(self::BELONGS_TO, 'Phototeam', 'phototeam_id'),
+			'sort'=>array(self::BELONGS_TO,'Sort','sort_id'),
 		);
 	}
 
@@ -68,7 +74,7 @@ class Photographs extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'title' => 'Title',
-			'piture' => 'Piture',
+			'picture' => 'picture',
 			'sort_id' => 'Sort',
 			'phototeam_id' => 'Phototeam',
 			'create_time' => 'Create Time',
@@ -98,7 +104,7 @@ class Photographs extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
-		$criteria->compare('piture',$this->piture,true);
+		$criteria->compare('picture',$this->picture,true);
 		$criteria->compare('sort_id',$this->sort_id);
 		$criteria->compare('phototeam_id',$this->phototeam_id);
 		$criteria->compare('create_time',$this->create_time,true);
@@ -120,5 +126,14 @@ class Photographs extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function beforeSave(){
+		if (parent::beforeSave()) {
+			$this->create_time=date('Y-m-d H:i');
+			return true;
+		}
+		else
+			return false;
 	}
 }

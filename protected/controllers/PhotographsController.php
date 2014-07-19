@@ -6,7 +6,7 @@ class PhotographsController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/photographs';
 
 	/**
 	 * @return array action filters
@@ -28,8 +28,8 @@ class PhotographsController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view'),
-				'users'=>array('@'),
+				'actions'=>array('index','view','sort'),
+				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -86,5 +86,10 @@ class PhotographsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionSort($sort){
+		$photographs=Photographs::model()->findAllByAttributes(array('sort_id'=>$sort));
+		$this->render('sort',array('photographs'=>$photographs));
 	}
 }

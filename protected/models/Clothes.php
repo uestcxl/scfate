@@ -11,7 +11,7 @@
  * @property integer $reserve
  * @property integer $sort_id
  * @property string $description
- * @property string $piture
+ * @property string $picture
  * @property integer $comment_count
  * @property integer $sale_count
  * @property string $size
@@ -34,14 +34,14 @@ class Clothes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('clothesname, rent, cash_pledge, reserve, sort_id, description, piture, size', 'required'),
+			array('clothesname, rent, cash_pledge, reserve, sort_id, description, picture, size', 'required'),
 			array('rent, cash_pledge, reserve, sort_id, comment_count, sale_count', 'numerical', 'integerOnly'=>true),
 			array('clothesname', 'length', 'max'=>45),
-			array('piture', 'length', 'max'=>100),
+			array('picture', 'length', 'max'=>100),
 			array('size', 'length', 'max'=>40),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, clothesname, rent, cash_pledge, reserve, sort_id, description, piture, comment_count, sale_count, size', 'safe', 'on'=>'search'),
+			array('id, clothesname, rent, cash_pledge, reserve, sort_id, description, picture, comment_count, sale_count, size', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,7 +69,7 @@ class Clothes extends CActiveRecord
 			'reserve' => 'Reserve',
 			'sort_id' => 'Sort',
 			'description' => 'Description',
-			'piture' => 'Piture',
+			'picture' => 'Piture',
 			'comment_count' => 'Comment Count',
 			'sale_count' => 'Sale Count',
 			'size' => 'Size',
@@ -101,7 +101,7 @@ class Clothes extends CActiveRecord
 		$criteria->compare('reserve',$this->reserve);
 		$criteria->compare('sort_id',$this->sort_id);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('piture',$this->piture,true);
+		$criteria->compare('picture',$this->picture,true);
 		$criteria->compare('comment_count',$this->comment_count);
 		$criteria->compare('sale_count',$this->sale_count);
 		$criteria->compare('size',$this->size,true);

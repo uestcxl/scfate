@@ -34,8 +34,8 @@
 	<br />
 
 	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('piture')); ?>:</b>
-	<?php echo CHtml::encode($data->piture); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('picture')); ?>:</b>
+	<?php echo CHtml::encode($data->picture); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('comment_count')); ?>:</b>

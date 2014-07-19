@@ -28,7 +28,7 @@ $this->menu=array(
 		'reserve',
 		'sort_id',
 		'description',
-		'piture',
+		'picture',
 		'comment_count',
 		'sale_count',
 		'size',
