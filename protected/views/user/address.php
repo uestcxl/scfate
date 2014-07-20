@@ -46,38 +46,45 @@
 				<form>
 					<div class="form_part">
 						<span>收货人姓名：</span>
-						<input type="text">
+						<input type="text" name="Address[receipter]">
 						<span class="form_part_right">请填写您的真实姓名</span>		
 					</div>
 					
 					<div class="form_part">
 						<span>所在地区：</span>
-						<select>
-  							<option value ="none">请选择</option>
+						<select  name="province">
+  							<option value ="none" >请选择</option>
   							  <?php foreach ($newsdata1 as $news1) :?>
-  							<option value =""><?php echo $news1['area_name'];?></option>
+  							<option value ="<?php echo $news1['area_name'];?>"><?php echo $news1['area_name'];?></option>
   							 <?php endforeach;?>
 						</select>
-						<select>
+						<select  name="city">
   							<option value ="none">请选择</option>
   							  <?php foreach ($newsdata2 as $news2) :?>
-  							<option value =""><?php echo $news2['area_name'];?></option>
+  							<option value ="<?php echo $news2['area_name'];?>"><?php echo $news2['area_name'];?></option>
   							 <?php endforeach;?>
 						</select>
+						<select  name="county">
+  							<option value ="none">请选择</option>
+  							  <?php foreach ($newsdata3 as $news3) :?>
+  							<option value ="<?php echo $news3['area_name'];?>" ><?php echo $news3['area_name'];?></option>
+  							 <?php endforeach;?>
+						</select>
+
 					</div>
 					<div class="form_part">
 						<span>详细地址：</span>
-						<input type="text">
+						<input type="text" name="Address[detail]">
 						<span class="form_part_right">不必重复填写地区</span>
 					</div>
 					<div class="form_part">
 						<span>邮政编码：</span>
-						<input type="text">
+						<input type="text" name="Address[zipcode]">
 					</div>
 			
 					<div class="form_part">
 						<span>手机号码：</span>
-						<input type="text" >
+						<input type="text"  name="Address[phone]">
 					</div>
 					<div class="form_btn">
 						<input type="submit" class="btn" value="保存地址">

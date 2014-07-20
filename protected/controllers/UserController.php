@@ -34,7 +34,7 @@ array('allow', // allow authenticated user to perform 'create' and 'update' acti
 'users'=>array('*'),
 ),
 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder'),
+'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress'),
 'users'=>array('@'),
 ),
 array('allow',
@@ -223,35 +223,47 @@ public function actionchangpassword(){
     	
     	$newsdata1=Area::model()->findAllByAttributes(array('parent_id'=>1));
     	
-    	
     	$newsdata2=Area::model()->findAllByAttributes(array('parent_id'=>2));
+    	$newsdata3=Area::model()->findAllByAttributes(array('parent_id'=>3));
     	$this->render('address',array(
     		'model'=>$model,
     	                'newsdata1'=>$newsdata1,
                                 'newsdata2'=>$newsdata2,
+                                'newsdata3'=>$newsdata3,
                                 )
                         
     	);
     }
      public function actionCreateaddress(){
              
-	$id=Yii::app()->user->id;
+	
+                $id=Yii::app()->user->id;
+	$model=new  Address;
 
-	$model=User::model()->findByPk($id);
-
-	if (isset($_POST['User'])) {
+	if (isset($_POST['Address'])) {
 		
-		$mail=$_POST['User']['mail'];
-		$name=$_POST['User']['name'];
-		$QQ=$_POST['User']['QQ'];
-		$phone=$_POST['User']['phone'];
-		if (!empty($username) && !empty($mail)&&!empty($phone) && !empty($QQ)&&!empty($name)){
 		
-			$model->mail=$mail;
-			$model->name=$name;
-			$model->QQ=$QQ;
+		$receipter=$_POST['Address']['receipter'];
+		$province=$_POST['province'];
+		$city=$_POST['city'];
+		$detail=$_POST['Address']['detail'];
+		$zipcode=$_POST['Address']['zipcode'];
+		$county=$_POST['county'];
+		
+		$phone=$_POST['Address']['phone'];
+		if (!empty($receipter) && !empty($province)&&!empty($phone) && !empty($city)&&!empty($detail)&&!empty($zipcode)&&!empty($county)){
+		
+			$model->receipter=$receipter;
+			$model->province=$province;
+			$model->detail=$detail;
+			$model->city=$city;
+			$model->zipcode=$zipcode;
 			$model->phone=$phone;
-			if ($model->save()) {
+			$model->county=$county;
+			$model->userid=$id;
+
+			if ($model->save()){
+				
 				echo "修改成功";
 			}
 	             }

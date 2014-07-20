@@ -36,13 +36,13 @@ class Address extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userid, province, city, school, detail, zipcode, receipter, phone', 'required'),
+			array('userid, province, city, county, detail, zipcode, receipter, phone', 'required'),
 			array('userid, default', 'numerical', 'integerOnly'=>true),
-			array('province, city, school, zipcode, receipter', 'length', 'max'=>45),
+			array('province, city, county, zipcode, receipter', 'length', 'max'=>45),
 			array('phone', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, userid, province, city, school, detail, zipcode, receipter, default, phone', 'safe', 'on'=>'search'),
+			array('id, userid, province, city, county, detail, zipcode, receipter, default, phone', 'safe', 'on'=>'search'),
 		);
 	}
 

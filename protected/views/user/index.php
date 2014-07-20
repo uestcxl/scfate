@@ -86,7 +86,11 @@
 			</div>
 		
 			<?php $this->endWidget(); ?>
-
+	            <?php $form=$this->beginWidget('CActiveForm', array(
+                                   'id'=>'changepic',
+                                   'action'=>array('user/changepic'),
+                                   'enableAjaxValidation'=>false,
+            	            )); ?>
 			<div id="nav_reInformation_concent">
 				<div class="account_head">
 				           
@@ -95,6 +99,8 @@
 					                                	                   
 				</div>
 			                
+		<?php $this->endWidget(); ?>
+	
 	                <?php $form=$this->beginWidget('CActiveForm', array(
                                    'id'=>'changeziliao',
                                    'action'=>array('user/changeziliao'),
@@ -104,11 +110,10 @@
 					<form>
 					             <div class="form_part">
 							<span>用户名：</span>
-<<<<<<< HEAD
-							<?php echo Yii::app()->user->name;?>					
-=======
-							<input type="text" value="<?php echo Yii::app()->user->name;?>">						
->>>>>>> ec9ff59f104b70764d1c75883e3f40eaebb9d439
+
+							<?php echo Yii::app()->user->name;?>			
+
+							
 						</div>
 				
 						<div class="form_part">
@@ -119,30 +124,22 @@
 						<div class="form_part">
 							<span>真实姓名：</span>
 							<?php if(!empty($model->name)){?>
-<<<<<<< HEAD
+
 							<input type="text"  name="User[name]" value="<?php echo $model->name;?>">
 							<?php }else{?>
 							<input type="text" name="User[name]" value="请输入你的真实姓名">
-=======
-							<input type="text" value="<?php echo $model->name;?>">
-							<?php }else{?>
-							<input type="text" value="请输入你的真实姓名">
->>>>>>> ec9ff59f104b70764d1c75883e3f40eaebb9d439
+
+							
 							<?php }?>
 					        <?php echo $form->error($model,'name'); ?>
 						</div>							
 						<div class="form_part">
 							<span>QQ：</span>
 							<?php if(!empty($model->QQ)){?>
-<<<<<<< HEAD
+
 							<input type="text" name="User[QQ]"  value="<?php echo $model->QQ;?>">
 							<?php }else{?>
 							<input type="text" name="User[QQ]" value="请输入你的qq">
-=======
-							<input type="text" value="<?php echo $model->QQ;?>">
-							<?php }else{?>
-							<input type="text" value="请输入你的qq">
->>>>>>> ec9ff59f104b70764d1c75883e3f40eaebb9d439
 							<?php }?>
 					        <?php echo $form->error($model,'QQ'); ?>
 						</div>
