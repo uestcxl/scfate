@@ -201,9 +201,14 @@ public function actionchangpassword(){
 		$QQ=$_POST['User']['QQ'];
 		$phone=$_POST['User']['phone'];
 
-		if (!empty($username) && !empty($mail)&&!empty($phone) && !empty($QQ)&&!empty($name)){
+
+		if (!empty($mail)&&!empty($phone) && !empty($QQ)&&!empty($name)){
 		
 			$model->mail=$mail;
+			
+			$model->username=$model->username;
+			
+			$model->password=$model->password;
 			$model->name=$name;
 			$model->QQ=$QQ;
 			$model->phone=$phone;
