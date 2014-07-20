@@ -239,10 +239,9 @@ public function actionchangpassword(){
                         
     	);
     }
-     public function actionCreateaddress(){
-             
-	
-                $id=Yii::app()->user->id;
+
+public function actionCreateaddress(){
+	$id=Yii::app()->user->id;
 	$model=new  Address;
 
 	if (isset($_POST['Address'])) {
@@ -268,8 +267,7 @@ public function actionchangpassword(){
 			$model->userid=$id;
 
 			if ($model->save()){
-				
-				echo "修改成功";
+				$this->redirect(array('address'));
 			}
 	             }
              }

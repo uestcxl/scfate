@@ -1,4 +1,6 @@
-
+<?php
+	$myaddress=Address::model()->findAllByAttributes(array('userid'=>Yii::app()->user->id));
+?>
 <div  class="lable">
 	<span>ADDRESS</span>
 	<span class="lable_Ch">我的地址</span>
@@ -16,23 +18,25 @@
 			<table>
 				<tr style="border:0;">
 					<th width="15%">收货人姓名</th>
-					<th width="15%">所在地区</th>
+					<th width="20%">所在地区</th>
 					<th width="30%">详细地址</th>
 					<th width="10%">邮政编码</th>
 					<th width="10%" >联系电话</th>
 					<th width="20%"></th>
 				</tr>
+				<?php foreach ($myaddress as $key => $address) :?>
 				<tr>
-					<td>张三丰</td>
-					<td>四川省成都市</td>
-					<td>高新西区西源大道2006号</td>
-					<td>123456</td>
-					<td>12345678901</td>
+					<td><?php echo strip_tags($address->receipter);?></td>
+					<td><?php echo strip_tags($address->province).'省'.strip_tags($address->city).strip_tags($address->county)?></td>
+					<td><?php echo strip_tags($address->detail)?></td>
+					<td><?php echo strip_tags($address->zipcode)?></td>
+					<td><?php echo strip_tags($address->phone)?></td>
 					<td class= "table_right_button">
 						<input type="button" value="编辑">
 						<input type="button" value="删除">
 					</td>
 				</tr>
+			<?php endforeach;?>
 			</table>
 		</div>
                             <?php $form=$this->beginWidget('CActiveForm', array(
