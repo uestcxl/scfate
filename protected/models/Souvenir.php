@@ -47,6 +47,10 @@ class Souvenir extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, price, reduce_price, is_reduce, area_id, school_id, description, sort_id, picture, sale_count, comment_count', 'safe', 'on'=>'search'),
+			array('picture', 'file', 'allowEmpty'=>true,
+				'types'=>'jpg, jpeg, gif, png',
+				'maxSize'=>1024 * 512 * 1, // 512kb
+				'tooLarge'=>'上传文件超过 512kb，无法上传。',)
 		);
 	}
 

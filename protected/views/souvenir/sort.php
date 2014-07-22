@@ -1,6 +1,4 @@
-<?php
-	$souvenir=Souvenir::model()->findAll();
-?>
+
 <div class="works_concent"> 
 				<div>
 					<?php if(!empty($souvenir)) {foreach ($souvenir as $key => $onesouvenir) {?>

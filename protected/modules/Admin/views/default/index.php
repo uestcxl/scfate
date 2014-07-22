@@ -20,3 +20,6 @@
 <p>管理展示作品:<a href="<?php echo $this->createUrl('photographs/admin')?>">点我</a></p>
 
 <p>管理纪念品:<a href="<?php echo $this->createUrl('souvenir/admin')?>">点我</a></p>
+
+<p>管理衣服:<a href="<?php echo $this->createUrl('clothes/admin')?>">点我</a></p>
+
