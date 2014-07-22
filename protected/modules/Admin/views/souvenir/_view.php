@@ -34,9 +34,7 @@
 	<br />
 
 	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('school')); ?>:</b>
-	<?php echo CHtml::encode($data->school); ?>
-	<br />
+
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
 	<?php echo CHtml::encode($data->description); ?>

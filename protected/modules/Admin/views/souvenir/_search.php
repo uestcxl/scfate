@@ -46,10 +46,7 @@
 		<?php echo $form->textField($model,'school_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'school'); ?>
-		<?php echo $form->textField($model,'school',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->label($model,'description'); ?>

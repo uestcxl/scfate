@@ -95,4 +95,9 @@ class Sort extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	public function getsortlist()
+	{
+		$sortlist=Sort::model()->findAllByAttributes(array('sort_type'=>1));
+		 return  CHtml::listData($sortlist,'id','sort_name');
+	}
 }

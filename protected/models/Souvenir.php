@@ -39,14 +39,14 @@ class Souvenir extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, price, reduce_price, area_id, school_id, school, description, sort_id, picture', 'required'),
+			array('name, price, reduce_price, area_id, school_id, description, sort_id, picture', 'required'),
 			array('is_reduce, area_id, school_id, sort_id, sale_count, comment_count', 'numerical', 'integerOnly'=>true),
 			array('price, reduce_price', 'numerical'),
-			array('name, school', 'length', 'max'=>45),
+			array('name', 'length', 'max'=>45),
 			array('picture', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, price, reduce_price, is_reduce, area_id, school_id, school, description, sort_id, picture, sale_count, comment_count', 'safe', 'on'=>'search'),
+			array('id, name, price, reduce_price, is_reduce, area_id, school_id, description, sort_id, picture, sale_count, comment_count', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,14 +73,14 @@ class Souvenir extends CActiveRecord
 			'price' => 'Price',
 			'reduce_price' => 'Reduce Price',
 			'is_reduce' => 'Is Reduce',
-			'area_id' => 'Area',
-			'school_id' => 'School',
-			'school' => 'School',
-			'description' => 'Description',
-			'sort_id' => 'Sort',
-			'picture' => 'Picture',
-			'sale_count' => 'Sale Count',
-			'comment_count' => 'Comment Count',
+			'area_id' => '地区',
+			'school_id' => '学校',
+			
+			'description' => '具体描述',
+			'sort_id' => '种类',
+			'picture' => '图片',
+			'sale_count' => '销售数量',
+			'comment_count' => '评论数量',
 		);
 	}
 
@@ -109,7 +109,7 @@ class Souvenir extends CActiveRecord
 		$criteria->compare('is_reduce',$this->is_reduce);
 		$criteria->compare('area_id',$this->area_id);
 		$criteria->compare('school_id',$this->school_id);
-		$criteria->compare('school',$this->school,true);
+		
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('sort_id',$this->sort_id);
 		$criteria->compare('picture',$this->picture,true);

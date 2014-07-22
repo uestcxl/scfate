@@ -20,19 +20,19 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->labelEx($model,'纪念品名称'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'price'); ?>
+		<?php echo $form->labelEx($model,'原价'); ?>
 		<?php echo $form->textField($model,'price'); ?>
 		<?php echo $form->error($model,'price'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'reduce_price'); ?>
+		<?php echo $form->labelEx($model,'优惠价格'); ?>
 		<?php echo $form->textField($model,'reduce_price'); ?>
 		<?php echo $form->error($model,'reduce_price'); ?>
 	</div>
@@ -45,21 +45,16 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'area_id'); ?>
-		<?php echo $form->textField($model,'area_id'); ?>
+		<?php echo $form->dropDownList($model,'area_id',Area::model()->getarealist()); ?>
 		<?php echo $form->error($model,'area_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'school_id'); ?>
-		<?php echo $form->textField($model,'school_id'); ?>
+		<?php echo $form->dropDownList($model,'school_id',Area::model()->getschoollist()); ?>
 		<?php echo $form->error($model,'school_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'school'); ?>
-		<?php echo $form->textField($model,'school',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'school'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
@@ -69,13 +64,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'sort_id'); ?>
-		<?php echo $form->textField($model,'sort_id'); ?>
+		<?php echo $form->dropDownList($model,'sort_id',Sort::model()->getsortlist()); ?>
 		<?php echo $form->error($model,'sort_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->fileField($model,'picture');?>
 		<?php echo $form->error($model,'picture'); ?>
 	</div>
 

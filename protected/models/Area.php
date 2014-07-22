@@ -108,7 +108,12 @@ class Area extends CActiveRecord
 	}
 	public function getarealist()
 	{
-		$arealist=Area::model()->findAll();
+		$arealist=Area::model()->findAllByAttributes(array('parent_id'=>2));
+		 return  CHtml::listData($arealist,'id','area_name');
+	}
+	public function getschoollist()
+	{
+		$arealist=Area::model()->findAllByAttributes(array('area_type'=>4));
 		 return  CHtml::listData($arealist,'id','area_name');
 	}
 }
