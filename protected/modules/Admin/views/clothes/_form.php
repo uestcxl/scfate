@@ -1,4 +1,4 @@
-<?php
+	<?php
 /* @var $this ClothesController */
 /* @var $model Clothes */
 /* @var $form CActiveForm */
@@ -13,6 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -45,32 +46,30 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'sort_id'); ?>
-		<?php echo $form->textField($model,'sort_id'); ?>
+		<?php echo $form->dropDownList($model,'sort_id',Clothes::model()->getsortlist()); ?>
 		<?php echo $form->error($model,'sort_id'); ?>
 	</div>
 
+<!-- ueditor js-->
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl.'/protected/extensions/ueditor/ueditor.config.js'; ?>"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl.'/protected/extensions/ueditor/ueditor.all.js'; ?>"></script>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'description',array('id'=>'myEditor')); ?>
+			<script type="text/javascript">
+		    	var editor = new UE.ui.Editor({initialFrameHeight:500});
+		    	editor.render("myEditor");
+			</script>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->fileField($model,'picture'); 
+			if(!empty($model->picture)) echo '原图片：'.$model->picture; 
+		?>
 		<?php echo $form->error($model,'picture'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'comment_count'); ?>
-		<?php echo $form->textField($model,'comment_count'); ?>
-		<?php echo $form->error($model,'comment_count'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'sale_count'); ?>
-		<?php echo $form->textField($model,'sale_count'); ?>
-		<?php echo $form->error($model,'sale_count'); ?>
 	</div>
 
 	<div class="row">

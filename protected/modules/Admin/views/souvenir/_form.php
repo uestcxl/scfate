@@ -56,12 +56,20 @@
 		<?php echo $form->error($model,'school_id'); ?>
 	</div>
 
+	<!--ueditor js-->
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl.'/protected/extensions/ueditor/ueditor.config.js'; ?>"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl.'/protected/extensions/ueditor/ueditor.all.js'; ?>"></script>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'description',array('id'=>'myEditor')); ?>
+			<script type="text/javascript">
+		    	var editor = new UE.ui.Editor({initialFrameHeight:500});
+		    	editor.render("myEditor");
+			</script>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'sort_id'); ?>

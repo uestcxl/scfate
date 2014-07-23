@@ -42,6 +42,11 @@ class Clothes extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, clothesname, rent, cash_pledge, reserve, sort_id, description, picture, comment_count, sale_count, size', 'safe', 'on'=>'search'),
+			array('picture', 'file', 'allowEmpty'=>true,
+				'types'=>'jpg, jpeg, gif, png',
+				'maxSize'=>1024 * 512 * 1, // 512kb
+				'tooLarge'=>'上传文件超过 512KB，无法上传。',
+		),
 		);
 	}
 
@@ -63,16 +68,16 @@ class Clothes extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'clothesname' => 'Clothesname',
+			'clothesname' => '衣服名称',
 			'rent' => 'Rent',
-			'cash_pledge' => 'Cash Pledge',
-			'reserve' => 'Reserve',
-			'sort_id' => 'Sort',
-			'description' => 'Description',
-			'picture' => 'Piture',
-			'comment_count' => 'Comment Count',
-			'sale_count' => 'Sale Count',
-			'size' => 'Size',
+			'cash_pledge' => '租金',
+			'reserve' => '库存',
+			'sort_id' => '分类',
+			'description' => '详细描述',
+			'picture' => '添加缩略图',
+			'comment_count' => '评论数量',
+			'sale_count' => '历史销售数量',
+			'size' => '大小型号(按照规定的格式填写)',
 		);
 	}
 
@@ -120,5 +125,11 @@ class Clothes extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getsortlist()
+	{
+		$sortlist=Sort::model()->findAllByAttributes(array('sort_type'=>0));
+		 return  CHtml::listData($sortlist,'id','sort_name');
 	}
 }

@@ -5,6 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>欢迎来到校缘网，邂逅最青春的校缘</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/index.css">
