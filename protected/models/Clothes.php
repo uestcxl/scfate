@@ -69,8 +69,8 @@ class Clothes extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'clothesname' => '衣服名称',
-			'rent' => 'Rent',
-			'cash_pledge' => '租金',
+			'rent' => '租金',
+			'cash_pledge' => '押金',
 			'reserve' => '库存',
 			'sort_id' => '分类',
 			'description' => '详细描述',
