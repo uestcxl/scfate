@@ -47,6 +47,11 @@ class User extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, name, password, phone, mail, QQ', 'safe', 'on'=>'search'),
+			array('picture', 'file', 'allowEmpty'=>true,
+				'types'=>'jpg, jpeg, gif, png',
+				'maxSize'=>1024 * 256 * 1, // 1MB
+				'tooLarge'=>'上传文件超过 256KB，无法上传。',
+		),
 		);
 	}
 

@@ -1,3 +1,10 @@
+<style type="text/css">
+	#changepic{
+		padding-left: 50px;
+		padding-top: 20px;
+		border: 0px;
+	}
+</style>
  	<!--lable begin-->
 	<div  class="lable">
 		<span>ACCOUNT</span>
@@ -15,8 +22,11 @@
 		<div>
 			<div id="nav_information_concent">
 				<div class="account_head">
-					<img src="">
-					<input type="button" class="btn btn_no" value="更换头像">
+					<?php if (empty($me->picture)) {?>
+						<img src="<?php echo Yii::app()->baseUrl.'/images/user/default.gif'?>">
+					<?php }else{ ?>
+						<img src="<?php echo Yii::app()->baseUrl.'/images/user/'.$me->picture?>">
+					<?php }?>
 				</div>
 				<div class="information_form">
 					<form>
@@ -84,36 +94,41 @@
 					</form>
 				</div>
 			</div>
-		
-			<?php $this->endWidget(); ?>
+		<?php $this->endWidget(); ?>
+
+		<div id="nav_reInformation_concent">
+
+			<!--用户头像-->
 	            <?php $form=$this->beginWidget('CActiveForm', array(
                                    'id'=>'changepic',
                                    'action'=>array('user/changepic'),
                                    'enableAjaxValidation'=>false,
+                                   	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
             	            )); ?>
-			<div id="nav_reInformation_concent">
 				<div class="account_head">
-				           
-				                     		<img src="">
-					                                <input type="file" class="btn" value="更换头像">		
-					                                	                   
+					<?php if (empty($me->picture)) {?>
+						<img src="<?php echo Yii::app()->baseUrl.'/images/user/default.gif'?>">
+					<?php }else{ ?>
+						<img src="<?php echo Yii::app()->baseUrl.'/images/user/'.$me->picture?>">
+					<?php }?>
+					<?php echo $form->fileField($model,'picture',array('value'=>'更换头像','id'=>'changepic')); ?>
+					<?php echo $form->error($model,'picture'); ?>
+					<div class="form_btn">
+							<input type="submit" class="btn" value="提交头像">
+					</div>
 				</div>
-			                
 		<?php $this->endWidget(); ?>
 	
-	                <?php $form=$this->beginWidget('CActiveForm', array(
+	    <?php $form=$this->beginWidget('CActiveForm', array(
                                    'id'=>'changeziliao',
                                    'action'=>array('user/changeziliao'),
                                    'enableAjaxValidation'=>false,
             	            )); ?>
 				<div class="reInformation_form">
 					<form>
-					             <div class="form_part">
+					    <div class="form_part">
 							<span>用户名：</span>
-
-							<?php echo Yii::app()->user->name;?>			
-
-							
+							<?php echo Yii::app()->user->name;?>
 						</div>
 				
 						<div class="form_part">
