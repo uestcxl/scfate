@@ -1,0 +1,254 @@
+.dress_rent{
+	overflow:hidden;
+}
+.menu{
+	//height: 800px;
+	width: 200px;
+	float: left;
+}
+.menu_part{
+	height: 330px;
+	width: 200px;
+	margin-bottom: 30px;
+	background-color: #fff;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+}
+.menu_part .head{
+	height: 40px;
+	background-color: #246966;
+	color: #fff;
+	line-height: 40px;
+}
+.menu_part .body{
+	padding: 30px 0;
+}
+.dress_rent_content{
+	
+	width: 790px;
+	float: right;
+	
+}
+.dress_introduce{
+	overflow:hidden;
+}
+.dress_introduce .best_item,.new_dress{
+	background-color: #fff;
+	margin-bottom: 4px;
+}
+.dress_introduce .dress_type {	
+	height:36px;
+	line-height: 36px;
+    background: url(../img/dress_introduce_bg.jpg) repeat-x;
+    
+}
+.dress_rent_content h2{
+	
+    font-size: 20px;
+    color:#fff;
+    
+    margin-left: 16px;
+}
+.dress_introduce ul{
+	overflow: hidden;
+}
+.dress_introduce .dress_details{
+	float:left;
+	margin:14px;
+	margin-right:0;
+}
+.dress_introduce .dress_details span{
+	display:block;
+}
+
+.dress_rent_content .product_name{
+	margin-top: 14px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+.dress_rent_content .rent{
+ 
+	font-size: 16px;
+	color:#00662b;
+	font-weight: bold;
+}
+.costumes{
+	overflow:hidden;
+	background-color: #fff;
+	margin-top:7px;
+}
+.costumes .dress_show{
+ 	height:36px;
+	line-height: 36px;
+	background-color: #007e7b;
+}
+.costumes .dress_detail{
+	float:left;
+	margin:14px;
+}
+.costumes .dress_detail span{
+    display:block;
+}
+.costumes .dress_photo{
+	
+	margin:22px;
+	margin-right:0;
+}
+
+/* 显示页面  */
+.rent_show{
+	overflow: hidden;
+}
+
+.rent_show_content{
+	overflow: hidden;
+	width:790px;
+	float:right;
+	background: #fff;
+
+}
+.rent_show_content .show{
+	height:26px;
+	line-height: 26px;
+	background: url(../img/dress_introduce_bg.jpg) repeat-x;
+
+}
+.rent_show_content .show h2{
+	 font-size: 14px;
+     color:#fff;
+     margin-left: 16px;
+}
+.rent_show_content .condition{
+	margin:98px 18px 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #e5e5e5;
+	
+}
+.rent_show_content .condition span{
+	display: inline-block;
+	margin-left: 8px;
+	margin-top: 58px;
+
+}
+.rent_show_content .paging{
+	overflow: hidden;
+	margin-top: 12px;
+	margin-bottom: 6px;
+
+}
+.rent_show_content .paging a{
+    display:block;
+    float:right;
+    width: 80px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    background-color:#13b5b1;
+    border:1px solid #008b8d;
+
+}
+.rent_show_content .paging .next{
+	
+	margin-right: 6px;
+	margin-left: 90px;
+
+}
+.rent_show_content .rent_show_list{
+	margin-left: 10px;
+}
+.rent_show_content .rent_show_list ul{
+	overflow: hidden;
+}
+.rent_show_content .rent_show_list .dress_details{
+	float:left;
+	margin:14px;
+	margin-right:0;
+}
+.rent_show_content .rent_show_list .dress_details span{
+	display:block;
+}
+
+.rent_show_content .rent_show_list .product_name{
+	margin-top: 14px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+.rent_show_content .rent_show_list .rent{
+ 
+	font-size: 16px;
+	color:#00662b;
+	font-weight: bold;
+}
+
+/*商品详情页面*/
+.product_detail{
+	overflow: hidden;
+}
+.product_detail_content{
+	overflow: hidden;
+	width:790px;
+	float:right;
+	background: #fff;
+}
+.product_detail_content .bg{
+	height:28px;
+	background: url(../img/dress_introduce_bg.jpg) repeat-x; 
+}
+.product_detail_content .product_name{
+	height:52px;
+	line-height: 52px;
+	font-size: 24px;
+	margin:0 18px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.product_detail_content .product_information{
+	margin-top: 24px;
+	margin-left: 48px;
+	overflow: hidden;
+	position:relative;
+	
+	
+}
+.product_detail_content .product_information .show_photo{
+	float:left;
+}
+.product_detail_content .product_information .show_details{
+	float:left;
+	margin-left: 60px;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.product_detail_content .product_information .show_details li{
+	margin-bottom: 14px;
+}
+.product_detail_content .product_information .show_details .rental{
+	font-size: 24px;
+}
+.product_detail_content .product_information .show_details .deposit{
+	font-size: 16px;
+}
+
+.product_detail_content .product_information .shopping_cart{
+	position:absolute;
+	left:360px;
+	bottom:0; 
+
+}
+.product_detail_content .product_information .collect{
+	position:absolute;
+	right:70px;
+	bottom:0; 
+}
+.product_detail_content  .button_box{
+	margin-top: 120px;
+	border-top:6px solid #13b5b1;
+	padding-left: 48px;
+}
+.product_detail_content  .button_box a{
+	display: inline-block;
+	margin-left: -7px;
+}
+.product_detail_content  .button_box a:hover{
+	background: url(../img/PLDH_01 _hover.png)
+}
