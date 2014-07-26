@@ -51,7 +51,9 @@ class Area extends CActiveRecord
 		return array(
 			'photographs' => array(self::HAS_MANY, 'Photographs', 'school_id'),
 			'sentSpot' => array(self::HAS_ONE, 'SentSpot', 'id'),
-			'souvenirs' => array(self::HAS_MANY, 'Souvenir', 'area_id'),
+			//'souvenirs' => array(self::HAS_MANY, 'Souvenir', 'area_id'),
+			'souvenirs' => array(self::HAS_MANY, 'Souvenir', 'school_id'),
+
 		);
 	}
 
