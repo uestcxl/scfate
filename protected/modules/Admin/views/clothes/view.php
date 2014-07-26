@@ -27,10 +27,12 @@ $this->menu=array(
 		'cash_pledge',
 		'reserve',
 		'sort_id',
-		'description',
+		// 'description',
 		'picture',
 		'comment_count',
 		'sale_count',
 		'size',
 	),
 )); ?>
+
+<?php echo $model->description;?>

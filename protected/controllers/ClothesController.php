@@ -2,11 +2,8 @@
 
 class ClothesController extends Controller
 {
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
+
+	public $layout='//layouts/clothes';
 
 	/**
 	 * @return array action filters
@@ -28,7 +25,7 @@ class ClothesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','sort'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -54,10 +51,15 @@ class ClothesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Clothes');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$criteria=new CDbCriteria;
+		$count=Clothes::model()->count($criteria);
+
+		$pager=new CPagination($count);
+		$pager->pageSize=15;
+		$pager->applyLimit($criteria);
+
+		$clothes=Clothes::model()->findAll($criteria);
+		$this->render('index',array('pages'=>$pager,'clothes'=>$clothes));
 	}
 
 
@@ -86,6 +88,64 @@ class ClothesController extends Controller
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+
+	public function actionSort($sort=null,$type=null){
+		$layout='//layouts/clothes';
+		if (empty($type)) {
+			$criteria=new CDbCriteria;
+			$criteria->addCondition("sort_id=:sort");
+			$criteria->params[':sort']=$sort;
+			$count=Clothes::model()->count($criteria);
+	
+			$pager=new CPagination($count);
+			$pager->pageSize=15;
+			$pager->applyLimit($criteria);
+	
+			$clothes=Clothes::model()->findAll($criteria);
+			$this->render('sort',array('clothes'=>$clothes,'pages'=>$pager,'sort'=>$sort));
+		}
+		else{
+			switch ($type) {
+				case '0':
+					$sorttype='rent';
+					break;
+
+				case '1':
+					$sorttype='sale_count';
+					break;
+				
+				default:
+					$sorttype='sale_count';
+					break;
+			}
+			if (empty($sort)) {
+				$criteria=new CDbCriteria;
+				$criteria->order=$sorttype;
+				$count=Clothes::model()->count($criteria);
+		
+				$pager=new CPagination($count);
+				$pager->pageSize=15;
+				$pager->applyLimit($criteria);
+		
+				$clothes=Clothes::model()->findAll($criteria);
+				$this->render('sort',array('clothes'=>$clothes,'pages'=>$pager,'type'=>$type));
+			}
+			else{
+				$criteria=new CDbCriteria;
+				$criteria->order=$sorttype;
+				$count=Clothes::model()->count($criteria);
+				$criteria->addCondition("sort_id=:sort");
+				$criteria->params[':sort']=$sort;
+		
+				$pager=new CPagination($count);
+				$pager->pageSize=15;
+				$pager->applyLimit($criteria);
+		
+				$clothes=Clothes::model()->findAll($criteria);
+				$this->render('sort',array('clothes'=>$clothes,'pages'=>$pager,'type'=>$type,'sort'=>$sort));
+			}
 		}
 	}
 }

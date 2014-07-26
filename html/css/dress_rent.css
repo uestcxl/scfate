@@ -145,29 +145,6 @@
 	margin-left: 8px;
 	
 }
-.paging{
-	overflow: hidden;
-	margin-top: 12px;
-	margin-bottom: 6px;
-
-}
- .paging a{
-    display:block;
-    float:right;
-    width: 80px;
-    height:30px;
-    line-height: 30px;
-    text-align: center;
-    background-color:#13b5b1;
-    border:1px solid #008b8d;
-
-}
- .paging .next{
-	
-	margin-right: 6px;
-	margin-left: 90px;
-
-}
 .rent_show_content .rent_show_list{
 	margin-left: 10px;
 }
@@ -400,4 +377,38 @@
 	display: none;
 	background-color: #fff;
 	min-height: 300px;
+}
+
+li img{
+	height: 136px;
+	width: 136px;
+}
+
+.paging{
+	overflow: hidden;
+	margin-top: 12px;
+	margin-bottom: 6px;
+}
+ .paging a{
+    display:block;
+    float:right;
+    width: 80px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    background-color:#13b5b1;
+    border:1px solid #008b8d;
+
+}
+ .paging .next{
+	
+	margin-right: 6px;
+	margin-left: 90px;
+
+}
+
+.pager {
+	margin-top: 12px;
+	margin-bottom: 10px;
+	margin-left: 280px
 }

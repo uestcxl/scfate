@@ -51,7 +51,7 @@
 			<div>
 				<span><a href="<?php echo Yii::app()->createUrl('site/index')?>">网站主页</a></span>
 				<span><a href="<?php echo Yii::app()->createUrl('photographs/index')?>">作品展示</a></span>
-				<span><a href="#">服饰租赁</a></span>
+				<span><a href="<?php echo Yii::app()->createUrl('clothes/index')?>">服饰租赁</a></span>
 				<span><a href="<?php echo $this->createUrl('souvenir/index')?>">纪念礼品</a></span>
 				<span><a href="<?php echo $this->createUrl('/site/about')?>">关于我们</a></span>
 			</div>
