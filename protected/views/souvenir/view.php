@@ -1,15 +1,19 @@
+<?php
+	$school=Area::model()->findByPk($model->school_id);
+	$schoolname=$school->area_name;
+?>
 <div class="product_detail_content">
 			<div class="bg"></div>
 			<div class="product_name"><h2>商品名称</h2></div>
 			<div class="product_information">
-				<img src="<?php echo Yii::app()->baseUrl?>/html/img/dress_super.jpg" class="show_photo" />
+				<img style="height: 297px;width: 297px" src="<?php echo Yii::app()->baseUrl.'/images/souvenir/'.$model->picture?>" class="show_photo" />
 				<div class="show_details">
 					<ul>
 						<li class="rental">现价:￥<?php echo $model->price;?></li>
-						<li class="deposit">原价:￥<?php echo $model->reduce_price;?></li>
+						<li class="deposit">原价:<s>￥<?php echo $model->reduce_price;?></s></li>
 						<li>所在地：<?php echo $model->area->area_name;?></li>
+						<li>所在学校：<?php echo $schoolname;?></li>
 						<li>已售：<?php echo $model->sale_count;?></li>
-						
 						
 						<li>选择数量</li>
 					</ul>

@@ -8,10 +8,10 @@
 ?>
 <div class="show"><h2>显示</h2></div>
 <div class="condition">
-	<span>排序</span>
+	<span style="font-weight:bold">排序</span>
 	<span><a href="<?php echo $this->createUrl('sort',array('type'=>'1','sort'=>$sort))?>">综合</a></span>
 	<span><a href="<?php echo $this->createUrl('sort',array('type'=>'1','sort'=>$sort))?>">人气</a></span>
-	<span><a href="<?php echo $this->createUrl('sort',array('type'=>'0','sort'=>$sort))?>">价格</a></span>
+	<span><a href="<?php echo $this->createUrl('sort',array('type'=>'2','sort'=>$sort))?>">价格</a></span>
 </div>
 
 <div class="rent_show_list">

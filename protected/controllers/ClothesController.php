@@ -108,7 +108,7 @@ class ClothesController extends Controller
 		}
 		else{
 			switch ($type) {
-				case '0':
+				case '2':
 					$sorttype='rent';
 					break;
 
@@ -120,11 +120,12 @@ class ClothesController extends Controller
 					$sorttype='sale_count';
 					break;
 			}
+			// echo 'aaaa';die;
 			if (empty($sort)) {
 				$criteria=new CDbCriteria;
-				$criteria->order=$sorttype;
+				$criteria->order=$sorttype.' desc';
 				$count=Clothes::model()->count($criteria);
-		
+				
 				$pager=new CPagination($count);
 				$pager->pageSize=15;
 				$pager->applyLimit($criteria);
@@ -134,7 +135,7 @@ class ClothesController extends Controller
 			}
 			else{
 				$criteria=new CDbCriteria;
-				$criteria->order=$sorttype;
+				$criteria->order=$sorttype.' desc';
 				$count=Clothes::model()->count($criteria);
 				$criteria->addCondition("sort_id=:sort");
 				$criteria->params[':sort']=$sort;
