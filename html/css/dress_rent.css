@@ -145,13 +145,13 @@
 	margin-left: 8px;
 	
 }
-.rent_show_content .paging{
+.paging{
 	overflow: hidden;
 	margin-top: 12px;
 	margin-bottom: 6px;
 
 }
-.rent_show_content .paging a{
+ .paging a{
     display:block;
     float:right;
     width: 80px;
@@ -162,7 +162,7 @@
     border:1px solid #008b8d;
 
 }
-.rent_show_content .paging .next{
+ .paging .next{
 	
 	margin-right: 6px;
 	margin-left: 90px;
@@ -313,19 +313,91 @@
 	background-color: #fff;
 	min-height: 300px;
 }
+#nav_product_detail_content .attributes{
+	padding:26px;
+}
+#nav_product_detail_content .attributes-list{
+	margin:0 auto;
+	
+	overflow: hidden;
+}
+#nav_product_detail_content .attributes-list li{
+	float:left;
+	width: 206px;
+	height:24px;
+	line-height: 24px;
+	margin:2px 20px;
+
+}
+
+
 #nav_product_comment_content{
-	display: block;
+	display: none;
 	background-color: #fff;
 	min-height: 300px;
 }
+#nav_product_comment_content .review_list{
+	overflow: hidden;
+	margin-left: 40px;
+	margin-top: 10px;
+	height: 30px;
+	line-height: 30px;
+
+
+}
+#nav_product_comment_content .review_list li{
+	float:left;
+	min-width: 80px;
+	margin-right: 10px;
+}
+#nav_product_comment_content .buyer{
+	float:left;
+	width:100px;
+	text-align: center;
+}
+#nav_product_comment_content .comment_content{
+	padding:8px 22px;
+	height:80px;
+	line-height: 1.4;
+
+}
+#nav_product_comment_content .comment_time{
+	height:32px;
+	margin-left: 120px;
+}
+#nav_product_comment_content .comment_list{
+	border-bottom: 1px solid #b0b0b0;
+}
+
 #nav_sales_record_content{
-	display: block;
+	display: none;
 	background-color: #fff;
 	min-height: 300px;
 	
 }
+#nav_sales_record_content table {
+	margin-top: 8px;
+	width:100%;
+}
+#nav_sales_record_content  th{
+	width:80px;
+	font-weight: bold;
+	height:30px;
+	line-height: 30px
+}
+
+#nav_sales_record_content  td{
+	text-align: center;
+	height:30px;
+	line-height: 30px;
+	border-bottom: 1px dashed #b0b0b0;
+}
+#nav_sales_record_content  th .styles{
+	width:160px;
+}
+
 #nav_consultation_content{
-	display: block;
+	display: none;
 	background-color: #fff;
 	min-height: 300px;
 }
