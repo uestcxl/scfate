@@ -27,9 +27,13 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$criteria=new CDbCriteria;
+		$criteria->limit=5;
+		$criteria->order='create_time desc';
+		$criteria->addCondition("view=1");
+
+		$indexpics=Indexpic::model()->findAll($criteria);
+		$this->render('index',array('indexpics'=>$indexpics));
 	}
 
 	/**

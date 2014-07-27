@@ -2426,3 +2426,12 @@ REQUEST_URI=/scfate/index.php?r=souvenir/sort&sort=4&type=0
 in /var/www/scfate/protected/views/souvenir/index.php (21)
 in /var/www/scfate/protected/controllers/SouvenirController.php (106)
 in /var/www/scfate/index.php (13)
+2014/07/27 21:58:41 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/27 21:58:51 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/27 21:59:17 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)

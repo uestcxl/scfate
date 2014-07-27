@@ -35,11 +35,12 @@ class Order extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('goods_name, goods_id, price, user_id, user_name, create_time, goods_type, order_status', 'required'),
-			array('goods_id, user_id, goods_type, order_status', 'numerical', 'integerOnly'=>true),
+			array('address_id,zgoods_id, user_id, goods_type, order_status', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
 			array('goods_name, user_name', 'length', 'max'=>45),
 			array('express_id', 'length', 'max'=>60),
 			array('message', 'safe'),
+			array('address_id'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, goods_name, goods_id, price, user_id, user_name, create_time, goods_type, order_status, message, express_id', 'safe', 'on'=>'search'),

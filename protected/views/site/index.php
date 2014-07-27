@@ -1,3 +1,7 @@
+<head>
+	<script src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.js"></script>
+	<script src="<?php echo Yii::app()->baseUrl?>/html/js/photo.js"></script>
+</head>
 <?php
 	$criteria=new CDbCriteria;
 	$criteria->limit=3;
@@ -7,7 +11,19 @@
 	<!-- section  begin -->
 		<!-- slider  begin -->
 		<div class="slider">
-			<img src="<?php echo Yii::app()->baseUrl?>/html/img/index_slider_tempPic.png">
+			
+			<div class="banner">
+				<div class="banner-btn">
+					<a href="javascript:;" class="prevBtn"><i></i></a>
+					<a href="javascript:;" class="nextBtn"><i></i></a>
+				</div>
+				<ul class="banner-img">
+					<?php foreach ($indexpics as $key => $indexpic) {?>
+						<li><a href="#"><img src="<?php echo Yii::app()->baseUrl.'/images/indexpic/'.$indexpic->picture?>"></a></li>
+					<?php }?>
+				</ul>
+				<ul class="banner-circle"></ul>
+			</div>
 		</div>
 		<!-- slider end -->
 		<!-- announcement&promotion  begin -->
