@@ -53,10 +53,15 @@ class PhotographsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Photographs');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$criteria=new CDbCriteria;
+		$count=Photographs::model()->count($criteria);
+
+		$pager=new CPagination($count);
+		$pager->pageSize=6;
+		$pager->applyLimit($criteria);
+
+		$photographs=Photographs::model()->findAll($criteria);
+		$this->render('index',array('pages'=>$pager,'photographs'=>$photographs));
 	}
 
 
@@ -88,8 +93,22 @@ class PhotographsController extends Controller
 		}
 	}
 
-	public function actionSort($sort){
-		$photographs=Photographs::model()->findAllByAttributes(array('sort_id'=>$sort));
-		$this->render('sort',array('photographs'=>$photographs));
+	public function actionSort($sort=null){
+		if (is_numeric($sort)) {
+			$criteria=new CDbCriteria;
+			$criteria->addCondition('sort_id=:sort');
+			$criteria->params[':sort']=$sort;
+			$count=Photographs::model()->count($criteria);
+	
+			$pager=new CPagination($count);
+			$pager->pageSize=6;
+			$pager->applyLimit($criteria);
+	
+			$photographs=Photographs::model()->findAll($criteria);
+			$this->render('sort',array('pages'=>$pager,'photographs'=>$photographs));
+		}
+		else{
+			$this->redirect('index');
+		}
 	}
 }
