@@ -12,5 +12,18 @@ function showButton(item){
 		document.getElementById("nav_"+arguments[i]).className="no";
 	}
 	document.getElementById("nav_"+item+"_content").style.display="block";
-	document.getElementById("nav_"+item).className="select";  
+	document.getElementById("nav_"+item).className="select"; 
 }
+
+$(document).ready(function(){
+	$('.click').click(function(){
+		$('.pop_bg').show();
+		$('.edit_pop').show();
+	});
+});
+$(document).ready(function(){
+	$('.delete').click(function(){
+		$('.pop_bg').show();
+		$('.pop_delete').show();
+	});
+});

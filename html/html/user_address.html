@@ -8,7 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 
-	<link rel="stylesheet" type="text/css" href="../css/user.css">
+	<link rel="stylesheet" type="text/css" href="../css/user.css">	
+	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 <body>
@@ -106,8 +107,8 @@
 									<td>123456</td>
 									<td>12345678901</td>
 									<td class= "table_right_button">
-										<input type="button" value="编辑">
-										<input type="button" value="删除">
+										<a href="javascript:;"class="click" >编辑</a>
+										<a href="javascript:;"class="delete">删除</a>
 									</td>
 								</tr>
 							</table>
@@ -159,6 +160,68 @@
 					</div>
 				</div>
 				<!--account end-->
+				<div class="pop_area">
+				<div class="pop_bg"></div>
+				<div class="edit_pop">			
+							<div>
+								<form>
+									<div class="form_part">
+										<span>收货人姓名：</span>
+										<input type="text">
+										<span class="form_part_right">请填写您的真实姓名</span>		
+									</div>
+									
+									<div class="form_part">
+										<span>所在地区：</span>
+										<select>
+  											<option value ="none">请选择</option>
+  											<option value ="sichuan">四川省</option>
+										</select>
+										<select>
+  											<option value ="none">请选择</option>
+  											<option value ="成都">成都市</option>
+										</select>
+									</div>
+									<div class="form_part">
+										<span>详细地址：</span>
+										<input type="text">
+										<span class="form_part_right">不必重复填写地区</span>
+									</div>
+									<div class="form_part">
+										<span>邮政编码：</span>
+										<input type="text">
+									</div>
+									<div class="form_part">
+										<span>电话号码：</span>
+										<input type="text">
+										<span class="form_part_right">区号-电话号码-分号</span>
+									</div>
+									<div class="form_part">
+										<span>手机号码：</span>
+										<input type="text" >
+									</div>
+									<div class="form_btn">
+										<input type="submit" class="btn" value="保存地址">
+									</div>
+								</form>
+							</div>
+					
+				</div>
+				</div>
+				<!--pop end -->
+				<!--pop_delete start-->
+				<div class="pop_delete_area">
+					<div class="pop_bg"></div>
+					<div class="pop_delete">
+						
+						<p>确定删除该地址嘛？</p>
+						<a href="" class="delete">确定</a>
+						<a href="" class="delete_no">返回</a>
+						
+					</div>
+				</div>
+
+				<!--pop_delete end-->
 			</div>
 			<!--user_section end-->
 			<!--user end-->

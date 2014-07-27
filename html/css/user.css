@@ -195,10 +195,13 @@ section{
 .table_right_button{
 	text-align: right;
 }
-.table_right_button input{
+.table_right_button a{
+	display: inline-block;
+	text-align: center;
 	margin-left: 3px;
 	width: 50px;
 	height: 25px;
+	line-height: 25px;
 	border-radius: 3px;
 	color: #fff;
 	border: 0;
@@ -220,6 +223,88 @@ section{
 	width: 250px;
 	height: 25px;
 }
+/*------------弹窗部分-----------------*/
+.pop_bg{
+	display: none;
+	position:fixed;
+	z-index:1;
+	opacity:0.5;
+	background-color: black;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.pop_area,.pop_delete_area{
+	position:relative;
+}
+.edit_pop{
+	display:none;
+	z-index:2;
+	width:550px;
+	height:400px;
+	position:absolute;
+	background-color: #fff;
+	
+	border:10px solid #009e96;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	
+
+}
+.edit_pop .form_part{
+	width:500px;
+
+}
+.edit_pop .form_part input{
+	width: 250px;
+	height: 25px;
+}
+
+.pop_delete{
+	display: none;
+	width: 250px;
+	height:100px;
+	z-index:2;
+	position:absolute;
+	background-color: #fff;
+	
+	border:5px solid #009e96;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	margin-left: 140px;
+
+}
+.pop_delete p{
+	font-size: 18px;
+	margin-top: 25px;
+	text-align: center;
+
+}
+.pop_delete a{
+	display: inline-block;
+	text-align: center;
+	margin-left: 3px;
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 3px;
+	color: #fff;
+	border: 0;
+	background-color: #009e96;
+	margin-top: 20px;	
+}
+.pop_delete .delete{
+	margin-left: 30px;
+}
+.pop_delete .delete_no{
+	margin-left: 84px;
+}
+
 
 /*-------------indents-----------------*/
 .indents_select{
@@ -318,6 +403,9 @@ section{
 .indent_do_right input:hover{
 	background-color: #00736d;
 }
+
+
+
 
 
 /*--------------indents detail--------------*/
