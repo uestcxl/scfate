@@ -19,7 +19,7 @@
 					</ul>
 				</div>
 				<div class="button">
-					<a href=""class="shopping_cart"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
+					<a href=""class="shopping_cart" type="1" cid="<?php echo $model->id;?>"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
 					<a href=""class="collect"><img src="<?php echo Yii::app()->baseUrl?>/html/img/SCJ.png" /></a>
 			
 				</div>

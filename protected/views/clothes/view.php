@@ -10,12 +10,12 @@
 					<ul>
 						<li class="rental">租借价格:￥<?php echo $model->rent;?>/天</li>
 						<li>已售：<?php echo $model->sale_count;?></li>
-						
-						<li>选择数量</li>
+						<li>型号:</li>
+						<li>选择数量:</li>
 					</ul>
 				</div>
 				<div class="button">
-					<a href=""class="shopping_cart"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
+					<a href=""class="shopping_cart" type="0" cid="<?php echo $model->id?>"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
 					<a href=""class="collect"><img src="<?php echo Yii::app()->baseUrl?>/html/img/SCJ.png" /></a>
 			
 				</div>
