@@ -54,7 +54,15 @@ class SouvenirController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->render('index');
+		$criteria=new CDbCriteria;
+		$count=Souvenir::model()->count($criteria);
+
+		$pager=new CPagination($count);
+		$pager->pageSize=6;
+		$pager->applyLimit($criteria);
+
+		$souvenir=Souvenir::model()->findAll($criteria);
+		$this->render('index',array('pages'=>$pager,'souvenir'=>$souvenir));
 	}
 
 	/**
@@ -85,16 +93,43 @@ class SouvenirController extends Controller
 		}
 	}
 
-	public function actionSort($sort,$type){
+	public function actionSort($sort=null,$type=null){
 		if ($type===0) {
-			$souvenir=Souvenir::model()->findAllByAttributes(array('sort_id'=>$sort));
-			$this->render('sort',array('souvenir'=>$souvenir));
+			$criteria=new CDbCriteria;
+			$criteria->addCondition("sort_id=:sort");
+			$criteria->params[':sort']=$sort;
+			$count=Souvenir::model()->count($criteria);
+	
+			$pager=new CPagination($count);
+			$pager->pageSize=6;
+			$pager->applyLimit($criteria);
+	
+			$souvenir=Souvenir::model()->findAll($criteria);
+			$this->render('sort',array('pages'=>$pager,'souvenir'=>$souvenir));
 		}
 		elseif ($type===1) {
-			$souvenir=Souvenir::model()->findAllByAttributes(array('school_id'=>$sort));
-			$this->render('sort',array('souvenir'=>$souvenir));
+			$criteria=new CDbCriteria;
+			$criteria->addCondition("school_id=:sort");
+			$criteria->params[':sort']=$sort;
+			$count=Souvenir::model()->count($criteria);
+	
+			$pager=new CPagination($count);
+			$pager->pageSize=6;
+			$pager->applyLimit($criteria);
+	
+			$souvenir=Souvenir::model()->findAll($criteria);
+			$this->render('sort',array('pages'=>$pager,'souvenir'=>$souvenir));
 		}
-		else
-			$this->render('index');
+		else{
+			$criteria=new CDbCriteria;
+			$count=Souvenir::model()->count($criteria);
+	
+			$pager=new CPagination($count);
+			$pager->pageSize=6;
+			$pager->applyLimit($criteria);
+	
+			$souvenir=Souvenir::model()->findAll($criteria);
+			$this->render('index',array('pages'=>$pager,'souvenir'=>$souvenir));
+		}
 	}
 }

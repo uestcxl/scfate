@@ -54,6 +54,7 @@ class User extends CActiveRecord
 		),
 		);
 	}
+	
 
 	/**
 	 * @return array relational rules.

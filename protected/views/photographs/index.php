@@ -1,6 +1,3 @@
-<?php
-	$photographs=Photographs::model()->findAll();
-?>
 <div class="works_concent"> 
 				<div>
 					<?php if(!empty($photographs)) {foreach ($photographs as $key => $photograph) {?>

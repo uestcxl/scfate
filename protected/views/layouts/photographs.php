@@ -21,15 +21,6 @@
 						<?php }}?>
 					</div>
 				</div>
-<!-- 				<div class="menu_part">
-	<div class="head"><h1>按场景分类</h1></div>
-	<div class="body">
-		<div><a href="">主楼</a></div>
-		<div><a href="">图书馆</a></div>
-		<div><a href="">人工湖</a></div>
-		<div><a href="">银杏</a></div>
-	</div>
-</div> -->
 			</div>
 
 			<?php echo $content;?>

@@ -84,3 +84,162 @@
 	color:#990000;
 	font-weight:800;
 }
+.total{
+	text-align: right;
+	padding: 10px;
+	font-size: 18px;
+}
+.shopping_btn{
+	padding: 5px;
+	text-align: right;
+}
+.shopping_btn span a{
+	margin: 0 5px;
+	text-decoration: underline;
+	color: #00f;
+}
+.shopping_btn input{
+	min-width: 75px;
+	height: 30px;
+	line-height: 24px;
+	color: #fff;
+	background-color: #f97f09;
+	cursor: pointer;
+}
+
+
+.shopping_address_concent{
+	margin: 10px 0;
+}
+.shopping_address_left{
+	float: left;
+	width: 750px;
+	height:600px;
+}
+.shopping_address_right{
+	float: right;
+	height: 600px;
+	width: 240px;
+}
+.shopping_address_leftPart{
+	background-color:#fff;
+	width: 750px;
+	min-height: 100px;
+	margin-bottom: 15px ;
+}
+.shopping_address_leftPart h2,.shopping_address_right h2{
+	background-color: #8b8b8b;
+	display: block;
+	height: 30px;
+	line-height: 28px;
+	color: #fff;
+	padding: 0 5px;
+}
+.shopping_address_leftPart h3{
+	display: inline;
+	font-weight: bold;
+}
+.shopping_address_leftPart p{
+	line-height: 20px;
+	margin: 3px;
+}
+.address_choose_right{
+	float: right;
+}
+.shopping_address_leftPart form{
+	padding: 5px 0 10px 0;
+	line-height: 20px;
+}
+.shopping_address_leftPart form span{
+	margin: 0 5px;
+}
+.shopping_address_leftPart form input{
+	margin: 0  0 0 20px;
+}
+.shopping_address_leftPart form textarea{
+	width: 700px;
+	margin: 0 20px;
+	height: 100px;
+}
+.shopping_sent{
+	width: 350px;
+}
+input.btn_green{
+	min-width: 75px;
+	height: 30px;
+	line-height: 24px;
+	color: #fff;
+	background-color: #13b5b1;
+	cursor: pointer;
+}
+
+.shopping_address_right iframe{
+	width: 240px;
+	min-height: 500px;
+}
+body.shopping_address_goods{
+	background-color: #fff;
+	width: 220px;
+	font-size: 12px;
+}
+body.shopping_address_goods a,body.shopping_address_goods a:visited{
+	cursor: pointer;
+	color: #5b5b5b;
+	color: inherit;
+	text-decoration: none;
+}
+body.shopping_address_goods a:hover{
+	color: #13b5b1;
+}
+body.shopping_address_goods .goods_part{
+	padding: 3px;
+	margin: 5px;
+}
+body.shopping_address_goods .goods_part .goods_photo,body.shopping_address_goods .goods_part .goods_concent{
+	display: inline-block;
+	vertical-align: top;
+	line-height: 30px;
+}
+
+body.shopping_address_goods .goods_photo{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #adadad;
+	display: inline-block;
+	vertical-align: middle;
+}
+body.shopping_address_goods .goods_part .goods_concent ._red{
+	color: red;
+}
+
+
+.shopping_ok_concent{
+	text-align: center;
+	margin: 10px 0;
+	line-height: 30px;
+	min-height: 220px;
+	background-color: #fff;
+}
+.shopping_ok_concent .state{
+	padding: 30px;
+}
+.shopping_ok_concent .state img,.shopping_ok_concent .state div{
+	display: inline-block;
+	vertical-align: middle;
+}
+.shopping_ok_concent .state img{
+	width: 100px;
+	height:100px; 
+}
+.shopping_ok_concent .state div{
+	text-align: left;
+}
+.shopping_ok_concent .state div .title{
+	font-size: 20px;
+	line-height: 40px;
+}
+.shopping_ok_concent div.all{
+	font-weight: bold;
+	background-color: #ddd;
+	height: 30px;
+}

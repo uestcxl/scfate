@@ -1,0 +1,41 @@
+<?php 
+	$sorts=Sort::model()->findAllByAttributes(array('sort_type'=>'0'));
+	$this->beginContent('//layouts/main');
+	if (empty($type)) {
+		$type=null;
+	}
+	if (empty($sort)) {
+		$sort=null;
+	}
+?>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/dress_rent.css">
+</head>
+	<!-- section  begin -->
+	<section>
+		<div class="ad">
+			<img src="<?php echo Yii::app()->baseUrl?>/html/img/AD.png">
+		</div>
+		<div class="rent_show">
+			<div class="menu">
+				<div class="menu_part">
+					<div class="menu_title"></div>
+					<div class="body">
+						<div class="menu_list"><a href="<?php echo $this->createUrl('index')?>">所有分类</a></div>
+						<?php foreach ($sorts as $key => $onesort) {?>
+							<div class="menu_list"><a href="<?php echo $this->createUrl('sort',array('sort'=>$onesort->id,'type'=>$type))?>"><?php echo $onesort->sort_name?></a></div>
+						<?php }?>
+					</div>
+			   </div>
+			</div>
+			<div class="rent_show_content">
+
+			<?php echo $content;?>
+
+			</div>
+		</div>
+	</section>
+	<!-- section  end -->
+
+<?php $this->endContent();?>
