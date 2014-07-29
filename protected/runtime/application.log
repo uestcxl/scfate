@@ -2435,3 +2435,35 @@ in /var/www/scfate/index.php (13)
 2014/07/27 21:59:17 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
 in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
 in /var/www/scfate/index.php (13)
+2014/07/27 22:01:29 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/29 13:28:48 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/29 13:28:49 [error] [php] Trying to get property of non-object (/var/www/scfate/protected/models/Indexpic.php:118)
+Stack trace:
+#0 /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php(72): Indexpic->save()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): IndexpicController->actionCreate()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): IndexpicController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): IndexpicController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): IndexpicController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): IndexpicController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=Admin/indexpic/create
+in /var/www/scfate/protected/models/Indexpic.php (118)
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (72)
+in /var/www/scfate/index.php (13)
+2014/07/29 13:31:24 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)
+2014/07/29 13:31:44 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
+in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
+in /var/www/scfate/index.php (13)

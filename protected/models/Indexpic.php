@@ -111,12 +111,17 @@ class Indexpic extends CActiveRecord
 		if (parent::beforeSave()) {
 			$this->create_time=date('Y-m-d H:i');
 			$count=count(Indexpic::model()->findAll());
+			if ($count===0) {
+				return true;
+			}
+			else{
 			$criteria=new CDbCriteria;
 			$criteria->limit=1;
 			$criteria->offset=$count-1;
 			$lastest=Indexpic::model()->find($criteria);
 			$this->id=$lastest->id+1;
 			return true;
+			}
 		}
 		else
 			return false;
