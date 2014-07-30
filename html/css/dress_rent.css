@@ -219,6 +219,63 @@
 .product_detail_content .product_information .show_details .deposit{
 	font-size: 16px;
 }
+.product_detail_content .product_information .model {
+	overflow: hidden;
+	margin-top: 10px;
+}
+.product_detail_content .product_information .model li{
+	overflow: hidden;
+	float:left;
+	margin-right: 20px;
+	margin-bottom: 0;
+}
+.product_detail_content .product_information .model a{
+	display: block;
+	width:30px;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	
+	border:1px solid #ccc;
+	
+}
+
+ .highlight {
+	border:2px solid red;
+}
+
+
+.product_detail_content .product_information .number_area{
+	overflow: hidden;
+}
+.product_detail_content .product_information .choose_number{
+	float:left;
+	width: 72px;
+	height: 26px;
+	line-height: 26px;
+}
+.product_detail_content .product_information .number{
+	float:left;
+	margin-left: 30px;
+	width:106px;
+	height:26px;
+}
+.product_detail_content .product_information  #min,#add{
+	width:26px;
+	height: 26px;
+	background-color: #ededed;
+}
+.product_detail_content .product_information #add{
+	margin-left: -9px;
+}
+.product_detail_content .product_information  #text_box{
+	width:48px;
+	text-align: center;
+	height: 24px;
+	margin-left: -9px;
+	border:1px solid #ccc;
+	padding: 0;
+}
 
 .product_detail_content .product_information .shopping_cart{
 	position:absolute;

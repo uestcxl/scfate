@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link rel="stylesheet" type="text/css" href="../css/dress_rent.css">
-	
+	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 <body>
@@ -80,13 +80,26 @@
 						<li class="deposit">押金:￥10000.00</li>
 						<li>品牌：</li>
 						<li>库存：</li>
-						<li>套数：</li>
-						<li>所在地：</li>
-						<li>选择数量</li>
+						<li>型号：
+							<ul class="model">
+								<li><a href="javascript:;">S</a></li>
+								<li><a href="javascript:;">M</a></li>
+								<li><a href="javascript:;">L</a></li>
+								<li><a href="javascript:;">XL</a></li>
+								<li><a href="javascript:;">XXL</a></li>
+							</ul>
+						</li>
+						<li class="number_area"><span class="choose_number">选择数量</span>
+							<div class="number">
+							<input id="min" name="" type="button" value="-" />  
+							<input id="text_box" name="" type="text" value="1" />  
+							<input id="add" name="" type="button" value="+" />
+							</div>
+							</li>
 					</ul>
 				</div>
 				<div class="button">
-					<a href=""class="shopping_cart"><img src="../img/GWC.png" /></a>
+					<a href="javascript:;"class="shopping_cart" cid="2202"type="dress"><img src="../img/GWC.png" /></a>
 					<a href=""class="collect"><img src="../img/SCJ.png" /></a>
 			
 				</div>
