@@ -82,7 +82,7 @@ $(document).ready(function(){
 		}else {
 			cart.push(goods);
 		}
-
+		console.log(cart);
 	})
 	
 })
