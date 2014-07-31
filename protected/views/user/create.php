@@ -35,7 +35,7 @@
 								<div class="form_part register_form">
 									<span>用户名：</span>
 									<input type="text" name="User[username]">
-									<?php echo $form->error($model,'username'); ?>	
+									<?php echo $form->error($model,'username',array('class'=>'error')); ?>	
 								</div>
 								<span>用于登录的名字</span>
 							</div>
@@ -43,7 +43,7 @@
 								<div class="form_part register_form">
 									<span>密&nbsp;&nbsp;码：</span>
 									<input type="password" name="User[password]">
-									<?php echo $form->error($model,'password'); ?>	
+									<?php echo $form->error($model,'password',array('class'=>'error')); ?>	
 								</div>
 								<span>您的密码</span>
 							</div>
@@ -51,7 +51,7 @@
 								<div class="form_part register_form">
 									<span>确认密码：</span>
 									<input type="password" name="User[password_repeat]">	
-									<?php echo $form->error($model,'password_repeat'); ?>	
+									<?php echo $form->error($model,'password_repeat',array('class'=>'error')); ?>	
 								</div>
 								<span>重复输入密码</span>
 							</div>
@@ -59,7 +59,7 @@
 								<div class="form_part register_form">
 									<span>电&nbsp;&nbsp;话：</span>
 									<input type="text" name="User[phone]">	
-									<?php echo $form->error($model,'phone'); ?>	
+									<?php echo $form->error($model,'phone',array('class'=>'error')); ?>	
 								</div>
 								<span>请输入电话</span>
 							</div>
@@ -67,7 +67,7 @@
 								<div class="form_part register_form">
 									<span>邮&nbsp;&nbsp;箱：</span>
 									<input type="text" name="User[mail]">	
-									<?php echo $form->error($model,'mail'); ?>	
+									<?php echo $form->error($model,'mail',array('class'=>'error')); ?>	
 								</div>
 								<span>请输入有效邮箱</span>
 							</div>

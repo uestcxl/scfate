@@ -35,12 +35,12 @@
 							<div class="form_part login_form">
 								<span>用户名：</span>
 								<input type="text" name="LoginForm[username]">
-								<?php echo $form->error($model,'username'); ?>
+								<?php echo $form->error($model,'username',array('class'=>'error logintext')); ?>
 							</div>
 							<div class="form_part login_form">
 								<span>密&nbsp;&nbsp;码：</span>
 								<input type="password" name="LoginForm[password]">
-								<?php echo $form->error($model,'password'); ?>
+								<?php echo $form->error($model,'password',array('class'=>'error logintext')); ?>
 							</div>
 							
 							<div class="rememberMe" style="padding-left: 22px">

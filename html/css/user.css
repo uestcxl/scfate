@@ -10,7 +10,8 @@ section{
 	font-size: 16px;
 }
 .login{
-	height:280px;
+	/*height:280px;*/
+	overflow: hidden;
 }
 
 .login_left,.register_left{
@@ -42,7 +43,8 @@ section{
 
 /*------------register-------------------*/
 .register{
-	height: 600px;
+	/*height: 600px;*/
+	overflow: hidden;
 }
 .form_part.register_form{
 	display: inline-block;
@@ -769,4 +771,14 @@ section{
 	height: 200px;
 	font-size: 14px;
 	line-height: 20px;
+}
+.error{
+	margin-left: 187px;
+	font-size: 12px;
+	color: red;
+	height: 10px;
+}
+
+.error .logintext{
+	margin-left: 120px;
 }
