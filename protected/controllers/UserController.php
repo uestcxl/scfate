@@ -54,6 +54,7 @@
 		* If creation is successful, the browser will be redirected to the 'view' page.
 		*/
 		public function actionCreate(){
+			$layouts='//layout/column1';
 			$model=new User;
 			if(isset($_POST['User']))
 			{
