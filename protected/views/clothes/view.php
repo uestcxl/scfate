@@ -1,25 +1,39 @@
-<head>
-	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
-</head>
+
 	<div class="product_detail_content">
 			<div class="bg"></div>
-			<div class="product_name"><h2>商品名称</h2></div>
+			<div class="product_name"><h1><?php echo $model->clothesname?></h1></div>
 			<div class="product_information">
 				<img style="height: 297px;width: 297px" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$model->picture?>" class="show_photo" />
 				<div class="show_details">
 					<ul>
 						<li class="rental">租借价格:￥<?php echo $model->rent;?>/天</li>
+						<li class="deposit">押金:￥<?php echo $model->cash_pledge?></li>
 						<li>已售：<?php echo $model->sale_count;?></li>
-						<li>型号:</li>
-						<li>选择数量:</li>
+						<li>库存：<?php echo $model->reserve?>件</li>
+						<li>型号：
+							<ul class="model">
+								<li><a href="javascript:;">S</a></li>
+								<li><a href="javascript:;">M</a></li>
+								<li><a href="javascript:;">L</a></li>
+								<li><a href="javascript:;">XL</a></li>
+								<li><a href="javascript:;">XXL</a></li>
+							</ul>
+						</li>
+						<li class="number_area"><span class="choose_number">选择数量</span>
+							<div class="number">
+							<input id="min" name="" type="button" value="-" />  
+							<input id="text_box" name="" type="text" value="1" />  
+							<input id="add" name="" type="button" value="+" />
+							</div>
+							</li>
 					</ul>
 				</div>
 				<div class="button">
-					<a href=""class="shopping_cart" type="0" cid="<?php echo $model->id?>"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
+					<a href="javascript:;"class="shopping_cart" cid="<?php echo $model->id?>" type="0"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
 					<a href=""class="collect"><img src="<?php echo Yii::app()->baseUrl?>/html/img/SCJ.png" /></a>
-			
 				</div>
 			</div>
+
 			<div class="nav_wrapper">
          		<div class="nav_bg"></div>
 				<nav class="user_nav">

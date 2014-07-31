@@ -6,6 +6,7 @@
 		$sort=null;
 	}
 ?>
+<div class="rent_show_content">
 <div class="show"><h2>显示</h2></div>
 <div class="condition">
 	<span style="font-weight:bold">排序</span>
@@ -38,4 +39,5 @@
 			);
 		?>
 	</div>
+</div>
 </div>
