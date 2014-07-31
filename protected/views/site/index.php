@@ -4,7 +4,7 @@
 </head>
 <?php
 	$criteria=new CDbCriteria;
-	$criteria->limit=3;
+	$criteria->limit=2;
 	$criteria->order='create_time desc';
 	$announcement=Announcement::model()->findAll($criteria);
 ?>
@@ -34,7 +34,11 @@
 				<?php foreach ($announcement as $key => $onelist) {?>
 					<div>
 						<h3><?php echo $onelist->title;?></h3>
-						<p><?php echo $onelist->content;?></p>
+						<?php if (mb_strlen($onelist->content,'utf-8')>48) {?>
+							<p><?php echo mb_substr($onelist->content,0,48,'utf-8').'......';?></p>
+						<?php } else{?>
+							<p><?php echo mb_substr($onelist->content,0,48,'utf-8');?></p>
+						<?php }?>
 					</div>
 				<?php }?>
 			</div>
