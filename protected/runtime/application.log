@@ -2467,3 +2467,9 @@ in /var/www/scfate/index.php (13)
 2014/07/29 13:31:44 [warning] [application] Failed to set unsafe attribute "picture" of "Indexpic".
 in /var/www/scfate/protected/modules/Admin/controllers/IndexpicController.php (67)
 in /var/www/scfate/index.php (13)
+2014/07/31 13:27:12 [warning] [application] Failed to set unsafe attribute "password_repeat" of "User".
+in /var/www/scfate/protected/controllers/UserController.php (62)
+in /var/www/scfate/index.php (13)
+2014/07/31 13:27:35 [warning] [application] Failed to set unsafe attribute "password_repeat" of "User".
+in /var/www/scfate/protected/controllers/UserController.php (62)
+in /var/www/scfate/index.php (13)
