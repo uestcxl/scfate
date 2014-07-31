@@ -65,7 +65,7 @@
 							if($model->save()){
 							echo "<script type='text/javascript'>
 								alert('注册成功! 确定并返回登陆页面。');
-								window.location.href = '../site/login';
+								window.location.href = '".$this->createUrl('site/login')."';
 								</script>";
 								}
 						}
