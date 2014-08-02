@@ -6,6 +6,7 @@ function showBox(item){
 	document.getElementById("nav_"+item+"_concent").style.display="block";
 	document.getElementById("nav_"+item).className="select";   
 }
+
 function showButton(item){
 	for(var i=1;i<arguments.length;i++){
 		document.getElementById("nav_"+arguments[i]+"_content").style.display="none";
@@ -14,6 +15,7 @@ function showButton(item){
 	document.getElementById("nav_"+item+"_content").style.display="block";
 	document.getElementById("nav_"+item).className="select"; 
 }
+
 
 $(document).ready(function(){
 	$('.click').click(function(){
@@ -31,11 +33,17 @@ $(document).ready(function(){
     var t = $("#text_box");  
  	
     $("#add").click(function(){       
-        t.val(parseInt(t.val())+1)  
+        t.val(parseInt(t.val())+1) 
+        if(parseInt(t.val())<0){ 
+				t.val(0); 
+			}  
        
     })  
     $("#min").click(function(){  
-       t.val(parseInt(t.val())-1)  
+       t.val(parseInt(t.val())-1) 
+       if(parseInt(t.val())<0){ 
+			t.val(0); 
+		}  
     
     }) ;
     
@@ -53,36 +61,46 @@ $(document).ready(function(){
 				}else{
 					$(this).addClass('highlight').siblings('li').removeClass('highlight');
 					$(this).unbind('focus');
-				}
-
-				
+				}	
 			});
 		});
 });
 $(document).ready(function(){
 
-	var cart = [];
-	
-
 	$('.shopping_cart').click(function(){
 		var goods = {};
-		goods.type = $(".button").find(".shopping_cart").attr("type");
+		goods.type = $(".product_name").attr("type");
 		goods.model = $(".model").find(".highlight a").text();
 		goods.num = parseInt($("#text_box").val(), 10);
-
-		if(cart.length != 0){
-			for(var i = 0; i < cart.length; i++){
-				if(cart[i].type == goods.type && cart[i].model == goods.model){
-					cart[i].num = cart[i].num + goods.num
-				}else {
-					goods.cid = ParseInt(Math.random() * 100000, 10);
-					cart.push(goods);
-				}
-			}
-		}else {
-			cart.push(goods);
+		goods.cid = $(".product_name").attr('cid');
+		if(!goods.model){
+			alert('请选择型号');
 		}
-		console.log(cart);
-	})
-	
-})
+		$.ajax({
+			type:'post',
+			url:'',
+			data:'goods',
+			datatype:'json',
+			success:function(data,status){
+				console.log(goods);
+			},
+		});
+	});
+	$('#delete').click(function(){
+			var goods_delete={};
+			goods_delete.type=$('.product_name').attr();
+			goods_delete.model=$('.model').text();
+			goods_delete.num=parseInt($(".text_box").val(), 10);
+			goods_delete.cid=$('.product_name').attr('cid');
+
+			$.ajax({
+				type:'post',
+				url:'',
+				data:'goods_delete',
+				datatype:'json',
+				success:function(data,status){
+				console.log(goods_delete);
+			},
+			});
+	});
+});
