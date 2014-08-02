@@ -1,6 +1,5 @@
 <head>
 	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.1.4.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/dress_rent.css">
 </head>

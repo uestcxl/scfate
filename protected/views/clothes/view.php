@@ -1,7 +1,7 @@
 
 	<div class="product_detail_content">
 			<div class="bg"></div>
-			<div class="product_name"><h1><?php echo $model->clothesname?></h1></div>
+			<div class="product_name" cid="<?php echo $model->id?>" type="0"><h1><?php echo $model->clothesname?></h1></div>
 			<div class="product_information">
 				<img style="height: 297px;width: 297px" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$model->picture?>" class="show_photo" />
 				<div class="show_details">
@@ -29,7 +29,7 @@
 					</ul>
 				</div>
 				<div class="button">
-					<a href="javascript:;"class="shopping_cart" cid="<?php echo $model->id?>" type="0"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
+					<a href="javascript:;"class="shopping_cart"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
 					<a href=""class="collect"><img src="<?php echo Yii::app()->baseUrl?>/html/img/SCJ.png" /></a>
 				</div>
 			</div>
