@@ -28,7 +28,7 @@ class CartController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','create','update','delete'),
+				'actions'=>array('show','create','update','delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -37,15 +37,13 @@ class CartController extends Controller
 		);
 	}
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+	public function actionShow(){
+		$clothes=Cart::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'type'=>'0'));
+		$souvenirs=Cart::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'type'=>'1'));
+		$this->render('index',array(
+			'clothes'=>$clothes,
+			'souvenirs'=>$souvenirs,
+			));
 	}
 
 	/**
@@ -60,28 +58,25 @@ class CartController extends Controller
 		}
 		else{
 			//获取post数据并解序列化
-			$mycart=json_decode($_POST['goods']);
+			if (isset($_POST['goods'])) {
+				//echo 'cid='.$_POST['goods']['cid'].';type='.$_POST['goods']['type'],';num='.$_POST['goods']['num'].';model='.$_POST['goods']['model'];die;
+				$mycart['type']=$_POST['goods']['type'];
+				$mycart['cid']=intval($_POST['goods']['cid']);
+				$mycart['num']=intval($_POST['goods']['num']);
+				$mycart['model']=$_POST['goods']['model'];
+				//echo 'cid='.$mycart['cid'],';type='.$mycart['type'],';num='.$mycart['num'].';model='.$mycart['model'];die;
 			//判断是否缺少参数
-			if (empty($mycart['type']) || empty($mycart['cid']) || empty($mycart['num'])) {
-				echo 2;
-			}
-			else{
+			if (isset($mycart['type']) && isset($mycart['cid']) && isset($mycart['num'])) {
 				//判断参数是否为数字
 				if (is_numeric($mycart['type']) && is_numeric($mycart['cid']) && is_numeric($mycart['num'])) {
 				//若添加的是衣服
-				if ($mycart['type']===0) {
-					//若型号为空
-					if (empty($mycart['model'])) {
-						echo 2;
-					}
-					//存储数据
-					else{
+				if ($mycart['type']==='0') {
+					//若衣服型号为空
+					if (isset($mycart['model'])) {
 						$user=Yii::app()->user->id;
 						$criteria=new CDbCriteria;
-						$criteria->addCondition()='user_id=:user and $goods_id=:goods_id';
-						$criteria->params[':user_id']=$user;
-						$criteria->params['goods_id']=$mycart['cid'];
-						$goods=Cart::model()->findAllByAttributes($criteria);
+						$criteria->condition='user_id='.$user.' and goods_id='.$mycart['cid'].' and size="'.$mycart['model'].'" and type=0';
+						$goods=Cart::model()->findAll($criteria);
 						//判断是否已经添加到购物车
 						if (empty($goods)) {
 							$onecart=new Cart;
@@ -89,50 +84,76 @@ class CartController extends Controller
 							$onecart->size=$mycart['model'];
 							$onecart->type=$mycart['type'];
 							$onecart->amount=$mycart['num'];
-							$onecart->goods_id=$mycart['goods_id'];
+							$onecart->goods_id=$mycart['cid'];
 							if ($onecart->save()) {
 								echo 1;
+							}
+							else{
+								echo 4;
 							}
 						}
 						//若已添加，则增加数据库中的数量
 						else{
-							$onecart->amount=$onecart->amount+$mycart['num'];
-							if ($onecart->save()) {
+							// var_dump($goods[0]);die;
+							$goods[0]->amount=$goods[0]->amount+$mycart['num'];
+							if ($goods[0]->save()) {
 								echo 1;
+							}
+							else{
+								echo 4;
 							}
 						}
 					}
+					//返回错误信息
+					else{
+						echo 2;
+					}
 				}
 				//若为纪念品
-				elseif ($mycart['type']===1) {
+				if ($mycart['type']==='1') {
 						$user=Yii::app()->user->id;
 						$criteria=new CDbCriteria;
-						$criteria->addCondition()='user_id=:user and $goods_id=:goods_id';
-						$criteria->params[':user_id']=$user;
-						$criteria->params['goods_id']=$mycart['cid'];
-						$goods=Cart::model()->findAllByAttributes($criteria);
+						$criteria->condition='user_id='.$user.' and goods_id='.$mycart['cid'].' and type=1';
+						$goods=Cart::model()->findAll($criteria);
+						//判断是否已经添加到购物车
 						if (empty($goods)) {
 							$onecart=new Cart;
 							$onecart->user_id=$user;
 							$onecart->type=$mycart['type'];
 							$onecart->amount=$mycart['num'];
-							$onecart->goods_id=$mycart['goods_id'];
+							$onecart->goods_id=$mycart['cid'];
 							if ($onecart->save()) {
 								echo 1;
 							}
+							else{
+								echo 4;
+							}
 						}
+						//若已添加，则增加数据库中的数量
 						else{
-							$onecart->amount=$onecart->amount+$mycart['num'];
-							if ($onecart->save()) {
+							// var_dump($goods[0]);die;
+							$goods[0]->amount=$goods[0]->amount+$mycart['num'];
+							if ($goods[0]->save()) {
 								echo 1;
+							}
+							else{
+								echo 4;
 							}
 						}
 					}
 				}
+				//参数不为数字
 				else{
 					echo 2;
 				}
 			}
+			else{
+				echo 2;
+			}
+		}
+		else{
+			echo 2;
+		}
 		}
 	}
 
@@ -158,23 +179,13 @@ class CartController extends Controller
 		}
 		else{
 			$deleteinfo=json_decode($_POST['goods_delete']);
-			if (empty($deleteinfo['cid'] || empty($deleteinfo['type']) )) {
+			if (empty($deleteinfo['cid']) || empty($deleteinfo['type']) ) {
 				echo 2;
 			}
 		}
 		$this->loadModel($id)->delete();
-
-/*		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
 	}
 
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$this->render('index');
-	}
 
 
 	/**

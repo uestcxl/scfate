@@ -107,4 +107,19 @@ class Cart extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function beforeSave(){
+		if (parent::beforeSave()) {
+			if (isset($this->create_time)) {
+				return true;
+			}
+			else{
+				$this->create_time=date('Y-m-d H:i');
+				return true;
+			}
+		}
+		else{
+			return false;
+		}
+	}
 }

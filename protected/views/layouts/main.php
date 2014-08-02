@@ -19,7 +19,7 @@
 				<?php if (!Yii::app()->user->isGuest) { ?>
 					<span>欢迎您，<?php echo Yii::app()->user->name;?></span>
 					<span><a href="<?php echo Yii::app()->createUrl('user/index')?>">|&nbsp;个人中心</a></span>
-					<span><a href="<?php echo Yii::app()->createUrl('cart/index')?>">|&nbsp;购物车</a></span>
+					<span><a href="<?php echo Yii::app()->createUrl('cart/show')?>">|&nbsp;购物车</a></span>
 					<span><a href="<?php echo Yii::app()->createUrl('site/logout')?>">|&nbsp;退出</a></span>
 					<?php if (Yii::app()->user->name===ADMIN) {?>
 						<span><a href="<?php echo Yii::app()->createUrl('Admin')?>">|&nbsp;我不是后台</a></span>

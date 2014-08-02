@@ -21,8 +21,11 @@ $(" .table_section").each(function(){
 	var num=Number($(this).find('.text_box').val());
 	var price=Number($(this).find('.price').text());
 	
-	  sum+=num*price;
-	
+/*	var eachitem=0;
+	eachitem=num*price;
+	$(this)("#total_item_1").html(eachitem.toFixed(2));	*/
+
+	sum+=num*price;
 	}); 
 $("#total").html(sum.toFixed(2)); 
 } 

@@ -69,6 +69,65 @@ $(document).ready(function(){
 
 	$('.shopping_cart').click(function(){
 		var goods = {};
+		goods.type =parseInt($(".product_name").attr("type"),10); 
+		goods.model = $(".model").find(".highlight a").text();
+		goods.num = parseInt($("#text_box").val(), 10);
+		goods.cid = parseInt($(".product_name").attr('cid'),10);
+		if(!goods.model){
+			alert('请选择型号');
+		}
+		$.ajax({
+			type:'post',
+			url:'http://localhost/scfate/index.php?r=cart/create',
+			data:{
+				'goods':goods
+			},
+			datatype:'json',
+			success:function(data,status){
+				console.log(goods);
+				if (status=='success') {
+					switch(data){
+						case '0':
+							alert('您还木登录！');
+							break;
+						case '1':
+							alert('加入购物菜成功');
+							break;
+						case '2':
+							alert('还没有填对值哦');
+							break;
+						default:
+							alert('添加失败!!');
+							break;
+					}
+				};
+			},
+		});
+	});
+	$('#delete').click(function(){
+			var goods_delete={};
+			goods_delete.type=$('.product_name').attr();
+			goods_delete.model=$('.model').text();
+			goods_delete.num=parseInt($(".text_box").val(), 10);
+			goods_delete.cid=$('.product_name').attr('cid');
+
+			$.ajax({
+				type:'post',
+				url:'',
+				data:'goods_delete',
+				datatype:'json',
+				success:function(data,status){
+				console.log(goods_delete);
+			},
+			});
+	});
+});
+
+//backup
+/*$(document).ready(function(){
+
+	$('.shopping_cart').click(function(){
+		var goods = {};
 		goods.type = $(".product_name").attr("type");
 		goods.model = $(".model").find(".highlight a").text();
 		goods.num = parseInt($("#text_box").val(), 10);
@@ -78,7 +137,7 @@ $(document).ready(function(){
 		}
 		$.ajax({
 			type:'post',
-			url:'',
+			url:'http://localhost/scfate/index.php?r=cart/create',
 			data:'goods',
 			datatype:'json',
 			success:function(data,status){
@@ -104,3 +163,4 @@ $(document).ready(function(){
 			});
 	});
 });
+*/

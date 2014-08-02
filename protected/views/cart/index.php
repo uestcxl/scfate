@@ -1,73 +1,107 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/shopping.css">
 	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.1.4.2-min.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/pay.js"></script>
 </head>
-<!-- section  begin -->
-<section>
-	<div class="ad">
-		<img src="<?php echo Yii::app()->baseUrl?>/html/img/AD.png">
-	</div>
-	<div class="shopping_state">
-		<img src="<?php echo Yii::app()->baseUrl?>/html/img/shopping_stateOne.png">
-	</div>
-	<div class="shopping">
-	<script type="text/javascript" src="../js/payfor.js"></script>
-		<table>
-			<tr class="table_head">
-				<th width="40%">店铺服装</th>
-				<th width="10%">租金</th>
-				<th width="10%">数量</th>
-				<th width="10%">小计</th>
-				<th width="30%">操作</th>
-			</tr>
-			<tr class="table_section">
-				<td class="goods">
-					<div>
-						<div class="goods_photo">
-							<img src="">
-						</div>
-						<span><a href="">这里是名字这里是名字</a></span>
-					</div>
-				</td>	
-				<td id="price_item_1">￥200.00</td>
-				<td>
-					<div class="f_l add_chose">
-						<a class="reduce" onClick="setAmount.reduce('#qty_item_1')" href="javascript:void(0)">-</a>
-						<input type="text" name="qty_item_1" value="1" id="qty_item_1" onKeyUp="setAmount.modify('#qty_item_1')" class="text" />
-						<a class="add" onClick="setAmount.add('#qty_item_1')" href="javascript:void(0)">+</a>
-					</div>
-				</td>
-				<td class="_red"  id="total_item_1">$200.00</td>
-				<td class="goods_do">
-					<span><a href="">加入收藏夹</a></span>
-					<span><a href="">删除</a></span>
-				</td>
-			</tr>
-			<tr class="table_section">
-				<td class="goods">
-					<div>
-						<div class="goods_photo">
-							<img src="">
-						</div>
-						<span><a href="">这里是名字这里是名字</a></span>
-					</div>
-				</td>	
-				<td id="price_item_2">￥200.00</td>
-				<td>
-					<div class="f_l add_chose">
-						<a class="reduce" onClick="setAmount.reduce('#qty_item_2')" href="javascript:void(0)">-</a>
-						<input type="text" name="qty_item_2" value="1" id="qty_item_2" onKeyUp="setAmount.modify('#qty_item_2')" class="text" />
-						<a class="add" onClick="setAmount.add('#qty_item_2')" href="javascript:void(0)">+</a>
-					</div>
-				</td>
-				<td class="_red"   id="total_item_2">$200.00</td>
-				<td class="goods_do">
-					<span><a href="">加入收藏夹</a></span>
-					<span><a href="">删除</a></span>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div class="total">服装总价：<span class="_red"   id="total_item">$200.00</span></div>
-</section>
-<!-- section  end -->
+	<!-- section  begin -->
+	<section>
+		<div class="ad">
+			<img src="<?php echo Yii::app()->baseUrl?>/html/img/AD.png">
+		</div>
+		<div class="shopping_state">
+			<img src="<?php echo Yii::app()->baseUrl?>/html/img/shopping_stateOne.png">
+		</div>
+		<div class="shopping">
+		<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/payfor.js"></script>
+			<table>
+				<tr class="table_head">
+					<th width="25%">店铺服装</th>
+					<th width="10%">型号</th>
+					<th width="10%">租金</th>
+					<th width="20%">数量</th>
+					<th width="10%">小计</th>
+					<th width="25%">操作</th>
+				</tr>
+				<?php if(!empty($clothes)){foreach ($clothes as $key => $onecart) {
+						$oneclothes=Clothes::model()->findByPk($onecart->goods_id);
+					?>
+					<tr class="table_section">
+						<td class="goods">
+							<div>
+								<div class="goods_photo">
+									<img height="82" width="82" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$oneclothes->picture;?>">
+								</div>
+								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="0"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->clothesname?></a></span>
+							</div>
+						</td>	
+						<td cl="model"><?php echo $onecart->size?></td>
+						<td id="price_item_1">￥<?php echo $oneclothes->rent;?></td>
+						<td>
+							<input class="min" name="" type="button" value="-" /> 
+							<input class="text_box" name="" type="text" value="<?php echo $onecart->amount?>" /> 
+							<input class="add" name="" type="button" value="+" /> 
+						</td>
+						<td class="price _red"  id="total_item_1">200.00</td>
+						<td class="goods_do">
+							<span><a href="">加入收藏夹</a></span>
+							<span id="delete"><a href="">删除</a></span>
+						</td>
+					</tr>
+				<?php }}else{?>
+					<tr>
+						<td>
+							<br>
+							<h1><a href="<?php echo $this->createUrl('clothes/index');?>">还没有选择衣服哦</a></h1>
+							<br>
+						</td>
+					</tr>
+				<?php }?>
+				<tr class="table_head">
+					<th width="25%">我的纪念品</th>
+					<th width="10%">所属学校</th>
+					<th width="10%">金额</th>
+					<th width="20%">数量</th>
+					<th width="10%">小计</th>
+					<th width="25%">操作</th>
+				</tr>
+				<?php if(!empty($souvenirs)) {foreach ($souvenirs as $key => $onecart) {
+						$oneclothes=Souvenir::model()->findByPk($onecart->goods_id);
+					?>
+					<tr class="table_section">
+						<td class="goods">
+							<div>
+								<div class="goods_photo">
+									<img height="82" width="82" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$oneclothes->picture;?>">
+								</div>
+								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="0"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->clothesname?></a></span>
+							</div>
+						</td>	
+						<td cl="model"><?php echo $onecart->size?></td>
+						<td id="price_item_1">￥<?php echo $oneclothes->rent;?></td>
+						<td>
+							<input class="min" name="" type="button" value="-" /> 
+							<input class="text_box" name="" type="text" value="<?php echo $onecart->amount?>" /> 
+							<input class="add" name="" type="button" value="+" /> 
+						</td>
+						<td class="price _red"  id="total_item_1">200.00</td>
+						<td class="goods_do">
+							<span><a href="">加入收藏夹</a></span>
+							<span id="delete"><a href="">删除</a></span>
+						</td>
+					</tr>
+				<?php }}else{?>
+				<tr>
+					<td>
+						<br>
+						<h1><a href="<?php echo $this->createUrl('souvenir/index');?>">还没有选择纪念品哦</a></h1>
+						<br>
+					</td>
+				</tr>
+				<?php }?>
+			</table>
+		</div>
+		<div class="total">服装总价：<span id="total">200.00</span></div>
+	</section>
+	<!-- section  end -->
+
