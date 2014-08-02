@@ -1,4 +1,7 @@
-
+<head>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.1.4.2.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
+</head>
 	<div class="product_detail_content">
 			<div class="bg"></div>
 			<div class="product_name" cid="<?php echo $model->id?>" type="0"><h1><?php echo $model->clothesname?></h1></div>
@@ -46,26 +49,7 @@
 			</div>
 					<div id="nav_product_detail_content">
 						<div class="attributes">
-							<ul class="attributes-list">
-	    			    		<li >主图来源: 其他来源</li>
-	    			    		<li >货号: Q3445</li>
-	    			    		<li >风格: 街头</li>
-	    			    		<li >街头: 欧美</li>
-	    			    		<li >组合形式: 单件</li>
-	    			    		<li >裙长: 短裙</li>
-	    			    		<li >袖长: 短袖</li>
-	    			    		<li >领型: 圆领</li>
-	    			    		<li >袖型: 花瓣袖</li>
-	    			    		<li >衣门襟: 套头</li>
-	    			    		<li >裙型: 荷叶边裙</li>
-	    			    		<li >图案: 人物</li>
-	    			    		<li >流行元素/工艺: 印花</li>
-	    			    		<li >面料: 其他</li>
-	    			    		<li >成分含量: 51%(含)-70%(含)</li>
-	    			    		<li >年份季节: 2014年夏季</li>
-	    			    		<li >颜色分类: 白色</li>
-	    			    		<li >尺码: S M L XL XXL</li>
-	    			    </ul>
+							<?php echo $model->description;?>
 						</div>
 					</div>
 					<div id="nav_product_comment_content">
