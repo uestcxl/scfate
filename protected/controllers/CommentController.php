@@ -1,6 +1,6 @@
 <?php
 
-class OrderController extends Controller
+class CommentController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,9 +27,17 @@ class OrderController extends Controller
 	public function accessRules()
 	{
 		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','index','view'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -54,14 +62,14 @@ class OrderController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Order;
+		$model=new Comment;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Order']))
+		if(isset($_POST['Comment']))
 		{
-			$model->attributes=$_POST['Order'];
+			$model->attributes=$_POST['Comment'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -72,13 +80,66 @@ class OrderController extends Controller
 	}
 
 	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Comment']))
+		{
+			$model->attributes=$_POST['Comment'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDelete($id)
+	{
+		$this->loadModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+	/**
 	 * Lists all models.
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Order');
+		$dataProvider=new CActiveDataProvider('Comment');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new Comment('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Comment']))
+			$model->attributes=$_GET['Comment'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
 	}
 
@@ -86,12 +147,12 @@ class OrderController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Order the loaded model
+	 * @return Comment the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Order::model()->findByPk($id);
+		$model=Comment::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -99,15 +160,14 @@ class OrderController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Order $model the model to be validated
+	 * @param Comment $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='order-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-
 }
