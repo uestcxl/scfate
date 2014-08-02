@@ -3,6 +3,7 @@
 	margin: 10px auto;
 	border-top: 3px solid #adadad;
 	border-bottom: 3px solid #adadad;
+	overflow: hidden;
 }
 .shopping_state img{
 	width: 1000px;
@@ -45,45 +46,7 @@
 .goods_do span a{
 	text-decoration: underline;
 }	
- .f_l{
-	position: absolute;
-	top: 37px;
-}
-.add_chose{
-	width:105px;
-}
-.add_chose a{
-	float:left;
-	margin:5px 0 0 0;
-	display:block;
-	width:15px;
-	height:15px;
-	line-height:99em;
-	overflow:hidden;
-	background:url(../img/reduce-add.gif) no-repeat;
-}
-.add_chose a.reduce{
-	background-position:0 0;
-}
-.add_chose a.reduce:hover{
-	background-position:0 -16px;
-}
-.add_chose a.add{
-	background-position:-16px 0;
-}
-.add_chose a.add:hover{
-	background-position: -16px -16px;
-}
-.add_chose .text{
-	float:left;margin:0 5px;
-	display:inline;
-	border:solid 1px #ccc;
-	padding:4px 3px 4px 8px;
-	width:40px;
-	font-size:14px;
-	color:#990000;
-	font-weight:800;
-}
+
 .total{
 	text-align: right;
 	padding: 10px;
@@ -242,4 +205,22 @@ body.shopping_address_goods .goods_part .goods_concent ._red{
 	font-weight: bold;
 	background-color: #ddd;
 	height: 30px;
+}
+
+
+  .min,.add{
+	width:26px;
+	height: 26px;
+	background-color: #ededed;
+}
+ .add{
+	margin-left: -9px;
+}
+  .text_box{
+	width:48px;
+	text-align: center;
+	height: 24px;
+	margin-left: -9px;
+	border:1px solid #ccc;
+	padding: 0;
 }
