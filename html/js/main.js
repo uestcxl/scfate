@@ -78,7 +78,7 @@ $(document).ready(function(){
 		}
 		$.ajax({
 			type:'post',
-			url:'http://www.stcy1688.com/index.php?r=clothes/create',
+			url:'http://www.stcy1688.com/index.php?r=cart/create',
 			data:{
 				'goods':goods
 			},
