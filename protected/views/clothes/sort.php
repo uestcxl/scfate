@@ -6,15 +6,17 @@
 		$sort=null;
 	}
 ?>
-<div class="show"><h2>显示</h2></div>
-<div class="condition">
-	<span style="font-weight:bold">排序</span>
-	<span><a href="<?php echo $this->createUrl('sort',array('type'=>'1','sort'=>$sort))?>">综合</a></span>
-	<span><a href="<?php echo $this->createUrl('sort',array('type'=>'1','sort'=>$sort))?>">人气</a></span>
-	<span><a href="<?php echo $this->createUrl('sort',array('type'=>'2','sort'=>$sort))?>">价格</a></span>
-</div>
 
-<div class="rent_show_list">
+<div class="rent_show_content">
+	<div class="show"><h2>显示</h2></div>
+	<div class="condition">
+		<span style="font-weight:bold">排序</span>
+		<span><a href="<?php echo $this->createUrl('sort',array('type'=>'1','sort'=>$sort))?>">综合</a></span>
+		<span><a href="<?php echo $this->createUrl('sort',array('type'=>'1','sort'=>$sort))?>">人气</a></span>
+		<span><a href="<?php echo $this->createUrl('sort',array('type'=>'2','sort'=>$sort))?>">价格</a></span>
+	</div>
+
+	<div class="rent_show_list">
 	<ul>
 			<?php if(!empty($clothes)){foreach ($clothes as $key => $cloth) {?>
 				<li class="dress_details">
@@ -24,6 +26,7 @@
 				</li>
 			<?php }}?>
 	</ul>
+	</div>
 
 	<div class="pager">
 		<?php
