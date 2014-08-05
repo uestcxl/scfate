@@ -17,18 +17,20 @@ $(function(){
 
 function setTotal(){ 
       var sum=0;
+     
 $(" .table_section").each(function(){ 	
+	var price=0;
 	var num=Number($(this).find('.text_box').val());
-	var price=Number($(this).find('.price').text());
-	
-/*	var eachitem=0;
-	eachitem=num*price;
-	$(this)("#total_item_1").html(eachitem.toFixed(2));	*/
-
-	sum+=num*price;
+	var price_item=Number($(this).find('.price_item').text());
+	price=price_item*num;
+	$(this).find('.price').html(price.toFixed(2));
+	console.log(price);
+	sum+=price;
 	}); 
-$("#total").html(sum.toFixed(2)); 
-} 
-setTotal(); 
 
-}) 
+	$("#total").html(sum.toFixed(2));
+
+	}
+	setTotal();
+}) ;
+
