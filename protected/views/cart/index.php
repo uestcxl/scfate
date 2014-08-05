@@ -13,7 +13,6 @@
 			<img src="<?php echo Yii::app()->baseUrl?>/html/img/shopping_stateOne.png">
 		</div>
 		<div class="shopping">
-		<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/payfor.js"></script>
 			<table>
 				<tr class="table_head">
 					<th width="25%">店铺服装</th>
@@ -36,13 +35,13 @@
 							</div>
 						</td>	
 						<td cl="model"><?php echo $onecart->size?></td>
-						<td id="price_item_1">￥<?php echo $oneclothes->rent;?></td>
+						<td id="price_item_1"><?php echo $oneclothes->rent;?></td>
 						<td>
 							<input class="min" name="" type="button" value="-" /> 
 							<input class="text_box" name="" type="text" value="<?php echo $onecart->amount?>" /> 
 							<input class="add" name="" type="button" value="+" /> 
 						</td>
-						<td class="price _red"  id="total_item_1">200.00</td>
+						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
 							<span><a href="">加入收藏夹</a></span>
 							<span id="delete"><a href="">删除</a></span>
@@ -67,6 +66,7 @@
 				</tr>
 				<?php if(!empty($souvenirs)) {foreach ($souvenirs as $key => $onecart) {
 						$oneclothes=Souvenir::model()->findByPk($onecart->goods_id);
+						$school=Area::model()->findByPk($oneclothes->school_id);
 					?>
 					<tr class="table_section">
 						<td class="goods">
@@ -74,17 +74,17 @@
 								<div class="goods_photo">
 									<img height="82" width="82" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$oneclothes->picture;?>">
 								</div>
-								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="0"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->clothesname?></a></span>
+								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="0"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->name?></a></span>
 							</div>
 						</td>	
-						<td cl="model"><?php echo $onecart->size?></td>
-						<td id="price_item_1">￥<?php echo $oneclothes->rent;?></td>
+						<td cl="model"><?php echo $school->area_name?></td>
+						<td id="price_item_1"><?php echo $oneclothes->reduce_price;?></td>
 						<td>
 							<input class="min" name="" type="button" value="-" /> 
 							<input class="text_box" name="" type="text" value="<?php echo $onecart->amount?>" /> 
 							<input class="add" name="" type="button" value="+" /> 
 						</td>
-						<td class="price _red"  id="total_item_1">200.00</td>
+						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
 							<span><a href="">加入收藏夹</a></span>
 							<span id="delete"><a href="">删除</a></span>

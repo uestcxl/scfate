@@ -2,28 +2,33 @@
 	$school=Area::model()->findByPk($model->school_id);
 	$schoolname=$school->area_name;
 ?>
-<div class="product_detail_content">
+	<div class="product_detail_content">
 			<div class="bg"></div>
-			<div class="product_name"><h2>商品名称</h2></div>
+			<div class="product_name" cid="<?php echo $model->id?>" type="1"><h1><?php echo $model->name?></h1></div>
 			<div class="product_information">
-				<img style="height: 297px;width: 297px" src="<?php echo Yii::app()->baseUrl.'/images/souvenir/'.$model->picture?>" class="show_photo" />
+				<img style="height: 297px;width: 297px" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$model->picture?>" class="show_photo" />
 				<div class="show_details">
 					<ul>
-						<li class="rental">现价:￥<?php echo $model->price;?></li>
-						<li class="deposit">原价:<s>￥<?php echo $model->reduce_price;?></s></li>
-						<li>所在地：<?php echo $model->area->area_name;?></li>
-						<li>所在学校：<?php echo $schoolname;?></li>
+						<li class="rental">优惠价格:￥<?php echo $model->reduce_price;?></li>
+						<li class="deposit">原价:<s>￥<?php echo $model->price?></s></li>
+						<li>纪念品所属大学：<?php echo $schoolname?></li>
 						<li>已售：<?php echo $model->sale_count;?></li>
-						
-						<li>选择数量</li>
+
+						<li class="number_area"><span class="choose_number">选择数量</span>
+							<div class="number">
+							<input id="min" name="" type="button" value="-" />  
+							<input id="text_box" name="" type="text" value="1" />  
+							<input id="add" name="" type="button" value="+" />
+							</div>
+							</li>
 					</ul>
 				</div>
 				<div class="button">
-					<a href=""class="shopping_cart" type="1" cid="<?php echo $model->id;?>"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
+					<a href="javascript:;"class="shopping_cart"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
 					<a href=""class="collect"><img src="<?php echo Yii::app()->baseUrl?>/html/img/SCJ.png" /></a>
-			
 				</div>
 			</div>
+
 			<div class="nav_wrapper">
          		<div class="nav_bg"></div>
 				<nav class="user_nav">
@@ -36,26 +41,7 @@
 			</div>
 					<div id="nav_product_detail_content">
 						<div class="attributes">
-							<ul class="attributes-list">
-	    			    		<li >主图来源: 其他来源</li>
-	    			    		<li >货号: Q3445</li>
-	    			    		<li >风格: 街头</li>
-	    			    		<li >街头: 欧美</li>
-	    			    		<li >组合形式: 单件</li>
-	    			    		<li >裙长: 短裙</li>
-	    			    		<li >袖长: 短袖</li>
-	    			    		<li >领型: 圆领</li>
-	    			    		<li >袖型: 花瓣袖</li>
-	    			    		<li >衣门襟: 套头</li>
-	    			    		<li >裙型: 荷叶边裙</li>
-	    			    		<li >图案: 人物</li>
-	    			    		<li >流行元素/工艺: 印花</li>
-	    			    		<li >面料: 其他</li>
-	    			    		<li >成分含量: 51%(含)-70%(含)</li>
-	    			    		<li >年份季节: 2014年夏季</li>
-	    			    		<li >颜色分类: 白色</li>
-	    			    		<li >尺码: S M L XL XXL</li>
-	    			    </ul>
+							<?php echo $model->description;?>
 						</div>
 					</div>
 					<div id="nav_product_comment_content">
@@ -92,8 +78,8 @@
 						<ul>
 							<li class="comment_list"><div class="comment_content">
 									<div class="buyer">
-										<img src="<?php echo Yii::app()->baseUrl?>/html/img/avatar.png" /></br>
-										<span>林杨</span></br>
+										<img src="<?php echo Yii::app()->baseUrl?>/html/img/avatar.png" /><br>
+										<span>林杨</span><br>
 										<img src="<?php echo Yii::app()->baseUrl?>/html/img/system.png" />
 									</div>
 									<p>没想到这个价格能买到这样的质量，感觉赚到了哈哈~板型很好，做工和料子更没话说，上里面有内衬，一点都不会透~上面的绣花很紧密，很小清新的感觉~想买的亲们可以下手啦
@@ -105,8 +91,8 @@
 							<li class="comment_list">
 								<div class="comment_content">
 									<div class="buyer">
-										<img src="<?php echo Yii::app()->baseUrl?>/html/img/avatar.png" /></br>
-										<span>林杨</span></br>
+										<img src="<?php echo Yii::app()->baseUrl?>/html/img/avatar.png" /><br>
+										<span>林杨</span><br>
 										<img src="<?php echo Yii::app()->baseUrl?>/html/img/system.png" />
 									</div>
 									<p>	没想到这个价格能买到这样的质量，感觉赚到了哈哈~板型很好，做工和料子更没话说，上里面有内衬，一点都不会透~上面的绣花很紧密，很小清新的感觉~想买的亲们可以下手啦
@@ -118,8 +104,8 @@
 							<li class="comment_list">
 								<div class="comment_content">
 									<div class="buyer">
-										<img src="<?php echo Yii::app()->baseUrl?>/html/img/avatar.png" /></br>
-										<span>林杨</span></br>
+										<img src="<?php echo Yii::app()->baseUrl?>/html/img/avatar.png" /><br>
+										<span>林杨</span><br>
 										<img src="<?php echo Yii::app()->baseUrl?>/html/img/system.png" />
 									</div>
 									<p>没想到这个价格能买到这样的质量，感觉赚到了哈哈~板型很好，做工和料子更没话说，上里面有内衬，一点都不会透~上面的绣花很紧密，很小清新的感觉~想买的亲们可以下手啦
@@ -180,11 +166,10 @@
 						</table>
 						<div class="paging">		
 							<a href="" class="next">>下一页</a>
-							<a href=""><上一页</a>
+							<a href="">上一页</a>
 						</div>
 					</div>
 						
 					<div id="nav_consultation_content"></div>
-						
-		</div>
+		</div>				
 	
