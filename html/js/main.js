@@ -73,19 +73,11 @@ $(document).ready(function(){
 		goods.model = $(".model").find(".highlight a").text();
 		goods.num = parseInt($("#text_box").val(), 10);
 		goods.cid = parseInt($(".product_name").attr('cid'),10);
-<<<<<<< HEAD
-		if(goods.type!=1){
-			if(!goods.model){
-			alert('请选择型号');
-			}
-		}
-=======
 		if (goods.type==0) {
 			if(!goods.model){
 				alert('请选择型号');
 			}
 		};
->>>>>>> 43c8cd58c79367a60bf5f6c2d199b3a0006dfb31
 		$.ajax({
 			type:'post',
 			url:'http://localhost/scfate/index.php?r=cart/create',

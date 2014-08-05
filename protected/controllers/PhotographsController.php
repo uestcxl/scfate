@@ -57,7 +57,7 @@ class PhotographsController extends Controller
 		$count=Photographs::model()->count($criteria);
 
 		$pager=new CPagination($count);
-		$pager->pageSize=6;
+		$pager->pageSize=1;
 		$pager->applyLimit($criteria);
 
 		$photographs=Photographs::model()->findAll($criteria);

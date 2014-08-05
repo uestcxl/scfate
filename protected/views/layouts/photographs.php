@@ -15,14 +15,13 @@
 				<div class="menu_part">
 					<div class="head"><h1>按主题分类</h1></div>
 					<div class="body">
-						<div><a href="<?php echo $this->createUrl('index');?>">所有作品</a></div>
+						<div class="menu_list"><a href="<?php echo $this->createUrl('index');?>">所有作品</a></div>
 						<?php if(!empty($sorts)) {foreach ($sorts as $key => $sort) {?>
-							<div><a href="<?php echo $this->createUrl('sort',array('sort'=>$sort->id))?>"><?php echo $sort->sort_name;?></a></div>
+							<div class="menu_list"><a href="<?php echo $this->createUrl('sort',array('sort'=>$sort->id))?>"><?php echo $sort->sort_name;?></a></div>
 						<?php }}?>
 					</div>
 				</div>
 			</div>
-
 			<?php echo $content;?>
 
 		</div>

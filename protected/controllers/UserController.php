@@ -176,17 +176,28 @@
 					if ($password1==$password2) {
 						$model->password=md5($password1);
 						if ($model->save()) {
-							echo "修改密码成功";	
+							echo "<script type='text/javascript'>
+									alert('修改密码成功!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 						}
 					}else{
-						echo "两次输入密码不同";
+								echo "<script type='text/javascript'>
+									alert('两次输入密码不同!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 					}
 				}else{
-						
-						echo "原密码不对";
+						echo "<script type='text/javascript'>
+									alert('两次输入密码不同!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 				}
 			}else{
-				echo "密码不能为空";
+				echo "<script type='text/javascript'>
+									alert('密码不能为空!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 			}
 		}
 		}
