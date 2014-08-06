@@ -59,6 +59,7 @@ class CartController extends Controller
 		// 判断是否登陆
 		if (Yii::app()->user->isGuest) {
 			echo 0;
+			return;
 		}
 		else{
 			//获取post数据并解序列化
@@ -91,9 +92,11 @@ class CartController extends Controller
 							$onecart->goods_id=$mycart['cid'];
 							if ($onecart->save()) {
 								echo 1;
+								return;
 							}
 							else{
 								echo 4;
+								return;
 							}
 						}
 						//若已添加，则增加数据库中的数量
@@ -102,15 +105,18 @@ class CartController extends Controller
 							$goods[0]->amount=$goods[0]->amount+$mycart['num'];
 							if ($goods[0]->save()) {
 								echo 1;
+								return;
 							}
 							else{
 								echo 4;
+								return;
 							}
 						}
 					}
 					//返回错误信息
 					else{
 						echo 2;
+						return;
 					}
 				}
 				//若为纪念品
@@ -128,9 +134,11 @@ class CartController extends Controller
 							$onecart->goods_id=$mycart['cid'];
 							if ($onecart->save()) {
 								echo 1;
+								return;
 							}
 							else{
 								echo 4;
+								return;
 							}
 						}
 						//若已添加，则增加数据库中的数量
@@ -139,9 +147,11 @@ class CartController extends Controller
 							$goods[0]->amount=$goods[0]->amount+$mycart['num'];
 							if ($goods[0]->save()) {
 								echo 1;
+								return;
 							}
 							else{
 								echo 4;
+								return;
 							}
 						}
 					}
@@ -149,14 +159,17 @@ class CartController extends Controller
 				//参数不为数字
 				else{
 					echo 2;
+					return;
 				}
 			}
 			else{
 				echo 2;
+				return;
 			}
 		}
 		else{
 			echo 2;
+			return;
 		}
 		}
 	}
@@ -180,11 +193,13 @@ class CartController extends Controller
 	{	
 		if (Yii::app()->user->isGuest) {
 			echo 0;
+			return;
 		}
 		else{
 			$deleteinfo=json_decode($_POST['goods_delete']);
 			if (empty($deleteinfo['cid']) || empty($deleteinfo['type']) ) {
 				echo 2;
+				return;
 			}
 		}
 		$this->loadModel($id)->delete();

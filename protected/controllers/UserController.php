@@ -36,7 +36,7 @@
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic'),
+				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic','collect'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -357,6 +357,12 @@
 			}
 		}
 
+	public function actionCollect(){
+		$clothes=Collect::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'good_type'=>0));
+		$souvenirs=Collect::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'good_type'=>1));
+		$this->render('collect');
+	}
+
 	/**
 	* 为上传文件命名
 	* @param $myAttribute 上传文件的字段名
@@ -404,4 +410,6 @@
 			unlink($dir);
 		}
 	}
+
+	
 } 
