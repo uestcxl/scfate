@@ -43,7 +43,6 @@
 						</td>
 						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
-							<span><a href="">加入收藏夹</a></span>
 							<span id="delete"><a href="">删除</a></span>
 						</td>
 					</tr>
@@ -86,7 +85,6 @@
 						</td>
 						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
-							<span><a href="">加入收藏夹</a></span>
 							<span id="delete"><a href="">删除</a></span>
 						</td>
 					</tr>

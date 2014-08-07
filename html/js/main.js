@@ -150,18 +150,22 @@ $(document).ready(function(){
 
 	$('#delete').click(function(){
 			var goods_delete={};
-			goods_delete.type=$('.product_name').attr();
+			goods_delete.type=Number($('.product_name').attr());
 			goods_delete.model=$('.model').text();
 			goods_delete.num=parseInt($(".text_box").val(), 10);
 			goods_delete.cid=$('.product_name').attr('cid');
 
 			$.ajax({
 				type:'post',
-				url:'',
-				data:'goods_delete',
-				datatype:'json',
+				url:'http://localhost/scfate/index.php?r=cart/delete',
+				data:{'goods_delete':goods_delete},
 				success:function(data,status){
 				console.log(goods_delete);
+				switch(data){
+					case '0':
+						alert('');
+
+				}
 			},
 			});
 	});
