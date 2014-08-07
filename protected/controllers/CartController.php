@@ -196,13 +196,57 @@ class CartController extends Controller
 			return;
 		}
 		else{
-			$deleteinfo=json_decode($_POST['goods_delete']);
-			if (empty($deleteinfo['cid']) || empty($deleteinfo['type']) ) {
-				echo 2;
-				return;
+			if (isset($_POST['goods_delete'])) {
+					$delete=$_POST['goods_delete'];
+					// 若类别是衣服
+					$delete['type']=intval($delete['type']);
+					$delete['cid']=intval($delete['cid']);
+					if ($delete['type']===0) {
+						if (isset($delete['model'])) {
+							$criteria=new CDbCriteria;
+							$criteria->condition="user_id=".Yii::app()->user->id.' and type=0 and size="'.$delete['model'].'" and goods_id='.$delete['cid'];
+							$model=Cart::model()->find($criteria);
+							if (empty($model)) {
+								echo 3;
+								return;
+							}						
+							else{
+								if ($model->delete()) {
+									echo 1;
+									return;
+								}
+							}
+						}
+						else{
+							echo 2;
+							return;
+						}
+					}
+					// 若种类为纪念品
+					elseif ($delete['type']===1) {
+						echo "string";die;
+							if (isset($delete['cid'])) {
+							$criteria=new CDbCriteria;
+							$criteria->condition="user_id=".Yii::app()->user->id.' and type=1 and goods_id='.$delete['cid'];
+							$model=Cart::model()->find($criteria);
+							if (empty($model)) {
+								echo 3;
+								return;
+							}						
+							else{
+								if ($model->delete()) {
+									echo 1;
+									return;
+								}
+							}
+						}
+						else{
+							echo 2;
+							return;
+						}
+					}
+				}
 			}
-		}
-		$this->loadModel($id)->delete();
 	}
 
 

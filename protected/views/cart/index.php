@@ -34,7 +34,7 @@
 								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="0"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->clothesname?></a></span>
 							</div>
 						</td>	
-						<td cl="model"><?php echo $onecart->size?></td>
+						<td class="model" modelname="<?php echo $onecart->size?>"><?php echo $onecart->size?></td>
 						<td id="price_item_1"><?php echo $oneclothes->rent;?></td>
 						<td>
 							<input class="min" name="" type="button" value="-" /> 
@@ -43,7 +43,7 @@
 						</td>
 						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
-							<span id="delete"><a href="">删除</a></span>
+							<span id="delete"><a href="javascript:;">删除</a></span>
 						</td>
 					</tr>
 				<?php }}else{?>
@@ -76,7 +76,7 @@
 								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="0"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->name?></a></span>
 							</div>
 						</td>	
-						<td cl="model"><?php echo $school->area_name?></td>
+						<td class="model" modelname=""><?php echo $school->area_name?></td>
 						<td id="price_item_1"><?php echo $oneclothes->reduce_price;?></td>
 						<td>
 							<input class="min" name="" type="button" value="-" /> 
@@ -85,7 +85,7 @@
 						</td>
 						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
-							<span id="delete"><a href="">删除</a></span>
+							<span id="delete"><a href="javascript:;">删除</a></span>
 						</td>
 					</tr>
 				<?php }}else{?>
