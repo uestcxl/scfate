@@ -73,7 +73,7 @@ $(document).ready(function(){
 		goods.model = $(".model").find(".highlight a").text();
 		goods.num = parseInt($("#text_box").val(), 10);
 		goods.cid = parseInt($(".product_name").attr('cid'),10);
-		
+
 		if (goods.type==0) {
 			if(!goods.model){
 				alert('请选择型号');
@@ -110,6 +110,45 @@ $(document).ready(function(){
 			},
 		});
 	});
+
+	$('.collect').click(function(){
+		var collect={};
+		collect.type=Number($(".product_name").attr('type'),10);
+		collect.cid=parseInt($(".product_name").attr('cid'));
+		$.ajax({
+			url: 'http://localhost/scfate/index.php?r=collect/create',
+			type:'post',
+			data: {
+				'collect':collect
+			},
+			success:function(data,status){
+				console.log(collect);
+				if (status=='success') {
+					switch(data){
+						case '0':
+						alert('您还木登录！');
+						window.location.href="http://localhost/scfate/index.php?r=site/login";
+						// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+						break;
+						case '1':
+							alert('参数错误！');
+							break;
+						case '2':
+							alert('添加成功！');
+							break;
+						case '3':
+							alert('您已添加过此商品！');
+							break;
+						default:
+							// alert('添加失败！Orz')
+							alert(data)
+							break;
+					}
+				};
+			}
+		})
+	});
+
 	$('#delete').click(function(){
 			var goods_delete={};
 			goods_delete.type=$('.product_name').attr();

@@ -16,7 +16,7 @@
 		<div class="ad">
 			<img src="<?php echo Yii::app()->baseUrl?>/html/img/AD.png">
 		</div>
-		<div class="souvenir">
+		<div class="product_detail">
 			<div class="menu">
 				<div class="menu_part">
 					<div class="head"><h1>按品种分类</h1></div>

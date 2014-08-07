@@ -36,7 +36,7 @@
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic'),
+				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic','collect'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -176,17 +176,28 @@
 					if ($password1==$password2) {
 						$model->password=md5($password1);
 						if ($model->save()) {
-							echo "修改密码成功";	
+							echo "<script type='text/javascript'>
+									alert('修改密码成功!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 						}
 					}else{
-						echo "两次输入密码不同";
+								echo "<script type='text/javascript'>
+									alert('两次输入密码不同!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 					}
 				}else{
-						
-						echo "原密码不对";
+						echo "<script type='text/javascript'>
+									alert('两次输入密码不同!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 				}
 			}else{
-				echo "密码不能为空";
+				echo "<script type='text/javascript'>
+									alert('密码不能为空!');
+									window.location.href = '".$this->createUrl('user/index')."';
+								</script>";	
 			}
 		}
 		}
@@ -346,6 +357,12 @@
 			}
 		}
 
+	public function actionCollect(){
+		$clothes=Collect::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'good_type'=>0));
+		$souvenirs=Collect::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'good_type'=>1));
+		$this->render('collect');
+	}
+
 	/**
 	* 为上传文件命名
 	* @param $myAttribute 上传文件的字段名
@@ -393,4 +410,6 @@
 			unlink($dir);
 		}
 	}
+
+	
 } 

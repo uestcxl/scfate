@@ -1,5 +1,4 @@
 <div class="works_concent"> 
-				<div>
 					<?php if(!empty($photographs)) {foreach ($photographs as $key => $photograph) {?>
 						<div class="works_concent_part">
 							<img src="<?php echo Yii::app()->baseUrl.'/images/photographs/'.$photograph->picture?>">
@@ -7,5 +6,18 @@
 							<p><?php echo $photograph->description;?></p>
 						</div>
 					<?php }}?>
-				</div>
+							<div class="pager">
+								<?php
+									$this->widget('CLinkPager',array(
+											'header'=>'',
+											'firstPageLabel'=>'第一页',
+											'lastPageLabel' => '末页',
+											'prevPageLabel' => '上一页',
+											'nextPageLabel' => '下一页',
+											'pages' => $pages, 
+										)
+									);
+								?>
+							</div>
+	
 </div>

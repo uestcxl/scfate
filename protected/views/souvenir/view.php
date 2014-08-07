@@ -25,7 +25,7 @@
 				</div>
 				<div class="button">
 					<a href="javascript:;"class="shopping_cart"><img src="<?php echo Yii::app()->baseUrl?>/html/img/GWC.png" /></a>
-					<a href=""class="collect"><img src="<?php echo Yii::app()->baseUrl?>/html/img/SCJ.png" /></a>
+					<a href="javascript:;"class="collect"><img src="<?php echo Yii::app()->baseUrl?>/html/img/SCJ.png" /></a>
 				</div>
 			</div>
 

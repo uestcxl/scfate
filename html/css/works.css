@@ -43,7 +43,8 @@
 	width: 790px;
 	float: right;
 	background-color: #fff;
-	min-height: 330px;
+
+   
 }
 .works_concent_part{
 	height:280px;
@@ -65,4 +66,9 @@
 .works_concent_part p,.works_concent_part h2{
 	line-height: 20px;
 	margin: 4px 0;
+}
+.pager{
+	position: absolute;
+	bottom:10px;
+	left:300px;
 }
