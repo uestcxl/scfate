@@ -43,13 +43,14 @@
 	width: 790px;
 	float: right;
 	background-color: #fff;
-	position: relative;
+
+   
 }
 .works_concent_part{
-	height: 300px;
+	height:280px;
 	width: 230px;
 	float:left;
-	margin: 16px;
+	margin: 12px;
 	border-right: 1px solid #adadad;
 	border-bottom: 1px solid #adadad; 
 	background-color: #fff;

@@ -240,6 +240,16 @@ section{
 .pop_area,.pop_delete_area{
 	position:relative;
 }
+
+.pop_area .btn.save{
+	float:left;
+	margin-left: 80px;
+}
+.pop_area .btn.cancel{
+	float: right;
+	margin-right: 100px;
+}
+
 .edit_pop{
 	display:none;
 	z-index:2;

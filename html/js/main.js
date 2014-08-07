@@ -73,6 +73,7 @@ $(document).ready(function(){
 		goods.model = $(".model").find(".highlight a").text();
 		goods.num = parseInt($("#text_box").val(), 10);
 		goods.cid = parseInt($(".product_name").attr('cid'),10);
+
 		if (goods.type==0) {
 			if(!goods.model){
 				alert('请选择型号');
