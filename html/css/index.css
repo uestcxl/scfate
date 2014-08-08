@@ -124,3 +124,34 @@
 	color: #5b5b5b;
 	line-height: 20px;
 }
+.works_show{
+	width: 1000px;
+}
+.works_show_content{
+	overflow: hidden;
+	padding:20px 0 20px 20px;
+	background-color: #fff;
+}
+.works_show h1{
+	display: block;
+	padding:2px 5px;
+	background-color: #8b8b8b;
+	line-height: 20px;
+}
+.works_show img{
+     width: 226px;
+     height: 212px;
+
+
+}
+.works_show .show_info{
+	float: left;
+	width: 226px;
+	margin-right: 18px;
+}
+.works_show .show_info h2{
+	margin-top: 20px;
+	font-size: 16px;
+	text-align: center;
+
+}
