@@ -41,7 +41,7 @@
 				<a href="<?php echo Yii::app()->createUrl('site/index')?>"><img src="<?php echo Yii::app()->baseUrl?>/html/img/LOGO.png"></a>
 			</div>
 			<div class="search">
-				<form action="/scfate/index.php?r=site/search" method="post">
+				<form action="<?php echo $this->createUrl('site/search')?>" method="post">
 					<a><img src="<?php echo Yii::app()->baseUrl?>/html/img/FDJ.png"></a>
 					<input type="text" class="search_content" name="search_content">
 					<span><input type="submit" value='搜索' style="width: 40px"/></span>

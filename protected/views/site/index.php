@@ -10,6 +10,7 @@
 ?>
 	<!-- section  begin -->
 		<!-- slider  begin -->
+		<div class="index_content">
 		<div class="slider">
 			
 			<div class="banner">
@@ -49,5 +50,37 @@
 			</div>
 			<!-- promotion  end -->
 		</div>
+				</div>
+
+	 <div class="works_show">
+		<h1>作品展示</h1>
+		<div class="works_show_content">
+			<div class="show_info">
+				<div class="photo">
+					<a href=""><img src="<?php echo Yii::app()->baseUrl?>/html/img/p1.jpg" /></a>
+				</div>
+				<h2>林杨林杨</h2>
+			</div>
+			<div class="show_info">
+				<div class="photo">
+					<a href=""><img src="<?php echo Yii::app()->baseUrl?>/html/img/p2.jpg" /></a>
+				</div>
+				<h2>林杨林杨</h2>
+			</div>
+			<div class="show_info">
+				<div class="photo">
+					<a href=""><img src="<?php echo Yii::app()->baseUrl?>/html/img/p3.jpg" /></a>
+				</div>
+				<h2>林杨林杨</h2>
+			</div>
+			<div class="show_info">
+				<div class="photo">
+					<a href=""><img src="<?php echo Yii::app()->baseUrl?>/html/img/p4.jpg" /></a>
+				</div>
+				<h2 class="works_name">林杨林杨</h2>
+			</div>
+			
+		</div> 
+	</div> 
 		<!-- announcement&promotion end -->
 	<!-- section  end -->

@@ -123,7 +123,7 @@ class SiteController extends Controller
 			$this->render('result');
 		}
 		else{
-			echo "<script charset='gb2312' type='text/javascript' language='javascript'>
+			echo "<meta charset='utf8'/><script type='text/javascript' language='javascript'>
 						alert('请填写您想搜索的内容！Orz');
 						history.go(-1);
 				</script>";
