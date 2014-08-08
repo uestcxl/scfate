@@ -103,7 +103,7 @@ $(document).ready(function(){
 							alert('还没有填对值哦');
 							break;
 						default:
-							alert('添加失败!!');
+							alert('出了一点点问题~Orz!!');
 							break;
 					}
 				};
@@ -122,7 +122,6 @@ $(document).ready(function(){
 				'collect':collect
 			},
 			success:function(data,status){
-				console.log(collect);
 				if (status=='success') {
 					switch(data){
 						case '0':
@@ -141,7 +140,7 @@ $(document).ready(function(){
 							break;
 						default:
 							// alert('添加失败！Orz')
-							alert(data)
+							alert('出了一点点问题~Orz')
 							break;
 					}
 				};
@@ -149,63 +148,64 @@ $(document).ready(function(){
 		})
 	});
 
-	$('#delete').click(function(){
+	$('.delete').click(function(){
 			var goods_delete={};
-			goods_delete.type=$('.product_name').attr();
-			goods_delete.model=$('.model').text();
-			goods_delete.num=parseInt($(".text_box").val(), 10);
-			goods_delete.cid=$('.product_name').attr('cid');
+			goods_delete.type=Number($('.product_name').attr('type'));
+			goods_delete.model=$('.model').attr('modelname');
+			goods_delete.cid=parseInt($('.product_name').attr('cid'));
 
 			$.ajax({
 				type:'post',
-				url:'',
-				data:'goods_delete',
-				datatype:'json',
-				success:function(data,status){
-				console.log(goods_delete);
-			},
-			});
-	});
-});
-
-//backup
-/*$(document).ready(function(){
-
-	$('.shopping_cart').click(function(){
-		var goods = {};
-		goods.type = $(".product_name").attr("type");
-		goods.model = $(".model").find(".highlight a").text();
-		goods.num = parseInt($("#text_box").val(), 10);
-		goods.cid = $(".product_name").attr('cid');
-		if(!goods.model){
-			alert('请选择型号');
-		}
-		$.ajax({
-			type:'post',
-			url:'http://localhost/scfate/index.php?r=cart/create',
-			data:'goods',
-			datatype:'json',
+				url:'http://localhost/scfate/index.php?r=cart/delete',
+				data:{'goods_delete':goods_delete},
 			success:function(data,status){
-				console.log(goods);
-			},
-		});
-	});
-	$('#delete').click(function(){
-			var goods_delete={};
-			goods_delete.type=$('.product_name').attr();
-			goods_delete.model=$('.model').text();
-			goods_delete.num=parseInt($(".text_box").val(), 10);
-			goods_delete.cid=$('.product_name').attr('cid');
-
-			$.ajax({
-				type:'post',
-				url:'',
-				data:'goods_delete',
-				datatype:'json',
-				success:function(data,status){
 				console.log(goods_delete);
+				if (status=='success') {
+					switch(data){
+						case '0':
+							alert('您还木登录！');
+							window.location.href="http://localhost/scfate/index.php?r=site/login";
+							// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+							break;
+						case '1':
+							alert('删除成功');
+							location.reload();
+							break;
+						case '2':
+							alert('参数错误！');
+							break;
+						default:
+							alert('出了一点点问题~Orz');
+							// alert(data);
+							break;
+					}
+				};
 			},
 			});
 	});
 });
-*/
+
+// 搜索ajax
+/*$(document).ready(function() {
+	$('#search_item').click(function() {
+		var search_content=$('.search_content').val();
+		$.ajax({
+			url: 'http://localhost/scfate/index.php?r=site/search',
+			type: 'GET',
+			data: {search_content: 'search_content'},
+			success:function(data,status){
+				console.log(search_content);
+				if (status=='success') {
+					switch('data'){
+						default:
+						alert(data);
+						break;
+					}
+				}
+				else{
+					alert('fail,error:'+data);
+				}
+			}
+		})
+	});	
+});*/

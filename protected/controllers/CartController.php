@@ -32,7 +32,7 @@ class CartController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('show','create','update','delete'),
+				'actions'=>array('show','second','create','update','delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -189,49 +189,70 @@ class CartController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete()
 	{	
 		if (Yii::app()->user->isGuest) {
 			echo 0;
 			return;
 		}
 		else{
-			$deleteinfo=json_decode($_POST['goods_delete']);
-			if (empty($deleteinfo['cid']) || empty($deleteinfo['type']) ) {
-				echo 2;
-				return;
+			if (isset($_POST['goods_delete'])) {
+					$delete=$_POST['goods_delete'];
+					// 若类别是衣服
+					$delete['type']=intval($delete['type']);
+					$delete['cid']=intval($delete['cid']);
+					if ($delete['type']===0) {
+						if (isset($delete['model'])) {
+							$criteria=new CDbCriteria;
+							$criteria->condition="user_id=".Yii::app()->user->id.' and type=0 and size="'.$delete['model'].'" and goods_id='.$delete['cid'];
+							$model=Cart::model()->find($criteria);
+							if (empty($model)) {
+								echo 3;
+								return;
+							}						
+							else{
+								if ($model->delete()) {
+									echo 1;
+									return;
+								}
+							}
+						}
+						else{
+							echo 2;
+							return;
+						}
+					}
+					// 若种类为纪念品
+					elseif ($delete['type']===1) {
+							if (isset($delete['cid'])) {
+							$criteria=new CDbCriteria;
+							$criteria->condition="user_id=".Yii::app()->user->id.' and type=1 and goods_id='.$delete['cid'];
+							$model=Cart::model()->find($criteria);
+							if (empty($model)) {
+								echo 3;
+								return;
+							}						
+							else{
+								if ($model->delete()) {
+									echo 1;
+									return;
+								}
+							}
+						}
+						else{
+							echo 2;
+							return;
+						}
+					}
+				}
 			}
-		}
-		$this->loadModel($id)->delete();
 	}
 
-
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return Cart the loaded model
-	 * @throws CHttpException
-	 */
-	public function loadModel($id)
-	{
-		$model=Cart::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Cart $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='cart-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
+	// 购物车，确认收货地址页面
+	public function actionSecond(){
+		$address=Address::model()->findAllByAttributes(array('userid'=>Yii::app()->user->id));
+		$this->render('second',array(
+				'address'=>$address
+			));
 	}
 }

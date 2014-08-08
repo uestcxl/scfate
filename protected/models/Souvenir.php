@@ -106,22 +106,15 @@ class Souvenir extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('price',$this->price);
 		$criteria->compare('reduce_price',$this->reduce_price);
-		$criteria->compare('is_reduce',$this->is_reduce);
-		$criteria->compare('area_id',$this->area_id);
-		$criteria->compare('school_id',$this->school_id);
-		
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('sort_id',$this->sort_id);
-		$criteria->compare('picture',$this->picture,true);
-		$criteria->compare('sale_count',$this->sale_count);
-		$criteria->compare('comment_count',$this->comment_count);
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array(
+					'pageSize'=>10
+				),
 		));
 	}
 
