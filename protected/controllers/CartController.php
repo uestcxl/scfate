@@ -32,7 +32,7 @@ class CartController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('show','create','update','delete'),
+				'actions'=>array('show','second','create','update','delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -248,33 +248,11 @@ class CartController extends Controller
 			}
 	}
 
-
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return Cart the loaded model
-	 * @throws CHttpException
-	 */
-	public function loadModel($id)
-	{
-		$model=Cart::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Cart $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='cart-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
+	// 购物车，确认收货地址页面
+	public function actionSecond(){
+		$address=Address::model()->findAllByAttributes(array('userid'=>Yii::app()->user->id));
+		$this->render('second',array(
+				'address'=>$address
+			));
 	}
 }

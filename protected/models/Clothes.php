@@ -99,16 +99,10 @@ class Clothes extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
 		$criteria->compare('clothesname',$this->clothesname,true);
 		$criteria->compare('rent',$this->rent);
 		$criteria->compare('cash_pledge',$this->cash_pledge);
-		$criteria->compare('reserve',$this->reserve);
-		$criteria->compare('sort_id',$this->sort_id);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('picture',$this->picture,true);
-		$criteria->compare('comment_count',$this->comment_count);
-		$criteria->compare('sale_count',$this->sale_count);
 		$criteria->compare('size',$this->size,true);
 
 		return new CActiveDataProvider($this, array(

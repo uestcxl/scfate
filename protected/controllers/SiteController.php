@@ -21,6 +21,34 @@ class SiteController extends Controller
 		);
 	}
 
+	public function accessRules()
+	{
+		return array(
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('index','error','about','search','login'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('logout'),
+				'users'=>array('@'),
+			),
+			array('deny',
+				'actions'=>array('login'),
+				'users'=>array('@'),
+				),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -50,31 +78,6 @@ class SiteController extends Controller
 		}
 	}
 
-	/**
-	 * Displays the contact page
-	 */
-/*	public function actionContact()
-	{
-		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
-			if($model->validate())
-			{
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{$model->email}>\r\n".
-					"Reply-To: {$model->email}\r\n".
-					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
-
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
-			}
-		}
-		$this->render('contact',array('model'=>$model));
-	}*/
 
 	/**
 	 * Displays the login page
@@ -113,5 +116,17 @@ class SiteController extends Controller
 
 	public function actionAbout(){
 		$this->render('about');
+	}
+
+	public function actionSearch(){
+		if (!empty($_POST['search_content'])) {
+			$this->render('result');
+		}
+		else{
+			echo "<script charset='gb2312' type='text/javascript' language='javascript'>
+						alert('请填写您想搜索的内容！Orz');
+						history.go(-1);
+				</script>";
+		}
 	}
 }

@@ -1,8 +1,5 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/shopping.css">
-	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.1.4.2-min.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/pay.js"></script>
 </head>
 	<!-- section  begin -->
 	<section>
@@ -35,7 +32,7 @@
 							</div>
 						</td>	
 						<td class="model" modelname="<?php echo $onecart->size?>"><?php echo $onecart->size?></td>
-						<td id="price_item_1"><?php echo $oneclothes->rent;?></td>
+						<td class="price_item"><?php echo $oneclothes->rent;?></td>
 						<td>
 							<input class="min" name="" type="button" value="-" /> 
 							<input class="text_box" name="" type="text" value="<?php echo $onecart->amount?>" /> 
@@ -73,11 +70,11 @@
 								<div class="goods_photo">
 									<img height="82" width="82" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$oneclothes->picture;?>">
 								</div>
-								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="1"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->name?></a></span>
+								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="1"><a href="<?php echo $this->createUrl('souvenir/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->name?></a></span>
 							</div>
 						</td>	
 						<td class="model" modelname=""><?php echo $school->area_name?></td>
-						<td id="price_item_1"><?php echo $oneclothes->reduce_price;?></td>
+						<td class="price_item"><?php echo $oneclothes->reduce_price;?></td>
 						<td>
 							<input class="min" name="" type="button" value="-" /> 
 							<input class="text_box" name="" type="text" value="<?php echo $onecart->amount?>" /> 

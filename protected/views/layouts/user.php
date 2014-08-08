@@ -3,7 +3,6 @@
 	<!-- section  begin -->
 		<head>
 			<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/user.css">
-			<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
 		</head>
 		<section>
 		<div class="ad">

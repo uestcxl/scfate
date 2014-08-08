@@ -185,44 +185,27 @@ $(document).ready(function(){
 	});
 });
 
-//backup
-/*$(document).ready(function(){
-
-	$('.shopping_cart').click(function(){
-		var goods = {};
-		goods.type = $(".product_name").attr("type");
-		goods.model = $(".model").find(".highlight a").text();
-		goods.num = parseInt($("#text_box").val(), 10);
-		goods.cid = $(".product_name").attr('cid');
-		if(!goods.model){
-			alert('请选择型号');
-		}
+// 搜索ajax
+/*$(document).ready(function() {
+	$('#search_item').click(function() {
+		var search_content=$('.search_content').val();
 		$.ajax({
-			type:'post',
-			url:'http://localhost/scfate/index.php?r=cart/create',
-			data:'goods',
-			datatype:'json',
+			url: 'http://localhost/scfate/index.php?r=site/search',
+			type: 'GET',
+			data: {search_content: 'search_content'},
 			success:function(data,status){
-				console.log(goods);
-			},
-		});
-	});
-	$('#delete').click(function(){
-			var goods_delete={};
-			goods_delete.type=$('.product_name').attr();
-			goods_delete.model=$('.model').text();
-			goods_delete.num=parseInt($(".text_box").val(), 10);
-			goods_delete.cid=$('.product_name').attr('cid');
-
-			$.ajax({
-				type:'post',
-				url:'',
-				data:'goods_delete',
-				datatype:'json',
-				success:function(data,status){
-				console.log(goods_delete);
-			},
-			});
-	});
-});
-*/
+				console.log(search_content);
+				if (status=='success') {
+					switch('data'){
+						default:
+						alert(data);
+						break;
+					}
+				}
+				else{
+					alert('fail,error:'+data);
+				}
+			}
+		})
+	});	
+});*/

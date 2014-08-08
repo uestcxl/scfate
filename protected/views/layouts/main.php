@@ -9,6 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/index.css">
+
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.1.4.2-min.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/pay.js"></script>
 </head>
 <body>
 	<!-- header  begin -->
@@ -37,10 +41,11 @@
 				<a href="<?php echo Yii::app()->createUrl('site/index')?>"><img src="<?php echo Yii::app()->baseUrl?>/html/img/LOGO.png"></a>
 			</div>
 			<div class="search">
-				<form>
+				<form action="/scfate/index.php?r=site/search" method="post">
 					<a><img src="<?php echo Yii::app()->baseUrl?>/html/img/FDJ.png"></a>
-					<span>搜索</span>
-					<input type="text">
+					<input type="text" class="search_content" name="search_content">
+					<span><input type="submit" value='搜索' style="width: 40px"/></span>
+					<!-- <span><a href="javascript:;" id="search_item">搜索</a></span> -->
 				</form>
 			</div>
 		</div>

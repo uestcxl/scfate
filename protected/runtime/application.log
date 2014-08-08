@@ -4377,3 +4377,271 @@ in /var/www/scfate/index.php (13)
 2014/08/08 13:33:39 [warning] [application] Failed to set unsafe attribute "picture" of "Souvenir".
 in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (67)
 in /var/www/scfate/index.php (13)
+2014/08/08 19:05:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/scfate/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/scfate/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search')
+#4 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search')
+#5 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/scfate/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/scfate/index.php?r=site/search
+---
+2014/08/08 19:05:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search?search_content=111".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/search?search_content=111
+---
+2014/08/08 19:06:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search?search_content=111".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/search?search_content=111
+---
+2014/08/08 19:06:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search?search_content".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/search?search_content
+---
+2014/08/08 19:06:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Search?search_content".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('Search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('Search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/Search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/Search?search_content
+---
+2014/08/08 19:09:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Search?search_content".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('Search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('Search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/Search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/Search?search_content
+---
+2014/08/08 19:12:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('login')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/login')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=user/login
+---
+2014/08/08 19:13:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/scfate/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/scfate/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/scfate/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#9 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/scfate/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/scfate/index.php?r=site/index
+HTTP_REFERER=http://localhost/scfate/index.php?r=photographs/index
+---
+2014/08/08 19:14:15 [error] [php] array_map(): Argument #2 should be an array (/var/www/scfate/framework/web/auth/CAccessControlFilter.php:115)
+Stack trace:
+#0 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#1 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#2 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#3 /var/www/scfate/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#4 /var/www/scfate/framework/web/CWebApplication.php(282): SiteController->run()
+#5 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=site/index
+in /var/www/scfate/index.php (13)
+2014/08/08 19:15:04 [error] [php] array_map(): Argument #2 should be an array (/var/www/scfate/framework/web/auth/CAccessControlFilter.php:115)
+Stack trace:
+#0 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#1 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#2 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#3 /var/www/scfate/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#4 /var/www/scfate/framework/web/CWebApplication.php(282): SiteController->run()
+#5 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=site/index
+in /var/www/scfate/index.php (13)
+2014/08/08 19:15:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/scfate/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search')
+#9 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search')
+#10 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/scfate/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/scfate/index.php?r=site/search
+---
+2014/08/08 19:16:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search?a=aaa".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('search?a=aaa')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search?a=aaa')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search?a=a...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/search?a=aaa
+---
+2014/08/08 19:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search?search_content=111".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/search?search_content=111
+---
+2014/08/08 19:16:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/scfate/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search')
+#9 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search')
+#10 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/scfate/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/scfate/index.php?r=site/search
+---
+2014/08/08 19:16:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search?search_content=111".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/search?search_content=111
+---
+2014/08/08 19:16:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/scfate/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search')
+#9 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search')
+#10 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/scfate/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/scfate/index.php?r=site/search
+---
+2014/08/08 19:17:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Search?search_content".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('Search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('Search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/Search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/Search?search_content
+---
+2014/08/08 19:17:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Search?search_content".' in /var/www/scfate/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(270): CController->missingAction('Search?search_c...')
+#1 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('Search?search_c...')
+#2 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/Search?sea...')
+#3 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/scfate/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/scfate/index.php?r=site/Search?search_content
+---
+2014/08/08 19:17:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/scfate/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('Search')
+#9 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/Search')
+#10 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/scfate/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/scfate/index.php?r=site/Search
+---
+2014/08/08 19:17:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/scfate/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/scfate/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/scfate/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('login')
+#8 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#9 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/scfate/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/scfate/index.php?r=site/login
+---
+2014/08/08 19:52:23 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "result".' in /var/www/scfate/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('result', NULL, true)
+#1 /var/www/scfate/protected/controllers/SiteController.php(123): CController->render('result')
+#2 /var/www/scfate/framework/web/actions/CInlineAction.php(49): SiteController->actionSearch()
+#3 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('search')
+#12 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('site/search')
+#13 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/scfate/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/scfate/index.php?r=site/search
+HTTP_REFERER=http://localhost/scfate/index.php?r=site/login
+---

@@ -1,7 +1,3 @@
-<head>
-	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/jquery.1.4.2.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/html/js/main.js"></script>
-</head>
 	<div class="product_detail_content">
 			<div class="bg"></div>
 			<div class="product_name" cid="<?php echo $model->id?>" type="0"><h1><?php echo $model->clothesname?></h1></div>
