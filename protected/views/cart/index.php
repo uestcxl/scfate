@@ -43,7 +43,7 @@
 						</td>
 						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
-							<span id="delete"><a href="javascript:;">删除</a></span>
+							<span class="delete"><a href="javascript:;">删除</a></span>
 						</td>
 					</tr>
 				<?php }}else{?>
@@ -73,7 +73,7 @@
 								<div class="goods_photo">
 									<img height="82" width="82" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$oneclothes->picture;?>">
 								</div>
-								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="0"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->name?></a></span>
+								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="1"><a href="<?php echo $this->createUrl('clothes/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->name?></a></span>
 							</div>
 						</td>	
 						<td class="model" modelname=""><?php echo $school->area_name?></td>
@@ -85,7 +85,7 @@
 						</td>
 						<td class="price _red"  id="total_item_1">0</td>
 						<td class="goods_do">
-							<span id="delete"><a href="javascript:;">删除</a></span>
+							<span class="delete"><a href="javascript:;">删除</a></span>
 						</td>
 					</tr>
 				<?php }}else{?>

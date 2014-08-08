@@ -224,7 +224,6 @@ class CartController extends Controller
 					}
 					// 若种类为纪念品
 					elseif ($delete['type']===1) {
-						echo "string";die;
 							if (isset($delete['cid'])) {
 							$criteria=new CDbCriteria;
 							$criteria->condition="user_id=".Yii::app()->user->id.' and type=1 and goods_id='.$delete['cid'];

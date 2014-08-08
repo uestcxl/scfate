@@ -4328,3 +4328,52 @@ Stack trace:
 REQUEST_URI=/scfate/index.php?r=cart/delete
 HTTP_REFERER=http://localhost/scfate/index.php?r=cart/show
 ---
+2014/08/08 13:22:54 [warning] [application] Failed to set unsafe attribute "picture" of "Souvenir".
+in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (67)
+in /var/www/scfate/index.php (13)
+2014/08/08 13:22:54 [error] [php] move_uploaded_file(/var/www/scfate/protected/../images/souvenir/1407475374.png): failed to open stream: Permission denied (/var/www/scfate/framework/web/CUploadedFile.php:198)
+Stack trace:
+#0 /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php(74): SouvenirController->moveFile()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): SouvenirController->actionCreate()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): SouvenirController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): SouvenirController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): SouvenirController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): SouvenirController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=Admin/souvenir/create
+in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (215)
+in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (74)
+in /var/www/scfate/index.php (13)
+2014/08/08 13:32:17 [warning] [application] Failed to set unsafe attribute "picture" of "Souvenir".
+in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (67)
+in /var/www/scfate/index.php (13)
+2014/08/08 13:32:17 [error] [php] move_uploaded_file(/var/www/scfate/protected/../images/souvenir/1407475937.png): failed to open stream: Permission denied (/var/www/scfate/framework/web/CUploadedFile.php:198)
+Stack trace:
+#0 /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php(74): SouvenirController->moveFile()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): SouvenirController->actionCreate()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): SouvenirController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): SouvenirController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): SouvenirController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): SouvenirController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=Admin/souvenir/create
+in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (215)
+in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (74)
+in /var/www/scfate/index.php (13)
+2014/08/08 13:33:39 [warning] [application] Failed to set unsafe attribute "picture" of "Souvenir".
+in /var/www/scfate/protected/modules/Admin/controllers/SouvenirController.php (67)
+in /var/www/scfate/index.php (13)

@@ -103,7 +103,7 @@ $(document).ready(function(){
 							alert('还没有填对值哦');
 							break;
 						default:
-							alert('添加失败!!');
+							alert('出了一点点问题~Orz!!');
 							break;
 					}
 				};
@@ -140,7 +140,7 @@ $(document).ready(function(){
 							break;
 						default:
 							// alert('添加失败！Orz')
-							alert('除了一点点问题~Orz')
+							alert('出了一点点问题~Orz')
 							break;
 					}
 				};
@@ -148,7 +148,7 @@ $(document).ready(function(){
 		})
 	});
 
-	$('#delete').click(function(){
+	$('.delete').click(function(){
 			var goods_delete={};
 			goods_delete.type=Number($('.product_name').attr('type'));
 			goods_delete.model=$('.model').attr('modelname');
@@ -175,8 +175,8 @@ $(document).ready(function(){
 							alert('参数错误！');
 							break;
 						default:
-							// alert('除了一点点问题~Orz');
-							alert(data);
+							alert('出了一点点问题~Orz');
+							// alert(data);
 							break;
 					}
 				};
