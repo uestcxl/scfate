@@ -78,37 +78,39 @@ $(document).ready(function(){
 			if(!goods.model){
 				alert('请选择型号');
 			}
+			else{
+				$.ajax({
+					type:'post',
+					// url:'http://localhost/scfate/index.php?r=cart/create',
+					url:'http://www.stcy1688.com/index.php?r=cart/create',
+					data:{
+						'goods':goods
+					},
+					datatype:'json',
+					success:function(data,status){
+						console.log(goods);
+						if (status=='success') {
+							switch(data){
+								case '0':
+									alert('您还木登录！');
+									// window.location.href="http://localhost/scfate/index.php?r=site/login";
+									window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+									break;
+								case '1':
+									alert('加入购物菜成功');
+									break;
+								case '2':
+									alert('还没有填对值哦');
+									break;
+								default:
+									alert('出了一点点问题~Orz!!');
+									break;
+							}
+						};
+					},
+				});
+			}
 		};
-		$.ajax({
-			type:'post',
-			url:'http://localhost/scfate/index.php?r=cart/create',
-			// url:'http://www.stcy1688.com/index.php?r=cart/create',
-			data:{
-				'goods':goods
-			},
-			datatype:'json',
-			success:function(data,status){
-				console.log(goods);
-				if (status=='success') {
-					switch(data){
-						case '0':
-							alert('您还木登录！');
-							window.location.href="http://localhost/scfate/index.php?r=site/login";
-							// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
-							break;
-						case '1':
-							alert('加入购物菜成功');
-							break;
-						case '2':
-							alert('还没有填对值哦');
-							break;
-						default:
-							alert('出了一点点问题~Orz!!');
-							break;
-					}
-				};
-			},
-		});
 	});
 
 	$('.collect').click(function(){
@@ -116,7 +118,8 @@ $(document).ready(function(){
 		collect.type=Number($(".product_name").attr('type'),10);
 		collect.cid=parseInt($(".product_name").attr('cid'));
 		$.ajax({
-			url: 'http://localhost/scfate/index.php?r=collect/create',
+			// url: 'http://localhost/scfate/index.php?r=collect/create',
+			url: 'http://www.stcy1688.com/index.php?r=collect/create',
 			type:'post',
 			data: {
 				'collect':collect
@@ -126,8 +129,8 @@ $(document).ready(function(){
 					switch(data){
 						case '0':
 						alert('您还木登录！');
-						window.location.href="http://localhost/scfate/index.php?r=site/login";
-						// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+						// window.location.href="http://localhost/scfate/index.php?r=site/login";
+						window.location.href="http://www.stcy1688.com/index.php?r=site/login";
 						break;
 						case '1':
 							alert('参数错误！');
@@ -156,7 +159,8 @@ $(document).ready(function(){
 
 			$.ajax({
 				type:'post',
-				url:'http://localhost/scfate/index.php?r=cart/delete',
+				// url:'http://localhost/scfate/index.php?r=cart/delete',
+				url:'http://www.stcy1688.com/index.php?r=cart/delete',
 				data:{'goods_delete':goods_delete},
 			success:function(data,status){
 				console.log(goods_delete);
@@ -164,8 +168,8 @@ $(document).ready(function(){
 					switch(data){
 						case '0':
 							alert('您还木登录！');
-							window.location.href="http://localhost/scfate/index.php?r=site/login";
-							// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+							// window.location.href="http://localhost/scfate/index.php?r=site/login";
+							window.location.href="http://www.stcy1688.com/index.php?r=site/login";
 							break;
 						case '1':
 							alert('删除成功');

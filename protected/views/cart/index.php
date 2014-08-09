@@ -96,7 +96,8 @@
 				<?php }?>
 			</table>
 		</div>
-		<div class="total">服装总价：<span id="total">200.00</span></div>
+				<div class="next_button"><a href="javascript:;">下一步</a></div>
+				<div class="total">服装总价：<span id="total">200.00</span></div>
 	</section>
 	<!-- section  end -->
 

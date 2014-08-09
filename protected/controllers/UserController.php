@@ -63,21 +63,21 @@
 					$someone=User::model()->findByAttributes(array('username'=>$model->username));
 						if ($someone==null) {
 							if($model->save()){
-							echo "<script type='text/javascript'>
+							echo "<meta charset='utf8'/><script type='text/javascript'>
 								alert('注册成功! 确定并返回登陆页面。');
 								window.location.href = '".$this->createUrl('site/login')."';
 								</script>";
 								}
 						}
 				else{
-					echo "<script type='text/javascript'>
+					echo "<meta charset='utf8'/><script type='text/javascript'>
 							alert('用户名已被使用!');
 							window.location.href = '".$this->createUrl('user/create')."';
 							</script>";
 					}
 				}
 			else{
-				echo "<script type='text/javascript'>
+				echo "<meta charset='utf8'/><script type='text/javascript'>
 						alert('两次输入的密码不相同!');
 						window.location.href = '".$this->createUrl('user/create')."';
 					</script>";
@@ -176,25 +176,25 @@
 					if ($password1==$password2) {
 						$model->password=md5($password1);
 						if ($model->save()) {
-							echo "<script type='text/javascript'>
+							echo "<meta charset='utf8'/><script type='text/javascript'>
 									alert('修改密码成功!');
 									window.location.href = '".$this->createUrl('user/index')."';
 								</script>";	
 						}
 					}else{
-								echo "<script type='text/javascript'>
+								echo "<meta charset='utf8'/><script type='text/javascript'>
 									alert('两次输入密码不同!');
 									window.location.href = '".$this->createUrl('user/index')."';
 								</script>";	
 					}
 				}else{
-						echo "<script type='text/javascript'>
+						echo "<meta charset='utf8'/><script type='text/javascript'>
 									alert('两次输入密码不同!');
 									window.location.href = '".$this->createUrl('user/index')."';
 								</script>";	
 				}
 			}else{
-				echo "<script type='text/javascript'>
+				echo "<meta charset='utf8'/><script type='text/javascript'>
 									alert('密码不能为空!');
 									window.location.href = '".$this->createUrl('user/index')."';
 								</script>";	
