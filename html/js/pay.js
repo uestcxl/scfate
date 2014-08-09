@@ -24,7 +24,7 @@ $(" .table_section").each(function(){
 	var price_item=Number($(this).find('.price_item').text());
 	price=price_item*num;
 	$(this).find('.price').html(price.toFixed(2));
-	console.log(price);
+	// console.log(price);
 	sum+=price;
 	}); 
 

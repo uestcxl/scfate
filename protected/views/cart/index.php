@@ -1,6 +1,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/shopping.css">
 </head>
+<div class="shopping_wrap">
 	<!-- section  begin -->
 	<section>
 		<div class="ad">
@@ -101,3 +102,4 @@
 	</section>
 	<!-- section  end -->
 
+</div>
