@@ -62,15 +62,18 @@
 	text-decoration: underline;
 	color: #00f;
 }
-.shopping_btn input{
+.shopping_btn .order{
 	min-width: 75px;
 	height: 30px;
 	line-height: 24px;
 	color: #fff;
 	background-color: #f97f09;
 	cursor: pointer;
+	border:1px solid #f97f09;
 }
-
+.shopping_btn .order a{
+	color:#fff;
+}
 
 .shopping_address_concent{
 	margin: 10px 0;
