@@ -9,6 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 
 	<link rel="stylesheet" type="text/css" href="../css/shopping.css">
+	<script type="text/javascript" src="../js/jquery.1.4.2.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+
+
 </head>
 <body>
 	<!-- header  begin -->
@@ -66,7 +71,7 @@
 					<p>管理收货人地址</p>
 					<form>
 						<div>
-							<input type="radio" name="address_choose">
+							<input type="radio" name="address_choose" value="1" >
 							<span>中国</span><span>北京</span><span>这里是详细地址</span>
 							<span class="address_choose_right">
 								<span>收货人：<span>张三</span></span>
@@ -74,16 +79,12 @@
 							</span>
 						</div>
 						<div>
-							<input type="radio" name="address_choose">
+							<input type="radio" name="address_choose" value="2">
 							<span>中国</span><span>北京</span><span>这里是详细地址</span>
 							<span class="address_choose_right">
 								<span>收货人：<span>张三</span></span>
 								<span>12345678909</span>
 							</span>
-						</div>
-						<div>
-							<input type="radio" name="address_choose">
-							<span>使用新地址</span>
 						</div>
 					</form>
 				</div>
@@ -116,8 +117,8 @@
 				<div class="shopping_address_leftPart">
 					<h2>给卖家留言</h2>
 					<form>
-						<textarea placeholder="请输入您的留言……"></textarea>
-					</form>
+					<textarea placeholder="请输入您的留言……" class="edit_input"></textarea>
+
 				</div>
 				<div>
 					<span>服装总价：<span class="_red">$499.00</span></span>
@@ -125,7 +126,8 @@
 				</div>
 				<div class="shopping_btn">
 					<span><a>返回购物车</a></span>
-					<input type="submit" value="下单并完成支付">
+				<!-- <input type="submit" class="order" value="下单并完成支付"> -->
+				<button type="submit" class="order"><a href="javascript:;">下单并完成支付</a></button>
 				</div>
 			</div>
 		</div>

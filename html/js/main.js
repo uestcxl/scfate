@@ -183,7 +183,111 @@ $(document).ready(function(){
 			},
 			});
 	});
+	$('.next_button').click(function(){
+		//goods_detail={};
+		var goods_detail=new Array();
+
+		var table_section=$('.table_section');
+	/*	for(var i=0; i<table_section.length;i++){*/
+		var i=0;
+		$('.table_section').each(
+		function(){
+			goods_detail[i]={};
+			goods_detail[i].cid=$(this).find('.product_name').attr('cid');
+			goods_detail[i].type=$(this).find('.product_name').attr('type');
+			goods_detail[i].model=$(this).find('.model').text();
+			goods_detail[i].num = $(this).find(".text_box").val();
+			i++
+		}
+		);
+		
+		goods=JSON.stringify(goods_detail);
+
+		$.cookie('cookieName',goods,{expires:7,path:'/'});
+		console.log($.cookie('cookieName'));
+
+	})
+
+		
+		
+
+	 	var $radio=$('input[name="address_choose"]:radio');
+			$radio.click(function(){
+			 address=$(this).val();
+				});
+	$('.order').click(function(){
+
+
+				/*	console.log(address);*/
+			if(!!address){
+					alert('请选择地址！')
+				}else{
+				edit_text=$(' form textarea').val();
+			 /*console.log(edit_text);*/
+			 goods=$.cookie('cookieName');
+			 goods=JSON.parse(goods);
+			 i=goods.length;
+			 goods[i]={};
+			 goods[i].eidt_text=edit_text;
+			goods[i].address=address;
+		
+			
+			goods=JSON.stringify(goods);
+			$.cookie('shopping',goods,{expires:7,path:'/'});
+			console.log($.cookie('shopping'));
+			alert(goods);
+				}
+		
+
+					
+	})
+
+// cookie**********************
+
+
+
 });
+
+var cookieUtil={
+
+    get:function(name){
+        var cookieName=encodeURIComponent(name)+"=",
+            cookieStart=document.cookie.indexOf(cookieName),
+            cookieValue=null;
+
+        if(cookieStart>-1){
+            var cookieEnd=document.cookie.indexOf(";",cookieStart);
+            if(cookieEnd==-1){
+               cookieEnd=document.cookie.length;
+            }
+            cookieValue=decodeURIComponent(document.cookie.substring(cookieStart+cookieName.length,cookieEnd));
+        }
+        return cookieValue;
+    },
+
+    set:function(name,value,expires,path,domain,secure){
+        var cookieText=encodeURIComponent(name)+"="+encodeURIComponent(value);
+
+        if(expires instanceof Date){
+            cookieText+="; expires"+expires.toGMTString();
+        }
+        if(path){
+            cookieText+="; path="+path;
+        }
+        if(domain){
+            cookieText+="; domain="+domain;
+        }
+        if(secure){
+            cookieText+="; secure";
+        }
+        document.cookie=cookieText;
+    },
+    unset:function(name,path,domain,secure){
+        this.set(name,"",new Date(0),path,domain,secure);
+    }
+}
+
+
 
 // 搜索ajax
 /*$(document).ready(function() {
