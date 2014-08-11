@@ -60,8 +60,14 @@ class SiteController extends Controller
 		$criteria->order='create_time desc';
 		$criteria->addCondition("view=1");
 
+		$connection=Yii::app()->db;
+		// $sql='select * from photographs as r1 join(select (rand()*(select max(id) from photographs)) as id) as r2 where r1.id>=r2.id order by r1.id asc limit 4;';
+		$sql='select * from photographs order by rand() limit 4';
+		$command=$connection->createCommand($sql);
+		$works=$command->queryAll();
+
 		$indexpics=Indexpic::model()->findAll($criteria);
-		$this->render('index',array('indexpics'=>$indexpics));
+		$this->render('index',array('indexpics'=>$indexpics,'works'=>$works));
 	}
 
 	/**

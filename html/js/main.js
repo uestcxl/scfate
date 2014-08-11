@@ -80,8 +80,8 @@ $(document).ready(function(){
 			else{
 				$.ajax({
 					type:'post',
-					url:'http://localhost/scfate/index.php?r=cart/create',
-					// url:'http://www.stcy1688.com/index.php?r=cart/create',
+					// url:'http://localhost/scfate/index.php?r=cart/create',
+					url:'http://www.stcy1688.com/index.php?r=cart/create',
 					data:{
 						'goods':goods
 					},
@@ -92,8 +92,8 @@ $(document).ready(function(){
 							switch(data){
 								case '0':
 									alert('您还木登录！');
-									// window.location.href="http://localhost/scfate/index.php?r=site/login";
-									window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+									window.location.href="http://localhost/scfate/index.php?r=site/login";
+									// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
 									break;
 								case '1':
 									alert('加入购物车成功~点右上方购物车查看~Orz');
@@ -116,8 +116,8 @@ $(document).ready(function(){
 		collect.type=Number($(".product_name").attr('type'),10);
 		collect.cid=parseInt($(".product_name").attr('cid'));
 		$.ajax({
-			url: 'http://localhost/scfate/index.php?r=user/createcollect',
-			// url: 'http://www.stcy1688.com/index.php?r=user/createcollect',
+			// url: 'http://localhost/scfate/index.php?r=user/createcollect',
+			url: 'http://www.stcy1688.com/index.php?r=user/createcollect',
 			type:'post',
 			data: {
 				'collect':collect
@@ -127,8 +127,8 @@ $(document).ready(function(){
 					switch(data){
 						case '0':
 						alert('您还木登录！');
-						// window.location.href="http://localhost/scfate/index.php?r=site/login";
-						window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+						window.location.href="http://localhost/scfate/index.php?r=site/login";
+						// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
 						break;
 						case '1':
 							alert('参数错误！');
@@ -157,16 +157,16 @@ $(document).ready(function(){
 
 			$.ajax({
 				type:'post',
-				url:'http://localhost/scfate/index.php?r=cart/delete',
-				// url:'http://www.stcy1688.com/index.php?r=cart/delete',
+				// url:'http://localhost/scfate/index.php?r=cart/delete',
+				url:'http://www.stcy1688.com/index.php?r=cart/delete',
 				data:{'goods_delete':goods_delete},
 			success:function(data,status){
 				if (status=='success') {
 					switch(data){
 						case '0':
 							alert('您还木登录！');
-							window.location.href="http://localhost/scfate/index.php?r=site/login";
-							// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+							// window.location.href="http://localhost/scfate/index.php?r=site/login";
+							window.location.href="http://www.stcy1688.com/index.php?r=site/login";
 							break;
 						case '1':
 							alert('删除成功');
@@ -206,7 +206,8 @@ $(document).ready(function(){
 		$.cookie('total',total,{expires:1,path:'/'})
 		$.cookie('cookieName',goods,{expires:1,path:'/'});
 		if ($.cookie('cookieName')!=null) {
-			window.location.href="http://localhost/scfate/index.php?r=cart/second";			
+			// window.location.href="http://localhost/scfate/index.php?r=cart/second";			
+			window.location.href="http://www.stcy1688.com/index.php?r=cart/second";			
 		};
 	})
 
@@ -217,7 +218,6 @@ $(document).ready(function(){
 
 	$('.order').click(function(){
 			if (!window.address) {
-			// if (!this.address) {
 				alert('您还没有选择收货地址！！这让老板怎么发货！！');
 			}
 			else{
@@ -230,11 +230,11 @@ $(document).ready(function(){
 				goods[i].address=address;
 			
 				goods=JSON.stringify(goods);
-				// $.cookie('shopping',goods,{expires:7,path:'/'});
 
 				$.ajax({
 					type:'post',
-					url:'http://localhost/scfate/index.php?r=cart/createorder',
+					// url:'http://localhost/scfate/index.php?r=cart/createorder',
+					url:'http://www.stcy1688.com/index.php?r=cart/createorder',
 					data:{'goods':goods},
 					success:function(data,status){
 					console.log(goods);
@@ -250,11 +250,12 @@ $(document).ready(function(){
 								break;
 							case '2':
 								alert('下单成功！请到您的个人中心查看您的订单状态！');
-								window.location.href="http://localhost/scfate/index.php?r=cart/success";
+								// window.location.href="http://localhost/scfate/index.php?r=cart/success";
+								window.location.href="http://www.stcy1688.com/index.php?r=cart/success";
 								break;
 							default:
-								// alert('出了一点点问题~Orz');
-								alert(data);
+								alert('出了一点点问题~Orz');
+								// alert(data);
 								break;
 						}
 					};
