@@ -29,6 +29,33 @@
 				</div>
 
 				<div class="shopping_address_leftPart">
+					<h2>选择派送方式</h2>
+					<form class="shopping_sent">
+						<div>
+							<input type="radio" name="address_choose">
+							<h3>快递</h3>
+							<span class="address_choose_right">
+								<span>配送费用：<span class="_red">￥6.00</span></span>
+							</span>
+						</div>
+						<div>
+							<input type="radio" name="address_choose">
+							<h3>邮递</h3>
+							<span class="address_choose_right">
+								<span>配送费用：<span class="_red">￥6.00</span></span>
+							</span>
+						</div>
+						<div>
+							<input type="radio" name="address_choose">
+							<h3>EMS</h3>
+							<span class="address_choose_right">
+								<span>配送费用：<span class="_red">￥6.00</span></span>
+							</span>
+						</div>
+					</form>
+				</div>
+
+				<div class="shopping_address_leftPart">
 					<h2>给卖家留言</h2>
 					<form>
 						<textarea placeholder="请输入您的留言……"></textarea>
