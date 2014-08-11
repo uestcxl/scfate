@@ -4863,3 +4863,668 @@ Stack trace:
 REQUEST_URI=/scfate/index.php?r=cart/createorder
 in /var/www/scfate/protected/controllers/CartController.php (278)
 in /var/www/scfate/index.php (13)
+2014/08/10 10:55:25 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/CartController.php(298): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/createorde...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+HTTP_REFERER=http://localhost/scfate/index.php?r=cart/second
+---
+2014/08/10 10:58:07 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/CartController.php(298): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/createorde...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+HTTP_REFERER=http://localhost/scfate/index.php?r=cart/second
+---
+2014/08/10 11:06:33 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/CartController.php(298): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/createorde...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+HTTP_REFERER=http://localhost/scfate/index.php?r=cart/second
+---
+2014/08/10 11:06:41 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/CartController.php(298): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/createorde...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+HTTP_REFERER=http://localhost/scfate/index.php?r=cart/second
+---
+2014/08/10 11:07:13 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/CartController.php(298): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/createorde...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+HTTP_REFERER=http://localhost/scfate/index.php?r=cart/second
+---
+2014/08/10 11:08:14 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/CartController.php(298): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/createorde...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+HTTP_REFERER=http://localhost/scfate/index.php?r=cart/second
+---
+2014/08/10 11:08:37 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/CartController.php(298): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/createorde...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+HTTP_REFERER=http://localhost/scfate/index.php?r=cart/second
+---
+2014/08/10 12:04:20 [error] [exception.CException] exception 'CException' with message 'Order has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /var/www/scfate/framework/base/CModel.php:289
+Stack trace:
+#0 /var/www/scfate/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/scfate/framework/base/CModel.php(158): CModel->getValidators()
+#2 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#3 /var/www/scfate/protected/controllers/TestController.php(24): CActiveRecord->save()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): TestController->actionCreateOrder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#9 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('test/createorde...')
+#10 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/scfate/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/scfate/index.php?r=test/createorder
+---
+2014/08/10 12:09:11 [error] [exception.CException] exception 'CException' with message 'Property "Order.zgoods_id" is not defined.' in /var/www/scfate/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(145): CComponent->__get('zgoods_id')
+#1 /var/www/scfate/framework/validators/CNumberValidator.php(78): CActiveRecord->__get('zgoods_id')
+#2 /var/www/scfate/framework/validators/CValidator.php(213): CNumberValidator->validateAttribute(Object(Order), 'zgoods_id')
+#3 /var/www/scfate/framework/base/CModel.php(159): CValidator->validate(Object(Order), NULL)
+#4 /var/www/scfate/framework/db/ar/CActiveRecord.php(805): CModel->validate(NULL)
+#5 /var/www/scfate/protected/controllers/TestController.php(24): CActiveRecord->save()
+#6 /var/www/scfate/framework/web/actions/CInlineAction.php(49): TestController->actionCreateOrder()
+#7 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/scfate/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('createorder')
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('test/createorde...')
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/scfate/index.php?r=test/createorder
+---
+2014/08/10 12:14:17 [error] [php] include(Souvenirs.php): failed to open stream: No such file or directory (/var/www/scfate/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/scfate/protected/controllers/CartController.php(307): spl_autoload_call()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CartController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CartController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): CartController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): CartController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+in /var/www/scfate/protected/controllers/CartController.php (307)
+in /var/www/scfate/index.php (13)
+2014/08/10 12:25:58 [error] [php] include(Souvenirs.php): failed to open stream: No such file or directory (/var/www/scfate/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/scfate/protected/controllers/CartController.php(308): spl_autoload_call()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CartController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CartController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): CartController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): CartController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+in /var/www/scfate/protected/controllers/CartController.php (308)
+in /var/www/scfate/index.php (13)
+2014/08/10 12:30:46 [error] [php] include(Souvenirs.php): failed to open stream: No such file or directory (/var/www/scfate/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/scfate/protected/controllers/CartController.php(309): spl_autoload_call()
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): CartController->actionCreateorder()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CartController->runAction()
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CartController->filterAccessControl()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): CartController->runActionWithFilters()
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): CartController->run()
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=cart/createorder
+in /var/www/scfate/protected/controllers/CartController.php (309)
+in /var/www/scfate/index.php (13)
+2014/08/10 13:36:53 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.baseUrl" is not defined.' in /var/www/scfate/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/scfate/framework/web/auth/CWebUser.php(146): CComponent->__get('baseUrl')
+#1 /var/www/scfate/protected/views/user/order.php(3): CWebUser->__get('baseUrl')
+#2 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#3 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#4 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#5 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('order', Array, true)
+#6 /var/www/scfate/protected/controllers/UserController.php(295): CController->render('order', Array)
+#7 /var/www/scfate/framework/web/actions/CInlineAction.php(49): UserController->actionOrder()
+#8 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('order')
+#17 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/order')
+#18 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/scfate/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/scfate/index.php?r=user/order
+HTTP_REFERER=http://localhost/scfate/index.php?r=user/address
+---
+2014/08/10 16:18:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "collect/create".' in /var/www/scfate/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('collect/create')
+#1 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/scfate/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/scfate/index.php?r=collect/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=souvenir/view&id=5
+---
+2014/08/10 16:18:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "collect/create".' in /var/www/scfate/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('collect/create')
+#1 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/scfate/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/scfate/index.php?r=collect/create
+HTTP_REFERER=http://localhost/scfate/index.php?r=souvenir/view&id=5
+---
+2014/08/10 16:51:03 [error] [exception.CException] exception 'CException' with message 'Property "CPagination.size" is not defined.' in /var/www/scfate/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/scfate/protected/controllers/UserController.php(299): CComponent->__set('size', 5)
+#1 /var/www/scfate/framework/web/actions/CInlineAction.php(49): UserController->actionOrder()
+#2 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('order')
+#11 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/order')
+#12 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/scfate/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/scfate/index.php?r=user/order
+HTTP_REFERER=http://localhost/scfate/index.php?r=user/address
+---
+2014/08/10 16:51:32 [error] [php] Undefined variable: orders (/var/www/scfate/protected/controllers/UserController.php:303)
+Stack trace:
+#0 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/order
+in /var/www/scfate/protected/controllers/UserController.php (303)
+in /var/www/scfate/index.php (13)
+2014/08/10 16:51:54 [error] [php] Argument 1 passed to UserController::getOrderStatus() must be an instance of int, string given, called in /var/www/scfate/protected/views/user/order.php on line 23 and defined (/var/www/scfate/protected/controllers/UserController.php:467)
+Stack trace:
+#0 /var/www/scfate/framework/web/CBaseController.php(95): UserController->renderInternal()
+#1 /var/www/scfate/framework/web/CController.php(869): UserController->renderFile()
+#2 /var/www/scfate/framework/web/CController.php(782): UserController->renderPartial()
+#3 /var/www/scfate/protected/controllers/UserController.php(303): UserController->render()
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(49): UserController->actionOrder()
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/order
+in /var/www/scfate/protected/controllers/UserController.php (467)
+in /var/www/scfate/protected/views/user/order.php (23)
+in /var/www/scfate/protected/controllers/UserController.php (303)
+2014/08/11 14:50:35 [error] [php] Undefined variable: oneorder (/var/www/scfate/protected/views/user/order.php:17)
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(869): UserController->renderFile()
+#1 /var/www/scfate/framework/web/CController.php(782): UserController->renderPartial()
+#2 /var/www/scfate/protected/controllers/UserController.php(303): UserController->render()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): UserController->actionOrder()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/order
+in /var/www/scfate/protected/views/user/order.php (17)
+in /var/www/scfate/protected/controllers/UserController.php (303)
+in /var/www/scfate/index.php (13)
+2014/08/11 15:05:28 [error] [php] Undefined variable: goods_id (/var/www/scfate/protected/views/user/order.php:42)
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(869): UserController->renderFile()
+#1 /var/www/scfate/framework/web/CController.php(782): UserController->renderPartial()
+#2 /var/www/scfate/protected/controllers/UserController.php(303): UserController->render()
+#3 /var/www/scfate/framework/web/actions/CInlineAction.php(49): UserController->actionOrder()
+#4 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#6 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#9 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#12 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#13 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/order
+in /var/www/scfate/protected/views/user/order.php (42)
+in /var/www/scfate/protected/controllers/UserController.php (303)
+in /var/www/scfate/index.php (13)
+2014/08/11 15:49:59 [error] [php] Argument 1 passed to UserController::actionOrderdetail() must be an instance of int, string given (/var/www/scfate/protected/controllers/UserController.php:512)
+Stack trace:
+#0 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#3 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#9 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#10 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=5
+in /var/www/scfate/protected/controllers/UserController.php (512)
+in /var/www/scfate/index.php (13)
+2014/08/11 15:50:38 [error] [php] Trying to get property of non-object (/var/www/scfate/protected/controllers/UserController.php:514)
+Stack trace:
+#0 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#3 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#9 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#10 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=asfdaf
+in /var/www/scfate/protected/controllers/UserController.php (514)
+in /var/www/scfate/index.php (13)
+2014/08/11 15:51:56 [error] [exception.CException] exception 'CException' with message 'UserController cannot find the requested view "user/order".' in /var/www/scfate/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('user/order', NULL, true)
+#1 /var/www/scfate/protected/controllers/UserController.php(515): CController->render('user/order')
+#2 [internal function]: UserController->actionOrderdetail('asdasd')
+#3 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('orderdetail')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/orderdetai...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=asdasd
+---
+2014/08/11 15:52:17 [error] [php] Undefined variable: orders (/var/www/scfate/protected/views/user/order.php:14)
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(869): UserController->renderFile()
+#1 /var/www/scfate/framework/web/CController.php(782): UserController->renderPartial()
+#2 /var/www/scfate/protected/controllers/UserController.php(515): UserController->render()
+#3 unknown(0): UserController->actionOrderdetail()
+#4 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#8 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#14 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#15 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=asdasd
+in /var/www/scfate/protected/views/user/order.php (14)
+in /var/www/scfate/protected/controllers/UserController.php (515)
+in /var/www/scfate/index.php (13)
+2014/08/11 15:53:17 [error] [php] Undefined variable: model (/var/www/scfate/protected/views/user/index.php:39)
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(869): UserController->renderFile()
+#1 /var/www/scfate/framework/web/CController.php(782): UserController->renderPartial()
+#2 /var/www/scfate/protected/controllers/UserController.php(515): UserController->render()
+#3 unknown(0): UserController->actionOrderdetail()
+#4 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#8 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#14 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#15 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=asdasd
+in /var/www/scfate/protected/views/user/index.php (39)
+in /var/www/scfate/protected/controllers/UserController.php (515)
+in /var/www/scfate/index.php (13)
+2014/08/11 15:53:31 [error] [exception.CException] exception 'CException' with message 'UserController cannot find the requested view "site/index".' in /var/www/scfate/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('site/index', NULL, true)
+#1 /var/www/scfate/protected/controllers/UserController.php(515): CController->render('site/index')
+#2 [internal function]: UserController->actionOrderdetail('asdasd')
+#3 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#4 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#5 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('orderdetail')
+#14 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/orderdetai...')
+#15 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/scfate/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=asdasd
+---
+2014/08/11 15:53:40 [error] [php] Undefined variable: indexpics (/var/www/scfate/protected/views/site/index.php:22)
+Stack trace:
+#0 /var/www/scfate/framework/web/CController.php(869): UserController->renderFile()
+#1 /var/www/scfate/framework/web/CController.php(782): UserController->renderPartial()
+#2 /var/www/scfate/protected/controllers/UserController.php(515): UserController->render()
+#3 unknown(0): UserController->actionOrderdetail()
+#4 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/scfate/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#8 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/scfate/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(265): UserController->runActionWithFilters()
+#14 /var/www/scfate/framework/web/CWebApplication.php(282): UserController->run()
+#15 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/scfate/index.php(13): CWebApplication->run()
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=asdasd
+in /var/www/scfate/protected/views/site/index.php (22)
+in /var/www/scfate/protected/controllers/UserController.php (515)
+in /var/www/scfate/index.php (13)
+2014/08/11 16:32:24 [error] [exception.CException] exception 'CException' with message 'Property "Order.phone" is not defined.' in /var/www/scfate/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(145): CComponent->__get('phone')
+#1 /var/www/scfate/protected/views/user/orderdetail.php(42): CActiveRecord->__get('phone')
+#2 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#3 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#4 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#5 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('orderdetail', Array, true)
+#6 /var/www/scfate/protected/controllers/UserController.php(519): CController->render('orderdetail', Array)
+#7 [internal function]: UserController->actionOrderdetail('5')
+#8 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#9 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#10 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('orderdetail')
+#19 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/orderdetai...')
+#20 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/scfate/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=5
+HTTP_REFERER=http://localhost/scfate/index.php?r=user/order
+---
+2014/08/11 16:36:51 [error] [exception.CException] exception 'CException' with message 'Property "Order.province" is not defined.' in /var/www/scfate/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(145): CComponent->__get('province')
+#1 /var/www/scfate/protected/views/user/orderdetail.php(48): CActiveRecord->__get('province')
+#2 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#3 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#4 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#5 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('orderdetail', Array, true)
+#6 /var/www/scfate/protected/controllers/UserController.php(519): CController->render('orderdetail', Array)
+#7 [internal function]: UserController->actionOrderdetail('5')
+#8 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#9 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#10 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('orderdetail')
+#19 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/orderdetai...')
+#20 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/scfate/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=5
+HTTP_REFERER=http://localhost/scfate/index.php?r=user/order
+---
+2014/08/11 16:45:40 [error] [exception.CException] exception 'CException' with message 'Property "Order.aomount" is not defined.' in /var/www/scfate/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(145): CComponent->__get('aomount')
+#1 /var/www/scfate/protected/views/user/orderdetail.php(58): CActiveRecord->__get('aomount')
+#2 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#3 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#4 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#5 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('orderdetail', Array, true)
+#6 /var/www/scfate/protected/controllers/UserController.php(519): CController->render('orderdetail', Array)
+#7 [internal function]: UserController->actionOrderdetail('5')
+#8 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#9 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#10 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('orderdetail')
+#19 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/orderdetai...')
+#20 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/scfate/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=5
+HTTP_REFERER=http://localhost/scfate/index.php?r=user/order
+---
+2014/08/11 16:54:23 [error] [exception.CException] exception 'CException' with message 'Property "Order.type" is not defined.' in /var/www/scfate/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/scfate/framework/db/ar/CActiveRecord.php(145): CComponent->__get('type')
+#1 /var/www/scfate/protected/views/user/orderdetail.php(66): CActiveRecord->__get('type')
+#2 /var/www/scfate/framework/web/CBaseController.php(126): require('/var/www/scfate...')
+#3 /var/www/scfate/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/scfate...', Array, true)
+#4 /var/www/scfate/framework/web/CController.php(869): CBaseController->renderFile('/var/www/scfate...', Array, true)
+#5 /var/www/scfate/framework/web/CController.php(782): CController->renderPartial('orderdetail', Array, true)
+#6 /var/www/scfate/protected/controllers/UserController.php(519): CController->render('orderdetail', Array)
+#7 [internal function]: UserController->actionOrderdetail('5')
+#8 /var/www/scfate/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#9 /var/www/scfate/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#10 /var/www/scfate/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/scfate/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/scfate/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/scfate/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/scfate/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/scfate/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/scfate/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/scfate/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/scfate/framework/web/CWebApplication.php(282): CController->run('orderdetail')
+#19 /var/www/scfate/framework/web/CWebApplication.php(141): CWebApplication->runController('user/orderdetai...')
+#20 /var/www/scfate/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/scfate/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/scfate/index.php?r=user/orderdetail&id=5
+HTTP_REFERER=http://localhost/scfate/index.php?r=user/order
+---

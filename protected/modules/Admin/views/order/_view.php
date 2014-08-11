@@ -13,6 +13,14 @@
 	<?php echo CHtml::encode($data->goods_name); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('amount')); ?>:</b>
+	<?php echo CHtml::encode($data->amount); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('size')); ?>:</b>
+	<?php echo CHtml::encode($data->size); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('goods_id')); ?>:</b>
 	<?php echo CHtml::encode($data->goods_id); ?>
 	<br />

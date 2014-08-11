@@ -32,11 +32,11 @@
 			'users'=>array('*'),
 			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create',),
+				'actions'=>array('create','createcollect'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic','collect'),
+				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic','collect','orderdetail'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -291,8 +291,16 @@
 		    //user order page
 		
 		public function actionOrder(){
-			$model=$this->loadModel(Yii::app()->user->id);
-			$this->render('order',array('model'=>$model));
+			$criteria=new CDbCriteria;
+			$criteria->condition='user_id='.Yii::app()->user->id;
+			$count=Order::model()->count($criteria);
+
+			$pager=new CPagination($count);
+			$pager->pageSize=5;
+			$pager->applyLimit($criteria);
+			$orders=Order::model()->findAll($criteria);
+
+			$this->render('order',array('orders'=>$orders,'pages'=>$pager));
 		}
 		
 		//user ablum page
@@ -411,5 +419,108 @@
 		}
 	}
 
-	
+	// 添加收藏夹
+	public function actionCreatecollect(){
+		// 判断是否登陆
+		if (Yii::app()->user->isGuest) {
+			echo 0;
+			return;
+		}
+		else{
+			if (isset($_POST['collect'])) {
+				$collects=$_POST['collect'];
+				//判断参数是否都为数字
+				if (is_numeric($collects['type']) && is_numeric($collects['cid'])) {
+					$model=Collect::model()->findByAttributes(array('user_id'=>Yii::app()->user->id,'good_type'=>$collects['type'],'good_id'=>$collects['cid']));
+					if (empty($model)) {
+						$goods=new Collect;
+						$goods->user_id=Yii::app()->user->id;
+						$goods->good_id=$collects['cid'];
+						$goods->good_type=$collects['type'];
+						$goods->create_time=date('Y-m-d H:i');
+						if ($goods->save()) {
+							echo 2;
+							return;
+						}
+						else{
+							echo 1;
+							return;
+						}
+					}	
+					else{
+						echo 3;
+						return;
+					}			
+				}
+				else{
+					echo 1;
+					return;
+				}
+			}
+			else{
+				echo 1;
+				return;
+			}
+		}
+	}
+
+	protected function getOrderStatus($type,$status){
+		//如果是衣服
+		if ($type=='0') {
+			switch ($status) {
+				case '0':
+					return '订单成功正在配送~~Orz';
+					break;
+
+				case '1':
+					return '衣服配送成功！等待您的归还~';
+					break;			
+
+				case '2':
+					return '衣服返回成功！交易完成！';
+					break;
+
+				default:
+					return '出了一点小问题!';
+					break;
+			}
+		}
+		//如果是纪念品
+		elseif ($type=='1') {
+			switch ($status) {
+				case '0':
+					return '订单成功！等待发货~请耐心等待';
+					break;
+				
+				case '1':
+					return '快递小哥正在送货中';
+					break;
+
+				case '2':
+					# code...
+					return '交易完成！';
+					break;
+				default:
+					return '出了一点小问题!';
+					break;
+			}
+		}
+	}
+
+
+	//订单详细页面
+	public function actionOrderdetail($id)	{
+		$order=Order::model()->findByPk($id);
+		if (empty($order)) {
+			$this->redirect(array('site/about'));
+		}
+		else{
+			if ($order->user_id===Yii::app()->user->id) {
+				$this->render('orderdetail',array('order'=>$order));
+			}
+			else{
+				throw new CHttpException(403,'The requested page does not exist.');
+			}
+		}
+	}
 } 

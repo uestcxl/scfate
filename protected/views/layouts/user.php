@@ -1,9 +1,8 @@
-<?php /* @var $this Controller */ ?>
-<?php $this->beginContent('//layouts/main'); ?>
-	<!-- section  begin -->
 		<head>
 			<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl?>/html/css/user.css">
 		</head>
+<?php $this->beginContent('//layouts/main'); ?>
+	<!-- section  begin -->
 		<section>
 		<div class="ad">
 			<img src="<?php echo Yii::app()->baseUrl?>/html/img/AD.png">

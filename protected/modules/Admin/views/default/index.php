@@ -23,3 +23,4 @@
 
 <p>管理衣服:<a href="<?php echo $this->createUrl('clothes/admin')?>">点我</a></p>
 
+<p>订单订单！！:<a href="<?php echo $this->createUrl('order/index')?>">点我</a></p>

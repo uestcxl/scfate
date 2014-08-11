@@ -384,7 +384,7 @@ section{
 	line-height: 30px;
 }
 .indent_do_left{
-	width: 200px;
+	width: 210px;
 	float: left;
 }
 .indent_do_right{
@@ -433,6 +433,7 @@ section{
 .seller_inf{
 	border-bottom: 1px solid #adadad;
 	padding: 3px;
+	height: 150px;
 }
 .seller_inf h2{
 	line-height: 30px;

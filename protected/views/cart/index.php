@@ -97,8 +97,12 @@
 				<?php }?>
 			</table>
 		</div>
-				<div class="next_button"><a href="javascript:;">下一步</a></div>
-				<div class="total">服装总价：<span id="total">200.00</span></div>
+				<?php if (empty($clothes) && empty($souvenirs)) {?>
+					<div class=""></div>
+				<?php }else{?>
+					<div class="next_button"><a href="javascript:;">下一步</a></div>
+				<?php }?>
+				<div class="total">服装总价：<span id="total">0</span></div>
 	</section>
 	<!-- section  end -->
 

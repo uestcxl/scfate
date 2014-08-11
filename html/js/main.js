@@ -74,8 +74,7 @@ $(document).ready(function(){
 		goods.num = parseInt($("#text_box").val(), 10);
 		goods.cid = parseInt($(".product_name").attr('cid'),10);
 
-		if (goods.type==0) {
-			if(!goods.model){
+			if((goods.type==0) && (!goods.model)){
 				alert('请选择型号');
 			}
 			else{
@@ -110,7 +109,6 @@ $(document).ready(function(){
 					},
 				});
 			}
-		};
 	});
 
 	$('.collect').click(function(){
@@ -118,8 +116,8 @@ $(document).ready(function(){
 		collect.type=Number($(".product_name").attr('type'),10);
 		collect.cid=parseInt($(".product_name").attr('cid'));
 		$.ajax({
-			url: 'http://localhost/scfate/index.php?r=collect/create',
-			// url: 'http://www.stcy1688.com/index.php?r=collect/create',
+			url: 'http://localhost/scfate/index.php?r=user/createcollect',
+			// url: 'http://www.stcy1688.com/index.php?r=user/createcollect',
 			type:'post',
 			data: {
 				'collect':collect
@@ -251,7 +249,8 @@ $(document).ready(function(){
 								alert('参数错误！');
 								break;
 							case '2':
-								alert('下单成功！请耐心等待！');
+								alert('下单成功！请到您的个人中心查看您的订单状态！');
+								window.location.href="http://localhost/scfate/index.php?r=cart/success";
 								break;
 							default:
 								// alert('出了一点点问题~Orz');

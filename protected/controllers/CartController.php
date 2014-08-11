@@ -32,7 +32,7 @@ class CartController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('show','second','create','update','delete','createorder'),
+				'actions'=>array('show','second','create','update','delete','createorder','success'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -271,10 +271,10 @@ class CartController extends Controller
 				$message=$infor->eidt_text;
 				$length=count($goods);
 				$count=0;				//用作计数，保证每件物品都已保存并从购物车中删除
+				// print_r($goods);die;
 
 				$user_name=Yii::app()->user->name;
 				$user_id=Yii::app()->user->id;
-
 				foreach ($goods as $onegoods) {
 					//如果是衣服
 					if ($onegoods->type==='0') {
@@ -286,7 +286,7 @@ class CartController extends Controller
 						$oneorder->size=$onegoods->model;
 
 						$oneorder->goods_name=$clothes->clothesname;
-						$oneorder->price=$clothes->rent;
+						$oneorder->price=intval($clothes->rent)*intval($onegoods->num);
 
 						$oneorder->user_id=$user_id;
 						$oneorder->user_name=$user_name;
@@ -296,15 +296,17 @@ class CartController extends Controller
 						$oneorder->order_status=0;
 
 						if ($oneorder->save()) {
-							$deletecart=Cart::model()->findByAttributes(array('user_id'=>$user_id,'goods_id'=>$onegoods->cid,'type'=>0,'size'=>$onegoods->model));
-							if ($deletecart->delete()) {
+							$criteria=new CDbCriteria;
+							$criteria->condition="user_id=".Yii::app()->user->id.' and type=0 and size="'.$onegoods->model.'" and goods_id='.$onegoods->cid;
+							$model=Cart::model()->find($criteria);
+							if ($model->delete()) {
 								++$count;
 							}
-						}						
+						}
 					}
 					//如果是纪念品
 					elseif ($onegoods->type==='1') {
-						$souvenir=Souvenirs::model()->findByPk($onegoods->cid);
+						$souvenir=Souvenir::model()->findByPk($onegoods->cid);
 						$oneorder=new Order;
 
 						$oneorder->goods_id=$onegoods->cid;
@@ -312,7 +314,7 @@ class CartController extends Controller
 						$oneorder->size=$onegoods->model;
 
 						$oneorder->goods_name=$souvenir->name;
-						$oneorder->price=$souvenir->reduce_price;
+						$oneorder->price=$souvenir->reduce_price*intval($onegoods->num);
 
 						$oneorder->user_id=$user_id;
 						$oneorder->user_name=$user_name;
@@ -320,10 +322,11 @@ class CartController extends Controller
 						$oneorder->address_id=$address_id;
 						$oneorder->goods_type=1;
 						$oneorder->order_status=0;
-
 						if ($oneorder->save()) {
-							$deletecart=Cart::model()->findByAttributes(array('user_id'=>$user_id,'goods_id'=>$onegoods->cid,'type'=>1));
-							if ($deletecart->delete()) {
+							$criteria=new CDbCriteria;
+							$criteria->condition="user_id=".Yii::app()->user->id.' and type=1 and goods_id='.$onegoods->cid;
+							$model=Cart::model()->find($criteria);
+							if ($model->delete()) {
 								++$count;
 							}
 						}
@@ -344,5 +347,10 @@ class CartController extends Controller
 				return;
 			}
 		}
+	}
+
+	//订单成功页面
+	public function actionSuccess(){
+		$this->render('success');
 	}
 }

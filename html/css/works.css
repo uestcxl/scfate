@@ -43,8 +43,7 @@
 	width: 790px;
 	float: right;
 	background-color: #fff;
-
-   
+	position: relative;
 }
 .works_concent_part{
 	height:280px;
