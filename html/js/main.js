@@ -92,8 +92,8 @@ $(document).ready(function(){
 							switch(data){
 								case '0':
 									alert('您还木登录！');
-									window.location.href="http://localhost/scfate/index.php?r=site/login";
-									// window.location.href="http://www.stcy1688.com/index.php?r=site/login";
+									// window.location.href="http://localhost/scfate/index.php?r=site/login";
+									window.location.href="http://www.stcy1688.com/index.php?r=site/login";
 									break;
 								case '1':
 									alert('加入购物车成功~点右上方购物车查看~Orz');

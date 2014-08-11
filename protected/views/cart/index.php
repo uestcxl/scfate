@@ -69,7 +69,7 @@
 						<td class="goods">
 							<div>
 								<div class="goods_photo">
-									<img height="82" width="82" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$oneclothes->picture;?>">
+									<img height="82" width="82" src="<?php echo Yii::app()->baseUrl.'/images/souvenir/'.$oneclothes->picture;?>">
 								</div>
 								<span class="product_name" cid="<?php echo $onecart->goods_id?>" type="1"><a href="<?php echo $this->createUrl('souvenir/view',array('id'=>$onecart->goods_id))?>"><?php echo $oneclothes->name?></a></span>
 							</div>

@@ -6,7 +6,7 @@
 			<div class="bg"></div>
 			<div class="product_name" cid="<?php echo $model->id?>" type="1"><h1><?php echo $model->name?></h1></div>
 			<div class="product_information">
-				<img style="height: 297px;width: 297px" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$model->picture?>" class="show_photo" />
+				<img style="height: 297px;width: 297px" src="<?php echo Yii::app()->baseUrl.'/images/souvenir/'.$model->picture?>" class="show_photo" />
 				<div class="show_details">
 					<ul>
 						<li class="rental">优惠价格:￥<?php echo $model->reduce_price;?></li>
