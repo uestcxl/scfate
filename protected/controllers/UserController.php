@@ -112,11 +112,11 @@
 		/**
 		* 个人中心首页
 		*/
-			public function actionIndex(){
-				$model=$this->loadModel(Yii::app()->user->id);
-				$me=User::model()->findByPk(Yii::app()->user->id);
-				$this->render('index',array('model'=>$model,'me'=>$me));
-			}
+		public function actionIndex(){
+			$model=$this->loadModel(Yii::app()->user->id);
+			$me=User::model()->findByPk(Yii::app()->user->id);
+			$this->render('index',array('model'=>$model,'me'=>$me));
+		}
 		
 		
 		/**
@@ -248,9 +248,9 @@
 		    	$this->render('address',array(
 		    		'model'=>$model,
 		    	                'newsdata1'=>$newsdata1,
-		                                'newsdata2'=>$newsdata2,
-		                                'newsdata3'=>$newsdata3,
-		                                )
+		                        'newsdata2'=>$newsdata2,
+		                        'newsdata3'=>$newsdata3,
+		            )
 		                        
 		    	);
 		    }
@@ -306,8 +306,7 @@
 		//user ablum page
 		
 		public function actionAlbum(){
-			$model=$this->loadModel(Yii::app()->user->id);
-			$this->render('album',array('model'=>$model));
+			$this->render('album');
 		}
 		
 		//view detail order
@@ -366,8 +365,6 @@
 		}
 
 	public function actionCollect(){
-		$clothes=Collect::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'good_type'=>0));
-		$souvenirs=Collect::model()->findAllByAttributes(array('user_id'=>Yii::app()->user->id,'good_type'=>1));
 		$this->render('collect');
 	}
 

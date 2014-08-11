@@ -56,7 +56,9 @@
 								?>
 								<img width="80px" height="80px" src="<?php echo Yii::app()->baseUrl.'/images/clothes/'.$goods->picture;?>">
 								<span><?php echo $goods->clothesname?></span>
-							<?php }elseif ($order->goods_type=='1') {?>
+							<?php }elseif ($order->goods_type=='1') {
+								$goods=Souvenir::model()->findByPk($order->goods_id);
+								?>
 								<img width="80px" height="80px" src="<?php echo Yii::app()->baseUrl.'/images/souvenir/'.$goods->picture;?>">
 								<span><?php echo $goods->name?></span>
 							<?php }?>
