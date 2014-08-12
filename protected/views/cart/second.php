@@ -46,7 +46,7 @@
 							<input type="radio" name="address_choose">
 							<h3></h3>
 							<span class="address_choose_right">
-								<span>送货上门<span class="_red">货到付款(支付租金以及押金)</span></span>
+								<span>送货上门,货到付款<span class="_red">支付租金以及押金</span></span>
 							</span>
 						</div>
 					</form>

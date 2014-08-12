@@ -17,7 +17,7 @@
 					<a href="<?php echo Yii::app()->createUrl('user/index'); ?>"><div class="menu_list">我的账户</div></a>
 					<a href="<?php echo $this->createUrl('user/order')?>"><div class="menu_list">我的订单</div></a>
 					<a href="<?php echo Yii::app()->createUrl('user/address')?>"><div class="menu_list">我的地址</div></a>
-					<a href="<?php echo $this->createUrl('user/album')?>"><div class="menu_list">我的相册</div></a>
+					<!--<a href="<?php echo $this->createUrl('user/album')?>"><div class="menu_list">我的相册</div></a>-->
 					<a href="<?php echo $this->createUrl('user/collect')?>"><div class="menu_list">我的收藏夹</div></a>
 <!-- 					<a href="#"><div class="menu_list">我的朋友</div></a>
 <a href="#"><div class="menu_list">系统消息</div></a> -->

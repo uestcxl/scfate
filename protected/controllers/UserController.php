@@ -36,7 +36,7 @@
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic','collect','orderdetail'),
+				'actions'=>array('index','changpassword','changeziliao','address','order','album','vieworder','createaddress','changepic','collect','orderdetail','deletecollect'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -302,6 +302,19 @@
 
 			$this->render('order',array('orders'=>$orders,'pages'=>$pager));
 		}
+
+
+		public function actionCollect(){
+			$criteria=new CDbCriteria;
+			$criteria->condition='user_id='.Yii::app()->user->id;
+			$count=Collect::model()->count($criteria);
+
+			$pager=new CPagination;
+			$pager->pageSize=5;
+			$pager->applyLimit($criteria);
+			$collects=Collect::model()->findAll($criteria);
+			$this->render('collect',array('collects'=>$collects,'pages'=>$pager));
+		}
 		
 		//user ablum page
 		
@@ -364,9 +377,6 @@
 			}
 		}
 
-	public function actionCollect(){
-		$this->render('collect');
-	}
 
 	/**
 	* 为上传文件命名
@@ -517,6 +527,37 @@
 			}
 			else{
 				throw new CHttpException(403,'The requested page does not exist.');
+			}
+		}
+	}
+
+	//删除收藏夹
+	public function actionDeleteCollect(){
+		if (Yii::app()->user->isGuest) {
+			echo 0;
+			return;
+		}else{
+			if (isset($_POST['cid'])) {
+				$cid=$_POST['cid'];
+				$collect=Collect::model()->findByPk($cid);
+				if ($collect->user_id===Yii::app()->user->id) {
+					if ($collect->delete()) {
+						echo 2;
+						return;
+					}
+					else{
+						echo 3;
+						return;
+					}
+				}
+				else{
+					echo 1;
+					return;
+				}
+			}
+			else{
+				echo 1;
+				return;
 			}
 		}
 	}
