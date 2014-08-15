@@ -126,7 +126,11 @@ class SiteController extends Controller
 
 	public function actionSearch(){
 		if (!empty($_POST['search_content'])) {
-			$this->render('result');
+			$search_content=mysql_real_escape_string($_POST['search_content']);
+			$sql="select id,clothesname as name,@type:='0' as type,picture from clothes where clothesname like '%".$search_content."%' union select id,name,@type:='1',picture from souvenir where name like '%".$search_content."%';";
+			$command=Yii::app()->db->createCommand($sql);
+			$results=$command->queryAll();
+			$this->render('result',array('results'=>$results));
 		}
 		else{
 			echo "<meta charset='utf8'/><script type='text/javascript' language='javascript'>
@@ -136,3 +140,5 @@ class SiteController extends Controller
 		}
 	}
 }
+
+

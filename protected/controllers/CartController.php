@@ -302,6 +302,15 @@ class CartController extends Controller
 							if ($model->delete()) {
 								++$count;
 							}
+/*							$sql="select amount from scfate.order where goods_id=".$clothes->id." and goods_type=0";
+							$command=Yii::app()->db->createCommand($sql);
+							$amounts=$command->queryAll();
+							$total=0;
+							foreach ($amounts as $key => $amount) {
+								$total+=$amount[$key];
+							}*/
+							$clothes->sale_count+=$onegoods->num;
+							$clothes->save();
 						}
 					}
 					//如果是纪念品
@@ -329,6 +338,8 @@ class CartController extends Controller
 							if ($model->delete()) {
 								++$count;
 							}
+							$souvenir->sale_count+=$onegoods->num;
+							$souvenir->save();
 						}
 					}
 				}

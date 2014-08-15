@@ -44,7 +44,7 @@
 			<div class="search">
 				<form action="<?php echo $this->createUrl('site/search')?>" method="post">
 					<a><img src="<?php echo Yii::app()->baseUrl?>/html/img/FDJ.png"></a>
-					<input type="text" class="search_content" name="search_content">
+					<input type="text" class="search_content" placeholder="搜啊搜啊搜" name="search_content">
 					<span><input type="submit" value='搜索' style="width: 40px"/></span>
 					<!-- <span><a href="javascript:;" id="search_item">搜索</a></span> -->
 				</form>
@@ -71,7 +71,7 @@
 	<footer>
 		<p>友情链接</p>
 		<div class="copyright">
-			<p>Copyright © 2014-05-30 校缘 All Rights Reserved.</p>
+			<p>Copyright © 2014-05-30 校缘 All Rights Reserved.&nbsp;&nbsp;&nbsp;蜀ICP备14019349号-1</p>
 		</div>
 	</footer>
 	<!-- footer  end -->
