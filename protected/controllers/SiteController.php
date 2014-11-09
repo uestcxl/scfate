@@ -24,11 +24,11 @@ class SiteController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			array('allow', 
 				'actions'=>array('index','error','about','search','login'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			array('allow', 
 				'actions'=>array('logout'),
 				'users'=>array('@'),
 			),
@@ -36,7 +36,7 @@ class SiteController extends Controller
 				'actions'=>array('login'),
 				'users'=>array('@'),
 				),
-			array('deny',  // deny all users
+			array('deny', 
 				'users'=>array('*'),
 			),
 		);

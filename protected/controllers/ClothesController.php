@@ -46,7 +46,7 @@ class ClothesController extends Controller
 	}
 
 
-	/**
+	/**k
 	 * Lists all models.
 	 */
 	public function actionIndex()
